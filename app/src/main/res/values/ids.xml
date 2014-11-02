@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="content_frame"/>
+    <item type="id" name="cross_fader_loading"/>
+    <item type="id" name="cross_fader_content"/>
+    <item type="id" name="pager"/>
+    <item type="id" name="image"/>
+    <item type="id" name="start_btn"/>
+    <item type="id" name="text"/>
+    <item type="id" name="indicator1"/>
+    <item type="id" name="indicator2"/>
+    <item type="id" name="indicator3"/>
+    <item type="id" name="indicator4"/>
+    <item type="id" name="actionbar_divider"/>
+    <item type="id" name="tabhost"/>
+    <item type="id" name="info_text"/>
+    <item type="id" name="layout_info"/>
+    <item type="id" name="btn_signin"/>
+    <item type="id" name="btn_signup"/>
+    <item type="id" name="login_header"/>
+    <item type="id" name="login_header_tips"/>
+    <item type="id" name="tv_quick_register"/>
+    <item type="id" name="container_name"/>
+    <item type="id" name="btn_clear_name"/>
+    <item type="id" name="et_user_name"/>
+    <item type="id" name="container_password"/>
+    <item type="id" name="btn_clear_password"/>
+    <item type="id" name="et_password"/>
+    <item type="id" name="tv_register"/>
+    <item type="id" name="btn_login_with_sina_weibo"/>
+
+
+    <item type="id" name="action_signup"/>
+    <item type="id" name="layout_captcha"/>
+    <item type="id" name="et_captcha"/>
+
+
+    <item type="id" name="calendar_view"/>
+    <item type="id" name="label_user_info"/>
+    <item type="id" name="line_label_user_info"/>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- tab -->
+    <color name="bg_tab_unselected">#2B3032</color>
+    <color name="bg_tab_selected">#363B3D</color>
+    <!-- tab end -->
+
+    <color name="button_disable_color">@color/disable_background</color>
+    <color name="button_press_color">#ff01a071</color>
+    <color name="disable_background">@android:color/darker_gray</color>
+    <color name="button_color">@color/green</color>
+    <color name="gray">#ff999999</color>
+    <color name="green">#ff5cbc7d</color>
+</resources>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="app_name">Vine marks</string>
+    <string name="verify_username_alread_exists">This name already exists.</string>
+    <string name="verify_not_empty"><xliff:g>%1$s</xliff:g> can not be empty.</string>
+    <string name="verify_begin_with_letter">The first character cannot be a number.</string>
+    <string name="verify_no_whitespace"><xliff:g>%1$s</xliff:g> can not contain any whitespace.</string>
+    <string name="verify_length">The length of the <xliff:g>%1$s</xliff:g> only can between <xliff:g>%2$s</xliff:g> and <xliff:g>%3$s.</xliff:g></string>
+    <string name="verify_not_consistent"><xliff:g>%1$s</xliff:g> are not the same.</string>
+    <string name="verify_label_username">Username</string>
+    <string name="verify_label_password">Password</string>
+    <string name="verify_label_nickname">Nickname</string>
+    <string name="start">Get started</string>
+    <string name="dialog_title_update">Update</string>
+    <string name="dialog_msg_update">Mobo Pick just got better! A new version available.</string>
+    <string name="dialog_button_update_positive">Update</string>
+    <string name="dialog_button_update_negative">Maybe later</string>
+    <string name="instruction_1">Bought a new smart phone, you feel so happy!!!</string>
+    <string name="instruction_2">But dozens of apps for same purposes, which one is better?</string>
+    <string name="instruction_3">IT editors, apps fans senior users... pick the best for you.</string>
+    <string name="instruction_4">Share your favorites discover fans favorites</string>
+    <string name="hello_world">Hello world!</string>
+    <!-- menu-->
+    <string name="action_settings">Settings</string>
+    <string name="action_signup">@string/signup</string>
+    <!-- menu end-->
+
+    <string name="signup">Signup</string>
+
+    <string name="tab_text_message">Message</string>
+    <string name="tab_text_calendar">Calendar</string>
+    <string name="tab_text_friend">Friend</string>
+    <string name="tab_text_discover">Discover</string>
+    <string name="tab_text_me">Me</string>
+    <string name="signin">Sign In</string>
+
+
+    <!-- net exception-->
+    <string name="error_parse">Data parse errored. </string>
+
+    <!-- end net exception-->
+    <string name="password">Password</string>
+    <string name="phone_or_email">Phone number/ Email</string>
+    <string name="hint_password">@string/password</string>
+    <string name="hint_username">@string/phone_or_email</string>
+    <string name="hint_captcha">Captcha</string>
+
+    <string name="user_info">User information</string>
+    <string name="profile">Profile</string>
+    <string name="other">Other</string>
+    <string name="other_block">Other block</string>
+    <string name="sigin_vine">Sigin Vinestar</string>
+    <string name="sigin_des">More functions after you sigin</string>
+    <string name="change_password">Change password</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="password_max_length" type="integer">30</item>
+    <item name="password_min_length" type="integer">6</item>
+    <item name="username_min_length" type="integer">4</item>
+    <item name="username_max_length" type="integer">20</item>
+    <item name="nickname_min_length" type="integer">1</item>
+    <item name="nickname_max_length" type="integer">16</item>
+</resources>
