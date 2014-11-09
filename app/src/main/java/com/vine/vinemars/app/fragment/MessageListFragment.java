@@ -7,12 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.vine.vinemars.R;
-import com.vine.vinemars.app.fragment.dummy.DummyContent;
 
 /**
  *
@@ -66,10 +64,6 @@ public class MessageListFragment extends BaseFragment implements AbsListView.OnI
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
-        // TODO: Change Adapter to display your content
-        mAdapter = new ArrayAdapter<DummyContent.DummyItem>(getActivity(),
-                android.R.layout.simple_list_item_1, android.R.id.text1, DummyContent.ITEMS);
     }
 
     @Override
@@ -110,7 +104,6 @@ public class MessageListFragment extends BaseFragment implements AbsListView.OnI
         if (null != mListener) {
             // Notify the active callbacks interface (the activity, if the
             // fragment is attached to one) that an item has been selected.
-            mListener.onFragmentInteraction(DummyContent.ITEMS.get(position).id);
         }
     }
 

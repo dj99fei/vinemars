@@ -21,11 +21,17 @@
     <item type="id" name="login_header_tips"/>
     <item type="id" name="tv_quick_register"/>
     <item type="id" name="container_name"/>
+    <item type="id" name="container_new_password"/>
+    <item type="id" name="container_old_password"/>
     <item type="id" name="btn_clear_name"/>
+    <item type="id" name="btn_clear_old_password"/>
+    <item type="id" name="btn_clear_new_password"/>
     <item type="id" name="et_user_name"/>
     <item type="id" name="container_password"/>
     <item type="id" name="btn_clear_password"/>
     <item type="id" name="et_password"/>
+    <item type="id" name="et_old_password"/>
+    <item type="id" name="et_new_password"/>
     <item type="id" name="tv_register"/>
     <item type="id" name="btn_login_with_sina_weibo"/>
 
@@ -38,4 +44,5 @@
     <item type="id" name="calendar_view"/>
     <item type="id" name="label_user_info"/>
     <item type="id" name="line_label_user_info"/>
+    <item type="id" name="btn_ok"/>
 </resources>

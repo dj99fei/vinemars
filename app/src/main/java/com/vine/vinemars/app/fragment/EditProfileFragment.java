@@ -14,6 +14,7 @@ import com.vine.vinemars.R;
 import com.vine.vinemars.net.ChangePasswordRequest;
 import com.vine.vinemars.net.MyVolley;
 import com.vine.vinemars.net.NetworkRequestListener;
+import com.vine.vinemars.utils.Validator;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -23,9 +24,11 @@ import butterknife.InjectView;
  */
 public class EditProfileFragment extends DialogFragment implements View.OnClickListener, NetworkRequestListener {
 
-    @InjectView(R.id.edit)
-    protected EditText edit;
-    @InjectView(R.id.ok)
+    @InjectView(R.id.et_old_password)
+    protected EditText oldPasswordEdit;
+    @InjectView(R.id.et_new_password)
+    protected EditText newPasswordEdit;
+    @InjectView(R.id.btn_ok)
     protected Button okButton;
 
     public static EditProfileFragment newInstance() {
@@ -41,22 +44,33 @@ public class EditProfileFragment extends DialogFragment implements View.OnClickL
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.inject(this, view);
-
         okButton.setOnClickListener(this);
     }
 
 
     @Override
     public void onClick(View view) {
-        if (view.getId() == R.id.ok) {
-            String newPassword = edit.getText().toString();
-            MyVolley.getRequestQueue().add(new ChangePasswordRequest("", newPassword, this));
+        if (view.getId() == R.id.btn_ok) {
+            String newPassword = newPasswordEdit.getText().toString();
+            String oldPassword = oldPasswordEdit.getText().toString();
+            Validator validator = new Validator();
+            try {
+                validator.notEmpty(oldPassword, R.string.old_password)
+                         .notEmpty(newPassword, R.string.new_password)
+                         .isLengthValid(newPassword, getResources().getInteger(R.integer.password_min_length),
+                                 getResources().getInteger(R.integer.password_max_length), R.string.password);
+                MyVolley.getRequestQueue().add(new ChangePasswordRequest("", newPassword, this));
+            } catch (Validator.ValidateException e) {
+                MessageDialogFragment.newInstance(e.getMessage(), getResources().getString(R.string.dialog_title_error))
+                        .show(getActivity().getSupportFragmentManager(), null);
+            }
         }
     }
 
     @Override
     public void onErrorResponse(VolleyError volleyError) {
-
+        MessageDialogFragment.newInstance(volleyError.getMessage(), getResources().getString(R.string.dialog_title_error))
+                .show(getActivity().getSupportFragmentManager(), null);
     }
 
     @Override

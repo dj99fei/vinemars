@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="bg">@android:color/white</color>
     <!-- tab -->
     <color name="bg_tab_unselected">#2B3032</color>
     <color name="bg_tab_selected">#363B3D</color>

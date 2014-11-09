@@ -57,12 +57,12 @@
 
     <style name="TextAppearance.Medium">
         <item name="android:textSize">16dp</item>
-        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
     </style>
 
     <style name="TextAppearance.Small">
         <item name="android:textSize">12dp</item>
-        <item name="android:textColor">?android:attr/textColorSecondary</item>
+        <item name="android:textColor">?android:attr/textColorTertiary</item>
     </style>
 
     <style name="TextAppearance.Small.Tab">
@@ -92,4 +92,24 @@
         <item name="@android:fragmentCloseExitAnimation">@anim/slide_left_out</item>
     </style>
     <!-- Animation end -->
+
+    <style name="Dialog" parent="@android:style/Theme.Dialog"/>
+
+    <style name="Dialog.Signin">
+        <item name="android:windowAnimationStyle">@style/Animation.Dialog.Signin</item>
+        <item name="android:windowBackground">@color/bg</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+    </style>
+
+    <style name="Animation.Dialog" parent="@android:style/Animation.Dialog" />
+
+    <style name="Animation.Dialog.Signin">
+        <item name="android:windowEnterAnimation">@anim/push_down_in</item>
+        <item name="android:windowExitAnimation">@anim/push_down_out</item>
+    </style>
 </resources>

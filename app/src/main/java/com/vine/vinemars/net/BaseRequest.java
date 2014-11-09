@@ -16,23 +16,21 @@ import java.util.Map;
  * Created by chengfei on 14-10-13.
  */
 public abstract class BaseRequest<T> extends Request<T> {
-
-    public static final String BASE_URL = "";
-
-//    "http://192.168.1.109:8081/vineapp/server"
     private static final String TAG = BaseRequest.class.getSimpleName();
 
+    /**
+     * 网络请求配置信息
+     */
     public static final class Config {
-        public static final String
+        public static final String BASE_URL = "http://192.168.1.107:8081/vineapp/server";
     }
-
 
 
     protected String checkCode;
     protected NetworkRequestListener listener;
 
     public BaseRequest(String checkCode, NetworkRequestListener listener) {
-        super(Method.POST,"http://192.168.1.107:8081/vineapp/server", listener);
+        super(Method.POST, Config.BASE_URL, listener);
         this.checkCode = checkCode;
         this.listener = listener;
     }
@@ -45,11 +43,13 @@ public abstract class BaseRequest<T> extends Request<T> {
     @Override
     public Map<String, String> getHeaders() throws AuthFailureError {
         Map<String, String> headers = new HashMap<String, String>();
-        PackageHead packageHead = new PackageHead(10001);
+        PackageHead packageHead = new PackageHead(getRequestId());
         headers.put("packetHead", new Gson().toJson(packageHead));
         headers.put("appHead", new Gson().toJson(new AppHead("1")));
         return headers;
     }
+
+    public abstract int getRequestId();
 
     @Override
     protected Response<T> parseNetworkResponse(NetworkResponse response) {
@@ -74,7 +74,6 @@ public abstract class BaseRequest<T> extends Request<T> {
             listener.onResponse(response);
         }
     }
-
 
     protected boolean successed(NetworkResponse response) {
         Map<String, String> header = response.headers;

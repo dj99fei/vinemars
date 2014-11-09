@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 
 import com.vine.vinemars.R;
 import com.vine.vinemars.app.ProfileActivity;
-import com.vine.vinemars.app.SigninActivity;
 
 import butterknife.InjectView;
 
@@ -44,12 +43,17 @@ public class MeFragment extends BaseFragment {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.layout_info:
-                Intent intent = new Intent(getActivity(), SigninActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                getActivity().startActivity(intent);
+//                Intent intent = new Intent(getActivity(), SigninActivity.class);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                getActivity().startActivity(intent);
+//                getActivity().getSupportFragmentManager()
+//                        .beginTransaction()
+//                        .add(R.id.container_name, SigninFragment.newInstance())
+//                        .commit();
+                SigninFragment.newInstance().show(getFragmentManager(), null);
                 break;
             case R.id.info_other2:
-                intent = new Intent(getActivity(), ProfileActivity.class);
+                Intent intent = new Intent(getActivity(), ProfileActivity.class);
                 getActivity().startActivity(intent);
                 break;
         }

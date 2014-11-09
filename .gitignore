@@ -1,6 +1,7 @@
 .gradle
 /local.properties
 .DS_Store
+.idea/workspace.xml
 /build
 
 # Built application files

@@ -2,11 +2,7 @@ package com.vine.vinemars.net;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
-import com.google.gson.Gson;
 import com.vine.vinemars.net.pb.EnrollPacket;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by chengfei on 14/10/29.
@@ -23,12 +19,8 @@ public class ChangePasswordRequest extends BaseRequest<Boolean> {
     }
 
     @Override
-    public Map<String, String> getHeaders() throws AuthFailureError {
-        Map<String, String> headers = new HashMap<String, String>();
-        PackageHead packageHead = new PackageHead(10006);
-        headers.put("packetHead", new Gson().toJson(packageHead));
-        headers.put("appHead", new Gson().toJson(new AppHead("1")));
-        return headers;
+    public int getRequestId() {
+        return HOpCodeEx.ResetPassword;
     }
 
     @Override

@@ -9,14 +9,15 @@ public class Constant {
         public static final String IMAGE_ID = "intent_key_image_id";
         public static final String DES_ID = "intent_key_des_id";
         public static final String IS_LAST = "intent_key_is_last";
+
+        public static final String MSG = "intent_key_msg";
+        public static final String TITLE = "intent_key_title";
     }
 
-    public static final String SCHEMA = "http://";
-    public static final String HOST = "www.mobo123.com";
 
-    public static String getBaseUrl() {
-        return new StringBuilder(SCHEMA).append(HOST).append("/").toString();
+    public static final class Version {
+        public static final String versionName = "v1.0";
+        public static final int versionCode = 1;
     }
-
 
 }

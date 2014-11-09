@@ -2,15 +2,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <string name="app_name">Vine marks</string>
-    <string name="verify_username_alread_exists">This name already exists.</string>
-    <string name="verify_not_empty"><xliff:g>%1$s</xliff:g> can not be empty.</string>
-    <string name="verify_begin_with_letter">The first character cannot be a number.</string>
-    <string name="verify_no_whitespace"><xliff:g>%1$s</xliff:g> can not contain any whitespace.</string>
-    <string name="verify_length">The length of the <xliff:g>%1$s</xliff:g> only can between <xliff:g>%2$s</xliff:g> and <xliff:g>%3$s.</xliff:g></string>
-    <string name="verify_not_consistent"><xliff:g>%1$s</xliff:g> are not the same.</string>
-    <string name="verify_label_username">Username</string>
-    <string name="verify_label_password">Password</string>
-    <string name="verify_label_nickname">Nickname</string>
+
     <string name="start">Get started</string>
     <string name="dialog_title_update">Update</string>
     <string name="dialog_msg_update">Mobo Pick just got better! A new version available.</string>
@@ -38,6 +30,8 @@
 
     <!-- net exception-->
     <string name="error_parse">Data parse errored. </string>
+    <string name="old_password">Old password </string>
+    <string name="new_password">New password </string>
 
     <!-- end net exception-->
     <string name="password">Password</string>
@@ -45,7 +39,10 @@
     <string name="hint_password">@string/password</string>
     <string name="hint_username">@string/phone_or_email</string>
     <string name="hint_captcha">Captcha</string>
+    <string name="hint_old_passworkd">Your old password</string>
+    <string name="hint_new_passworkd">Your new password</string>
 
+    <string name="username">Username</string>
     <string name="user_info">User information</string>
     <string name="profile">Profile</string>
     <string name="other">Other</string>
@@ -53,4 +50,27 @@
     <string name="sigin_vine">Sigin Vinestar</string>
     <string name="sigin_des">More functions after you sigin</string>
     <string name="change_password">Change password</string>
+    <string name="dont_have_account">Don’t have an account?</string>
+    <string name="create_a_acccount">Create a Vine account.</string>
+
+    <!-- form validation -->
+    <string name="prompt_email_invalid">Invalid email address.</string>
+    <string name="prompt_username_invalid">Username only can be phone number or email.</string>
+    <string name="prompt_phone_number_invalid">Invalid phone number.</string>
+    <string name="verify_username_alread_exists">This name already exists.</string>
+    <string name="verify_not_empty"><xliff:g>%1$s</xliff:g> can not be empty.</string>
+    <string name="verify_begin_with_letter">The first character cannot be a number.</string>
+    <string name="verify_no_whitespace"><xliff:g>%1$s</xliff:g> can not contain any whitespace.</string>
+    <string name="verify_length">The length of the <xliff:g>%1$s</xliff:g> only can between <xliff:g>%2$s</xliff:g> and <xliff:g>%3$s.</xliff:g></string>
+    <string name="verify_not_consistent"><xliff:g>%1$s</xliff:g> are not the same.</string>
+    <string name="verify_label_username">Username</string>
+    <string name="verify_label_password">Password</string>
+    <string name="verify_label_nickname">Nickname</string>
+    <string name="ok">OK</string>
+    <!-- form validation -->
+
+    <!-- dialog -->
+    <string name="dialog_title_error">Error</string>
+    <!-- dialog end -->
 </resources>
+

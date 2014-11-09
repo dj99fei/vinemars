@@ -38,6 +38,10 @@ public abstract  class CommonActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             Intent upIntent = NavUtils.getParentActivityIntent(this);
+            if (upIntent == null) {
+                onBackPressed();
+                return true;
+            }
             if (NavUtils.shouldUpRecreateTask(this, upIntent)) {
                 // This activity is NOT part of this app's task, so create a new task
                 // when navigating up, with a synthesized back stack.

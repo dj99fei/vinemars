@@ -34,6 +34,11 @@ public class EnrollRequest extends BaseRequest<User> {
     }
 
     @Override
+    public int getRequestId() {
+        return HOpCodeEx.Enroll;
+    }
+
+    @Override
     protected Response parseNetworkResponse(NetworkResponse response) {
         try {
             EnrollPacket.EnrollRet ret = EnrollPacket.EnrollRet.parseFrom(response.data);

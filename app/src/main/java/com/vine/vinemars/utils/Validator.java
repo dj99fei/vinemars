@@ -1,11 +1,15 @@
 
 package com.vine.vinemars.utils;
 
-import android.content.res.Resources;
-import android.widget.EditText;
+import android.support.v4.app.FragmentManager;
 
 import com.vine.vinemars.MyApplication;
 import com.vine.vinemars.R;
+import com.vine.vinemars.app.fragment.MessageDialogFragment;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 
 /**
  * This class is for form validation.It contains some common method to test if
@@ -15,15 +19,13 @@ import com.vine.vinemars.R;
  */
 public class Validator {
 
-    private MyApplication mApplication;
+    private MyApplication mApp;
 
     public static final int USERNAME_LENGTH_MAX = 20;
     public static final int USERNAME_LENGTH_MIN = 3;
 
-    private static final String TAG = Validator.class.getSimpleName();
-
     public Validator() {
-        this.mApplication = MyApplication.get();
+        this.mApp = MyApplication.get();
     }
 
     /**
@@ -37,8 +39,8 @@ public class Validator {
      */
     public Validator notEmpty(String data, int resId) throws ValidateException {
         if ("".equals(data)) {
-            throw new ValidateException(mApplication.getString(
-                    R.string.verify_not_empty, mApplication.getString(resId)));
+            throw new ValidateException(mApp.getString(
+                    R.string.verify_not_empty, mApp.getString(resId)));
         }
         return this;
     }
@@ -55,9 +57,9 @@ public class Validator {
     public Validator noWhiteSpace(String data, int resId)
             throws ValidateException {
         if (data != null && data.contains(" ")) {
-            throw new ValidateException(mApplication.getString(
+            throw new ValidateException(mApp.getString(
                     R.string.verify_no_whitespace,
-                    mApplication.getString(resId)));
+                    mApp.getString(resId)));
         }
         return this;
     }
@@ -76,21 +78,13 @@ public class Validator {
     public Validator isLengthValid(String data, int min, int max, int resId)
             throws ValidateException {
         if (data != null && (data.length() < min || data.length() > max)) {
-            throw new ValidateException(mApplication.getString(
-                    R.string.verify_length, mApplication.getString(resId).toLowerCase(), min,
+            throw new ValidateException(mApp.getString(
+                    R.string.verify_length, mApp.getString(resId).toLowerCase(), min,
                     max));
         }
         return this;
     }
-    
-    public Validator isBeginWithLetter(String data) throws ValidateException {
-        if (!data.matches("^[a-zA-Z].*")) {
-            throw new ValidateException(mApplication.getString(
-                    R.string.verify_begin_with_letter));
-        }
-        return this;
-    }
-    
+
     /**
      * To test if the two data is consistent.
      * 
@@ -104,11 +98,70 @@ public class Validator {
     public Validator isConsistent(String data, String data2, int resId)
             throws ValidateException {
         if (!data.equals(data2)) {
-            throw new ValidateException(mApplication.getString(
+            throw new ValidateException(mApp.getString(
                     R.string.verify_not_consistent,
-                    mApplication.getString(resId)));
+                    mApp.getString(resId)));
         }
         return this;
+    }
+
+
+    /**
+     * To test if the data is email or phone number.
+     * @param data The data to be test.
+     * @return The validator itself;
+     */
+    public Validator isEmailOrPhoneNumber(String data) throws ValidateException {
+
+        if (isEmailValid(data) || isPhoneNumberValid(data)) {
+            return this;
+
+        }
+        throw new ValidateException(R.string.prompt_username_invalid);
+    }
+
+    /**
+     * To test the data is a email form.
+     * 
+     * @param email The email string to be test.
+     * @return The verify result.
+     */
+    private boolean isEmailValid(String email) {
+        Pattern p = Pattern
+                .compile("^([a-zA-Z0-9_\\.\\-])+\\@(([a-zA-Z0-9\\-])+\\.)+([a-zA-Z0-9]{2,4})+$");
+        Matcher m = p.matcher(email);
+        if (!m.matches()) {
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * To test the data is a phone number form.
+     *
+     * @param phoneNumber The phoneNumber string to be test.
+     *
+     * @return The verify result.
+     */
+    private boolean isPhoneNumberValid(String phoneNumber) {
+        Pattern p = Pattern.compile("^((13[0-9])|(15[^4,\\D])|(18[0,5-9]))\\d{8}$");
+        Matcher m = p.matcher(phoneNumber);
+        if (!m.matches()) {
+             return false;
+        }
+        return true;
+
+    }
+
+    /**
+     * To handle the exception during the validation.A dialog implemented by a
+     * fragment will be showed,so you need pass in a FragmentManager.
+     * 
+     * @param fm The FragmentManager by which a FragmentDialog will be showed.
+     * @param e The exception occurred during the validation pass.
+     */
+    public void handleVerifyException(FragmentManager fm, ValidateException e) {
+        MessageDialogFragment.newInstance(e.getMessage(), "Error").show(fm, null);
     }
 
     /**
@@ -121,88 +174,14 @@ public class Validator {
 
         private static final long serialVersionUID = -7281950545855178907L;
 
-        private int id;
-        
         public ValidateException(String msg) {
             super(msg);
         }
-        
-        public ValidateException(int id, String msg) {
-            super(msg);
-            this.id = id;
+
+        public ValidateException(int res) {
+            super(MyApplication.get().getResources().getString(res));
         }
-        
-        public int getId() {
-            return id;
-        }
-        
-        public void setId(int id) {
-            this.id = id;
-        }
+
     }
-    
-    
-    /**
-     * To verify the legality of username.
-     * @return The validator itself.
-     * @throws ValidateException If the username is illegal, a ValidateException will be throw. 
-     */
-    public Validator verifyUsername(EditText usernameEdit) throws ValidateException {
-        Resources resouce = MyApplication.get().getResources();
-        String username = usernameEdit.getText().toString();
-        int usernameMinLength = resouce.getInteger(R.integer.username_min_length);
-        int usernameMaxLength = resouce.getInteger(R.integer.username_max_length);
-        try {
-            notEmpty(username, R.string.verify_label_username)
-                    .noWhiteSpace(username, R.string.verify_label_username)
-                    .isLengthValid(username, usernameMinLength, usernameMaxLength,
-                            R.string.verify_label_username)
-                    .isBeginWithLetter(username);
-        } catch (ValidateException e) {
-            e.setId(usernameEdit.getId());
-            throw e;
-        }
-        return this;
-    }
-    /**
-     * To verify the legality of password.
-     * @return The validator itself.
-     * @throws ValidateException If the password is illegal, a ValidateException will be throw.
-     */
-    public Validator verifyPassword(EditText passwordEdit) throws ValidateException {
-        Resources resouce = MyApplication.get().getResources();
-        String password = passwordEdit.getText().toString();
-        int passwordMinLength = resouce.getInteger(R.integer.password_min_length);
-        int passwordMaxLength = resouce.getInteger(R.integer.password_max_length);
-        try {
-            notEmpty(password, R.string.verify_label_password)
-                    .noWhiteSpace(password, R.string.verify_label_password)
-                    .isLengthValid(password, passwordMinLength, passwordMaxLength,
-                            R.string.verify_label_password);
-        } catch (ValidateException e) {
-            e.setId(passwordEdit.getId());
-            throw e;
-        }
-        return this;
-    }
-    /**
-     * To verify the legality of nickname.
-     * @return The validator itself.
-     * @throws ValidateException If the nickname is illegal, a ValidateException will be throw.
-     */
-    public Validator verifyNickname(EditText nicknameEdit) throws ValidateException {
-        Resources resouce = MyApplication.get().getResources();
-        String nickname = nicknameEdit.getText().toString().trim();
-        int passwordMinLength = resouce.getInteger(R.integer.nickname_min_length);
-        int passwordMaxLength = resouce.getInteger(R.integer.nickname_max_length);
-        try {
-            notEmpty(nickname, R.string.verify_label_nickname)
-                    .isLengthValid(nickname, passwordMinLength, passwordMaxLength,
-                            R.string.verify_label_nickname);
-        } catch (ValidateException e) {
-            e.setId(nicknameEdit.getId());
-            throw e;
-        }
-        return this;
-    }
+
 }
