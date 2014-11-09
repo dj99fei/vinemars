@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.android.volley.VolleyError;
 import com.vine.vinemars.R;
-import com.vine.vinemars.net.ChangePasswordRequest;
+import com.vine.vinemars.net.request.ChangePasswordRequest;
 import com.vine.vinemars.net.MyVolley;
 import com.vine.vinemars.net.NetworkRequestListener;
 import com.vine.vinemars.utils.Validator;

@@ -20,7 +20,7 @@ import android.widget.Toast;
 import com.android.volley.VolleyError;
 import com.vine.vinemars.R;
 import com.vine.vinemars.domain.User;
-import com.vine.vinemars.net.EnrollRequest;
+import com.vine.vinemars.net.request.EnrollRequest;
 import com.vine.vinemars.net.MyVolley;
 import com.vine.vinemars.net.NetworkRequestListener;
 import com.vine.vinemars.utils.Validator;

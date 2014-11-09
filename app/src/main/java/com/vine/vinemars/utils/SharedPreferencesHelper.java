@@ -15,6 +15,7 @@ import java.lang.reflect.Method;
 //TODO add multiple builder support
 public class SharedPreferencesHelper {
 
+    private static final String TAG = SharedPreferencesHelper.class.getSimpleName();
     private Context context;
     private SharedPreferences sharedPreferences;
     private Builder builder;
@@ -55,12 +56,8 @@ public class SharedPreferencesHelper {
             Method method = sharedPreferences.getClass().getMethod(methodName, String.class, c);
             T result = (T) method.invoke(sharedPreferences, builder.key, defaultValue);
             return result;
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            LogUtils.e(TAG, e);
         }
         return defaultValue;
     }

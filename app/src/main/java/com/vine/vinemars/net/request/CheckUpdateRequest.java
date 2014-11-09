@@ -1,6 +1,7 @@
-package com.vine.vinemars.net;
+package com.vine.vinemars.net.request;
 
 import com.vine.vinemars.domain.Version;
+import com.vine.vinemars.net.NetworkRequestListener;
 
 /**
  * Created by chengfei on 14-10-21.

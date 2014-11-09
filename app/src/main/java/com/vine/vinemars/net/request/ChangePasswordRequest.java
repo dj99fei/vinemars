@@ -1,7 +1,10 @@
-package com.vine.vinemars.net;
+package com.vine.vinemars.net.request;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
+import com.vine.vinemars.net.HOpCodeEx;
+import com.vine.vinemars.net.NetworkRequestListener;
+import com.vine.vinemars.net.ParseError;
 import com.vine.vinemars.net.pb.EnrollPacket;
 
 /**
@@ -13,14 +16,9 @@ public class ChangePasswordRequest extends BaseRequest<Boolean> {
     private String newPassword;
 
     public ChangePasswordRequest(String oldPassword, String newPassword, NetworkRequestListener listener) {
-        super(listener);
+        super(HOpCodeEx.ResetPassword, listener);
         this.oldPassword = oldPassword;
         this.newPassword = newPassword;
-    }
-
-    @Override
-    public int getRequestId() {
-        return HOpCodeEx.ResetPassword;
     }
 
     @Override
