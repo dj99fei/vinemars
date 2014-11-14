@@ -18,11 +18,15 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
+import com.digits.sdk.android.AuthCallback;
+import com.digits.sdk.android.DigitsAuthButton;
+import com.digits.sdk.android.DigitsException;
+import com.digits.sdk.android.DigitsSession;
 import com.vine.vinemars.R;
 import com.vine.vinemars.domain.User;
-import com.vine.vinemars.net.request.EnrollRequest;
 import com.vine.vinemars.net.MyVolley;
 import com.vine.vinemars.net.NetworkRequestListener;
+import com.vine.vinemars.net.request.EnrollRequest;
 import com.vine.vinemars.utils.Validator;
 
 import butterknife.ButterKnife;
@@ -31,7 +35,7 @@ import butterknife.InjectView;
 /**
  * Created by chengfei on 14-10-25.
  */
-public class SigninFragment extends DialogFragment implements View.OnFocusChangeListener, NetworkRequestListener<User>, View.OnClickListener {
+public class SigninFragment extends DialogFragment implements View.OnFocusChangeListener, NetworkRequestListener<User>, View.OnClickListener, AuthCallback {
 
     @InjectView(R.id.btn_signin)
     protected Button okButton;
@@ -41,6 +45,9 @@ public class SigninFragment extends DialogFragment implements View.OnFocusChange
     protected EditText userNameEdit;
     @InjectView(R.id.action_signup)
     protected View signupView;
+
+    @InjectView(R.id.auth_button)
+    protected DigitsAuthButton button;
 
     public static SigninFragment newInstance() {
         SigninFragment fragment = new SigninFragment();
@@ -61,6 +68,7 @@ public class SigninFragment extends DialogFragment implements View.OnFocusChange
         userNameEdit.setOnFocusChangeListener(this);
         passwordEdit.setOnFocusChangeListener(this);
         okButton.setOnClickListener(this);
+        button.setCallback(this);
         signupView.setOnClickListener(this);
     }
 
@@ -157,5 +165,15 @@ public class SigninFragment extends DialogFragment implements View.OnFocusChange
         Toast.makeText(getActivity(), "sigup success. userId = " + user.userId + " token " + user.token, Toast.LENGTH_SHORT).show();
 //        getFragmentManager().popBackStack();
         dismiss();
+    }
+
+    @Override
+    public void success(DigitsSession digitsSession, String s) {
+        Toast.makeText(getActivity(), "suc: " + s, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void failure(DigitsException e) {
+        Toast.makeText(getActivity(), "failed", Toast.LENGTH_SHORT).show();
     }
 }

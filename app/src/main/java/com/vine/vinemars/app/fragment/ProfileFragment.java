@@ -1,6 +1,5 @@
 package com.vine.vinemars.app.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -8,17 +7,14 @@ import android.widget.Toast;
 
 import com.android.volley.VolleyError;
 import com.vine.vinemars.R;
-import com.vine.vinemars.app.ChangePasswordActivity;
 import com.vine.vinemars.net.NetworkRequestListener;
-
-import butterknife.InjectView;
 
 /**
  * Created by chengfei on 14/10/29.
  */
 public class ProfileFragment extends BaseFragment implements NetworkRequestListener {
 
-    @InjectView(R.id.change_password)
+//    @InjectView(R.id.change_password)
     protected TextView changePasswordText;
 
     public static ProfileFragment newInstance() {
@@ -43,10 +39,10 @@ public class ProfileFragment extends BaseFragment implements NetworkRequestListe
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.change_password) {
-            startActivity(new Intent(getActivity(), ChangePasswordActivity.class));
+//        if (v.getId() == R.id.change_password) {
+//            startActivity(new Intent(getActivity(), ChangePasswordActivity.class));
 //            MyVolley.getRequestQueue().add(new ChangePasswordRequest(this));
-        }
+//        }
     }
 
     @Override

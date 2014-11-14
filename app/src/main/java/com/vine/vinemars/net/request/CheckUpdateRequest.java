@@ -10,6 +10,6 @@ public abstract class CheckUpdateRequest extends BaseRequest<Version> {
 
 
     public CheckUpdateRequest(String checkCode, NetworkRequestListener listener) {
-        super(checkCode, listener);
+        super(checkCode, 0, listener);
     }
 }

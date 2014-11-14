@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.vine.vinemars" >
 
-    <uses-sdk tools:node="replace" />
     <!-- To access Google+ APIs: -->
     <uses-permission android:name="android.permission.INTERNET" />
     <!--
@@ -24,21 +23,21 @@
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <!-- baidu 统计 -->
-    <meta-data
-        android:name="BaiduMobAd_CHANNEL"
-        android:value="mobopick_ver1.0_1021" />
-    <meta-data
-        android:name="BaiduMobAd_STAT_ID"
-        android:value="cfb3227dea000" />
-    <meta-data
-        android:name="BaiduMobAd_EXCEPTION_LOG"
-        android:value="true" />
-    <meta-data
-        android:name="BaiduMobAd_SEND_STRATEGY"
-        android:value="SET_TIME_INTERVAL" />
-    <meta-data
-        android:name="BaiduMobAd_TIME_INTERVAL"
-        android:value="2" />
+    <!--<meta-data-->
+        <!--android:name="BaiduMobAd_CHANNEL"-->
+        <!--android:value="mobopick_ver1.0_1021" />-->
+    <!--<meta-data-->
+        <!--android:name="BaiduMobAd_STAT_ID"-->
+        <!--android:value="cfb3227dea000" />-->
+    <!--<meta-data-->
+        <!--android:name="BaiduMobAd_EXCEPTION_LOG"-->
+        <!--android:value="true" />-->
+    <!--<meta-data-->
+        <!--android:name="BaiduMobAd_SEND_STRATEGY"-->
+        <!--android:value="SET_TIME_INTERVAL" />-->
+    <!--<meta-data-->
+        <!--android:name="BaiduMobAd_TIME_INTERVAL"-->
+        <!--android:value="2" />-->
 
     <application
         android:name="com.vine.vinemars.MyApplication"

@@ -72,5 +72,10 @@
     <!-- dialog -->
     <string name="dialog_title_error">Error</string>
     <!-- dialog end -->
+
+    <string name="about">About</string>
+    <string name="schedule">Schedule</string>
+    <string name="production">Production</string>
+    <string name="relationship">Relation Ship</string>
 </resources>
 

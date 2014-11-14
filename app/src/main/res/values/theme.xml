@@ -1,16 +1,5 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <!--<item name="windowActionBarOverlay">true</item>-->
-        <!--<item name="android:windowActionBarOverlay">true</item>-->
-        <item name="android:windowAnimationStyle">@style/Animation.Activity</item>
-        <item name="android:buttonStyle">@style/Widget.Button.Green</item>
-        <item name="android:editTextStyle">@style/Widget.EditText</item>
-        <item name="android:textViewStyle">@style/Widget.TextView</item>
-    </style>
-
     <style name="NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
         <!--<item name="android:windowBackground">@android:color/transparent</item>-->
         <!--<item name="android:windowFullscreen">true</item>-->

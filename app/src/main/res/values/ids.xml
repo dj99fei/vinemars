@@ -45,4 +45,6 @@
     <item type="id" name="label_user_info"/>
     <item type="id" name="line_label_user_info"/>
     <item type="id" name="btn_ok"/>
+    <item type="id" name="list"/>
+    <item type="id" name="avatar"/>
 </resources>

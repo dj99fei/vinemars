@@ -14,6 +14,11 @@
     <style name="TextAppearance.AppCompat.Widget.ActionBar.Title.MoboPickTitle">
     </style>
 
+    <style name="Widget.ListView" parent="@android:style/Widget.AbsListView">
+        <item name="android:listSelector">@null</item>
+        <item name="android:cacheColorHint">@android:color/transparent</item>
+    </style>
+
     <!-- EditText -->
     <style name="Widget.EditText" parent="android:Widget.EditText">
         <item name="android:layout_height">@dimen/edit_height</item>
