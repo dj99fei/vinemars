@@ -27,3 +27,6 @@ proguard/
 
 # Log Files
 *.log
+
+# other project (repository)
+vinestar
