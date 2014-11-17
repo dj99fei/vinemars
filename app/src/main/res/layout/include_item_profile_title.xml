@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@id/item_profile_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/profile_item_title_height"
+        android:gravity="center_vertical"
+        android:textAppearance="@style/TextAppearance.Large.CardTitle"
+        android:textColor="@android:color/black"
+        android:text="@string/schedule"/>
+
+</merge>

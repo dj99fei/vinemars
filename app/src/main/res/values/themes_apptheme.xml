@@ -7,6 +7,9 @@
 
     <style name="_AppTheme" parent="Theme.Actionbar">
 
+
+        <item name="android:windowBackground">@color/bg</item>
+
         <item name="android:editTextStyle">@style/EditTextAppTheme</item>
 
         <item name="android:textColorHighlight">#99cc0000</item>

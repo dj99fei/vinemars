@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="app_name">Vine marks</string>
+    <string name="app_name">Vine mars</string>
 
     <string name="start">Get started</string>
     <string name="dialog_title_update">Update</string>
@@ -76,6 +76,15 @@
     <string name="about">About</string>
     <string name="schedule">Schedule</string>
     <string name="production">Production</string>
-    <string name="relationship">Relation Ship</string>
+    <string name="relationship">Relationship</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="birthday">Birthday</string>
+    <string name="basic_info">Basic Information</string>
+    <string name="links">Links</string>
+    <string name="education">Education</string>
+    <string name="work">Work</string>
+    <string name="places">Places</string>
 </resources>
 

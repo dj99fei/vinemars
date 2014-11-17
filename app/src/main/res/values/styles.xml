@@ -5,7 +5,9 @@
         <item name="android:background">@android:color/transparent</item>
         <item name="windowActionBarOverlay">true</item>
         <item name="android:windowActionBarOverlay">true</item>
-        <item name="android:titleTextStyle"> @style/TextAppearance.AppCompat.Widget.Base.ActionBar.Title.Inverse </item>
+        <item name="android:titleTextStyle">
+            @style/TextAppearance.AppCompat.Widget.Base.ActionBar.Title.Inverse
+        </item>
         <item name="backgroundSplit">@android:color/transparent</item>
         <item name="android:backgroundSplit">@android:color/transparent</item>
         <item name="android:windowContentOverlay">@null</item>
@@ -29,17 +31,27 @@
     <!-- EditText end -->
     <style name="Widget.Button" parent="@android:style/Widget.Button"/>
 
+    <style name="Widget.ImageButton" parent="@android:style/Widget.ImageButton"/>
+
     <style name="Widget" parent="@android:style/Widget"/>
+
     <style name="Widget.TextView" parent="@android:style/Widget.TextView">
         <item name="android:textColor">@null</item>
         <item name="android:textAppearance">@style/TextAppearance.Medium</item>
     </style>
 
 
-    <style name="Widget.Line" >
+    <style name="Widget.Line">
         <item name="android:background">@android:color/darker_gray</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1.0dp</item>
+    </style>
+
+    <style name="Widget.ImageButton.ListAction">
+        <item name="android:background">@drawable/shape_btn_bg</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 
     <style name="Widget.Button.Green">
@@ -58,6 +70,15 @@
     <style name="TextAppearance.Large">
         <item name="android:textSize">18dp</item>
         <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Large.CardTitle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="TextAppearance.Medium.SubTitle">
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="TextAppearance.Medium">
@@ -111,7 +132,7 @@
         <item name="android:windowCloseOnTouchOutside">false</item>
     </style>
 
-    <style name="Animation.Dialog" parent="@android:style/Animation.Dialog" />
+    <style name="Animation.Dialog" parent="@android:style/Animation.Dialog"/>
 
     <style name="Animation.Dialog.Signin">
         <item name="android:windowEnterAnimation">@anim/push_down_in</item>

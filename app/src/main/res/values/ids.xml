@@ -46,5 +46,23 @@
     <item type="id" name="line_label_user_info"/>
     <item type="id" name="btn_ok"/>
     <item type="id" name="list"/>
-    <item type="id" name="avatar"/>
+    <item type="id" name="profile_avatar"/>
+    <item type="id" name="profile_avatar_layout"/>
+    <item type="id" name="profile_cover"/>
+    <item type="id" name="profile_abstract"/>
+    <item type="id" name="profile_abstract_layout"/>
+    <item type="id" name="profile_username"/>
+    <item type="id" name="profile_lives"/>
+    <item type="id" name="profile_viewed"/>
+    <item type="id" name="item_profile_title"/>
+    <item type="id" name="item_profile_mail"/>
+    <item type="id" name="item_profile_gender_label"/>
+    <item type="id" name="item_profile_gender"/>
+    <item type="id" name="item_profile_gender_edit"/>
+    <item type="id" name="item_profile_birthday_label"/>
+    <item type="id" name="item_profile_birthday"/>
+    <item type="id" name="item_profile_birthday_edit"/>
+    <item type="id" name="profile_tabs"/>
+    <item type="id" name="profile_tabs_about"/>
+    <item type="id" name="profile_tabs_layout"/>
 </resources>

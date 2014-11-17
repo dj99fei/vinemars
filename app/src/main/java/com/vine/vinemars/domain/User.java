@@ -16,6 +16,9 @@ public class User implements Parcelable {
     public String token;
     public String userId;
 
+    public String birthday;
+    public String gender;
+
 
     @Override
     public int describeContents() {

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@id/profile_cover"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/profile_cover_height"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile_cover_default"/>
+
+        <LinearLayout
+            android:id="@id/profile_abstract_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profile_cover"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:paddingBottom="@dimen/layout_padding_vertical"
+            android:paddingLeft="@dimen/layout_padding_horizontal"
+            android:paddingRight="@dimen/layout_padding_horizontal"
+            android:paddingTop="@dimen/layout_padding_vertical_huge">
+
+            <TextView
+                android:id="@id/profile_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fenn Cheng"
+                android:textAppearance="@style/TextAppearance.Large.CardTitle"/>
+
+            <TextView
+                android:id="@id/profile_abstract"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/background_dark"
+                android:layout_marginTop="@dimen/layout_padding_vertical"
+                android:text="Android Engineer at Changyou\nAttended GUIZHOU University\nLives in 中国北京市"/>
+
+            <TextView
+                android:id="@id/profile_viewed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="13 followers | 42,542 views"
+                android:textAppearance="@style/TextAppearance.Small"/>
+        </LinearLayout>
+        <ImageView
+            android:id="@id/profile_avatar"
+            android:layout_width="@dimen/profile_avatar_size"
+            android:layout_height="@dimen/profile_avatar_size"
+            android:layout_marginLeft="@dimen/layout_padding_horizontal"
+            android:layout_marginTop="@dimen/profile_avatar_offset_vertical"
+            android:src="@drawable/avatar_default"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/profile_header_tabs_height"
+            android:layout_below="@id/profile_abstract_layout"/>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

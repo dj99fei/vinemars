@@ -35,6 +35,13 @@
 
     <dimen name="layout_padding_horizontal">18dp</dimen>
     <dimen name="layout_padding_vertical">18dp</dimen>
+    <dimen name="layout_padding_vertical_huge">40dp</dimen>
     <dimen name="profile_cover_height">200dp</dimen>
+    <dimen name="profile_item_title_height">72dp</dimen>
+    <dimen name="profile_item_text_height">56dp</dimen>
+    <dimen name="profile_item_text_height_">56dp</dimen>
+    <dimen name="profile_avatar_size">108dp</dimen>
+    <dimen name="profile_avatar_offset">36dp</dimen>
+    <dimen name="profile_avatar_offset_vertical">128dp</dimen>
 
 </resources>
