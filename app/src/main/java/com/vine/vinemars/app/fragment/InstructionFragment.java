@@ -1,6 +1,11 @@
 package com.vine.vinemars.app.fragment;
 
-import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,14 +17,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
+import com.nineoldandroids.animation.AnimatorSet;
+import com.nineoldandroids.animation.ObjectAnimator;
 import com.vine.vinemars.R;
-import com.vine.vinemars.app.MainActivity;
+import com.vine.vinemars.domain.DeviceInfo;
 import com.vine.vinemars.utils.Constant;
-import com.vine.vinemars.utils.SharedPreferencesHelper;
 
 import butterknife.InjectView;
 
@@ -30,8 +33,8 @@ public class InstructionFragment extends BaseFragment implements ViewPager.OnPag
 
     @InjectView(R.id.pager)
     protected ViewPager pager;
-    private int indicators[] = new int[]{R.drawable.indicator_point_blue, R.drawable.indicator_point_blue_dark, R.drawable.indicator_point_green,
-            R.drawable.indicator_point_red};
+    private int indicators[] = new int[]{R.drawable.indicator_point_green, R.drawable.indicator_point_orange, R.drawable.indicator_point_blue,
+            R.drawable.indicator_point_grape};
     @InjectView(R.id.indicator1)
     protected ImageView indicatorImage1;
     @InjectView(R.id.indicator2)
@@ -40,9 +43,20 @@ public class InstructionFragment extends BaseFragment implements ViewPager.OnPag
     protected ImageView indicatorImage3;
     @InjectView(R.id.indicator4)
     protected ImageView indicatorImage4;
+
+    @InjectView(R.id.btn_signin)
+    protected Button signinButton;
+    @InjectView(R.id.btn_signup)
+    protected Button signupButton;
     private ImageView[] indicatorImages = new ImageView[4];
+    private int images[] = new int[]{R.drawable.instruction_1, R.drawable.instruction_2, R.drawable.instruction_3, R.drawable.instruction_4};
+
+    private Bitmap[] bitmaps = new Bitmap[4];
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        for (int i = 0; i < bitmaps.length; i++) {
+            bitmaps[i] = BitmapFactory.decodeResource(getResources(), images[i]);
+        }
         return inflater.inflate(R.layout.fragment_instruction, container, false);
     }
 
@@ -55,22 +69,49 @@ public class InstructionFragment extends BaseFragment implements ViewPager.OnPag
         indicatorImages[1] = indicatorImage2;
         indicatorImages[2] = indicatorImage3;
         indicatorImages[3] = indicatorImage4;
+        signinButton.setOnClickListener(this);
+        signupButton.setOnClickListener(this);
         setIndicator(0);
     }
-
+    private float scale = 0.4f;
+    private float noScale = 1f;
     private void setIndicator(int position) {
         for (int i = 0; i < indicatorImages.length; i++) {
             if (i == position) {
                 indicatorImages[i].setImageResource(indicators[i]);
+                ObjectAnimator scaleX = ObjectAnimator.ofFloat(indicatorImages[i], "scaleX", scale, noScale);
+                ObjectAnimator scaleY = ObjectAnimator.ofFloat(indicatorImages[i], "scaleY", scale, noScale);
+                AnimatorSet set = new AnimatorSet();
+                set.playTogether(scaleX, scaleY);
+                set.start();
             } else {
+                ObjectAnimator scaleX = ObjectAnimator.ofFloat(indicatorImages[i], "scaleX", noScale, scale);
+                ObjectAnimator scaleY = ObjectAnimator.ofFloat(indicatorImages[i], "scaleY", noScale, scale);
+                AnimatorSet set = new AnimatorSet();
+                set.playTogether(scaleX, scaleY);
                 indicatorImages[i].setImageResource(R.drawable.indicator_point_gray);
+                set.start();
             }
         }
     }
 
     @Override
-    public void onPageScrolled(int i, float v, int i2) {
+    public void onPageScrolled(int position, float v, int positionOffsetPixels) {
+        float nextCompent = 1.0f * Math.abs(positionOffsetPixels) / DeviceInfo.screenWidth;
+        float currentCompent = 1.0f - nextCompent;
+        Bitmap nextColorStr = null;
+        if (position + 1 < pager.getAdapter().getCount()) {
+            nextColorStr = bitmaps[position + 1];
+        } else if (position - 1 > 0) {
+            nextColorStr = bitmaps[position - 1];
+        }
+        Bitmap curColorStr = bitmaps[position];
 
+        Drawable mixed = createDrawable(curColorStr, nextColorStr, currentCompent);
+        pager.setBackgroundDrawable(mixed);
+//        int mixedColor = ColorUtils.mixColor(Color.parseColor(curColorStr), Color.parseColor(nextColorStr), currentCompent);
+//        pagerBackgroud.setBackgroundColor(mixedColor);
+//        bar.setBackgroundDrawable(new ColorDrawable(mixedColor));
     }
 
     @Override
@@ -86,8 +127,6 @@ public class InstructionFragment extends BaseFragment implements ViewPager.OnPag
 
     private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
 
-
-        private int images[] = new int[]{R.drawable.instruction_1, R.drawable.instruction_2, R.drawable.instruction_3, R.drawable.instruction_4};
         private int desIds[] = new int[]{R.string.instruction_1, R.string.instruction_2, R.string.instruction_3, R.string.instruction_4};
 
         public ScreenSlidePagerAdapter(FragmentManager fm) {
@@ -96,7 +135,7 @@ public class InstructionFragment extends BaseFragment implements ViewPager.OnPag
 
         @Override
         public Fragment getItem(int position) {
-            return ScreenSlidePageFragment.newInstance(images[position], desIds[position], position == images.length - 1);
+            return ScreenSlidePageFragment.newInstance(desIds[position], position == images.length - 1);
         }
 
         @Override
@@ -109,21 +148,12 @@ public class InstructionFragment extends BaseFragment implements ViewPager.OnPag
 
     public static class ScreenSlidePageFragment extends BaseFragment {
 
-        @InjectView(R.id.image)
-        protected ImageView imageView;
-        @InjectView(R.id.start_btn)
-        protected Button startButton;
-        @InjectView(R.id.text)
-        protected TextView desText;
         private boolean isLast;
-        private int imageId;
-        private int desId;
 
-        public static ScreenSlidePageFragment newInstance(int imageId, int desId, boolean isLast) {
+        public static ScreenSlidePageFragment newInstance(int desId, boolean isLast) {
             ScreenSlidePageFragment fragment = new ScreenSlidePageFragment();
             Bundle arguments = new Bundle();
             arguments.putInt(Constant.INTENT_KEY.DES_ID, desId);
-            arguments.putInt(Constant.INTENT_KEY.IMAGE_ID, imageId);
             arguments.putBoolean(Constant.INTENT_KEY.IS_LAST, isLast);
             fragment.setArguments(arguments);
             return fragment;
@@ -136,42 +166,41 @@ public class InstructionFragment extends BaseFragment implements ViewPager.OnPag
         @Override
         public void onViewCreated(View view, Bundle savedInstanceState) {
             super.onViewCreated(view, savedInstanceState);
-            if (isLast) {
-                startButton.setVisibility(View.VISIBLE);
-            }
-            startButton.setOnClickListener(this);
-            Picasso.with(getActivity()).load(imageId).into(imageView, new Callback() {
-                @Override
-                public void onSuccess() {
-//                    int bottom = imageView.getDrawable().getBounds().bottom;
-//                    RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) desText.getLayoutParams();
-//                    lp.topMargin = bottom + 20;
-                    desText.setText(desId);
-                }
-
-                @Override
-                public void onError() {
-
-                }
-            });
-
         }
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            imageId = getArguments().getInt(Constant.INTENT_KEY.IMAGE_ID);
-            desId = getArguments().getInt(Constant.INTENT_KEY.DES_ID);
             isLast = getArguments().getBoolean(Constant.INTENT_KEY.IS_LAST);
         }
 
-        @Override
-        public void onClick(View v) {
-            if (v.getId() == R.id.start_btn) {
-                getActivity().startActivity(new Intent(getActivity(), MainActivity.class));
-                getActivity().finish();
-                SharedPreferencesHelper.getInstance().withModule(R.string.module_default).withKey(R.string.key_first_open).setData(boolean.class, false).commit();
-            }
+
+    }
+
+    private Drawable createDrawable(Bitmap bitmap1, Bitmap bitmap2, float componet) {
+        Bitmap newBitmap = Bitmap.createBitmap(bitmap1.getWidth(), bitmap1.getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(newBitmap);
+        Paint p1 = new Paint();
+        p1.setAlpha((int) (componet * 255));
+
+        Paint p2 = new Paint();
+        p2.setAlpha((int) ((1 - componet) * 255));
+
+        canvas.drawBitmap(bitmap1, 0, 0, p1);
+        canvas.drawBitmap(bitmap2, 0, 0, p2);
+        return new BitmapDrawable(newBitmap);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.btn_signin) {
+            SigninFragment.newInstance().show(getFragmentManager(), "signin");
+//            SigninFragment.newInstance(bitmaps[pager.getCurrentItem()]).show(getFragmentManager(), "signin");
+//                getActivity().startActivity(new Intent(getActivity(), MainActivity.class));
+//                getActivity().finish();
+//                SharedPreferencesHelper.getInstance().withModule(R.string.module_default).withKey(R.string.key_first_open).setData(boolean.class, false).commit();
+        } else if (v.getId() == R.id.btn_signup) {
+            SignupFragment.newInstance().show(getFragmentManager(), "signup");
         }
     }
 

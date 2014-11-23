@@ -8,6 +8,7 @@ public class Constant {
 
         public static final String IMAGE_ID = "intent_key_image_id";
         public static final String DES_ID = "intent_key_des_id";
+        public static final String BITMAP = "intent_key_bitmap";
         public static final String IS_LAST = "intent_key_is_last";
 
         public static final String MSG = "intent_key_msg";

@@ -1,5 +1,6 @@
 <resources>
 
+	<!--
     <style name="Widget.AppCompat.ActionBar.MoboPickActionBar">
         <item name="background">@android:color/transparent</item>
         <item name="android:background">@android:color/transparent</item>
@@ -14,6 +15,7 @@
     <style name="TextAppearance.AppCompat.Widget.ActionBar.Title.MoboPickTitle">
     </style>
 
+-->
     <!-- EditText -->
     <style name="Widget.EditText" parent="android:Widget.EditText">
         <item name="android:layout_height">@dimen/edit_height</item>

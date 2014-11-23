@@ -1,5 +1,6 @@
 <resources>
 
+	<!--
     <style name="Widget.AppCompat.ActionBar.MoboPickActionBar">
         <item name="background">@android:color/transparent</item>
         <item name="android:background">@android:color/transparent</item>
@@ -12,7 +13,7 @@
         <item name="android:backgroundSplit">@android:color/transparent</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
-
+-->
     <style name="TextAppearance.AppCompat.Widget.ActionBar.Title.MoboPickTitle">
     </style>
 
@@ -29,7 +30,10 @@
         <item name="android:gravity">center_vertical</item>
     </style>
     <!-- EditText end -->
-    <style name="Widget.Button" parent="@android:style/Widget.Button"/>
+    <style name="Widget.Button" parent="@android:style/Widget.Button">
+        <item name="android:minHeight">48dip</item>
+        <item name="android:minWidth">64dip</item>
+    </style>
 
     <style name="Widget.ImageButton" parent="@android:style/Widget.ImageButton"/>
 
@@ -62,6 +66,11 @@
         <item name="android:layout_height">@dimen/green_button_height</item>
         <item name="android:textColor">@null</item>
         <item name="android:textAppearance">@style/TextAppearance.Medium.White</item>
+    </style>
+
+    <style name="Widget.Button.Gray">
+        <item name="android:background">@drawable/button_gray_selector</item>
+        <item name="android:textColor">#ffffff</item>
     </style>
 
     <style name="TextAppearance" parent="@android:style/TextAppearance">
@@ -103,6 +112,11 @@
         <item name="android:textColor">#909090</item>
     </style>
 
+    <style name="TextAppearance.Large.White">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+
+    </style>
 
     <!-- Animation -->
     <style name="Animation" parent="@android:style/Animation"/>
@@ -119,7 +133,7 @@
     </style>
     <!-- Animation end -->
 
-    <style name="Dialog" parent="@android:style/Theme.Dialog"/>
+    <style name="Dialog" parent="@style/_AppTheme"/>
 
     <style name="Dialog.Signin">
         <item name="android:windowAnimationStyle">@style/Animation.Dialog.Signin</item>
@@ -137,5 +151,11 @@
     <style name="Animation.Dialog.Signin">
         <item name="android:windowEnterAnimation">@anim/push_down_in</item>
         <item name="android:windowExitAnimation">@anim/push_down_out</item>
+    </style>
+    <style name="ActionBarThemeOverlay">
+        <item name="android:background">@color/primary</item>
+        <item name="android:textColorPrimary">#fff</item>
+        <item name="colorControlNormal">#ffff</item>
+        <item name="colorControlHighlight">#3fff</item>
     </style>
 </resources>

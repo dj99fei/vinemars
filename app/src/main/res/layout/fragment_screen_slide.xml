@@ -3,30 +3,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@id/image"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:scaleType="fitStart"
-        android:adjustViewBounds="true"
-        android:src="@drawable/instruction_1"
-        android:layout_height="wrap_content"
-        android:visibility="visible"/>
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="50dp"
-        android:layout_below="@id/image"
-        android:gravity="center_horizontal"
-        android:lineSpacingMultiplier="1.5"
-        style="@style/TextAppearance.Large.Welcome"
-        android:id="@id/text"/>
-    <Button
-        style="@style/Widget.Button.Green"
-        android:id="@id/start_btn"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:visibility="gone"
-        android:layout_marginBottom="60dp"
-        android:text="@string/start"/>
+        <ImageView
+            android:layout_width="@dimen/instruction_ic_bg_size"
+            android:layout_height="@dimen/instruction_ic_bg_size"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_instruction"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="个性备注"
+            android:textAppearance="@style/TextAppearance.Large.White"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/layout_inner_padding_vertical"
+            android:text="妈妈再也不用担心我的英语了"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
 </RelativeLayout>

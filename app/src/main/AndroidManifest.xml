@@ -48,7 +48,7 @@
         <activity
             android:name="com.vine.vinemars.app.EntryActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/NoActionBar" >
+            android:theme="@style/Theme.AppCompat.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

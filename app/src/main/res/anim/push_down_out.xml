@@ -6,8 +6,6 @@
         android:fillAfter="false"
         android:fromYDelta="0"
         android:interpolator="@android:anim/accelerate_decelerate_interpolator"
-        android:fromXDelta="0"
-        android:toXDelta="100%p"
         android:toYDelta="100%p" />
 
 </set>

@@ -44,4 +44,8 @@
     <dimen name="profile_avatar_offset">36dp</dimen>
     <dimen name="profile_avatar_offset_vertical">128dp</dimen>
 
+    <dimen name="instruction_ic_bg_size">150dp</dimen>
+    <dimen name="indicator_size">10dp</dimen>
+    <dimen name="instruction_login_height">72dp</dimen>
+
 </resources>

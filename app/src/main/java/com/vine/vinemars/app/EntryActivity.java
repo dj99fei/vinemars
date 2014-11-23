@@ -1,6 +1,5 @@
 package com.vine.vinemars.app;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -29,12 +28,12 @@ public class EntryActivity extends BaseActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (spHelper.get(boolean.class, true)) {
                     getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new InstructionFragment()).disallowAddToBackStack().commit();
-                } else {
-                    startActivity(new Intent(EntryActivity.this, MainActivity.class));
-                    finish();
-                }
+//                if (spHelper.get(boolean.class, true)) {
+//                } else {
+//                    startActivity(new Intent(EntryActivity.this, MainActivity.class));
+//                    finish();
+//                }
             }
         }, 2000);
     }
