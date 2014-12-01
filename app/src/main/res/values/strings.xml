@@ -20,7 +20,7 @@
     <string name="close">Close</string>
     <!-- menu end-->
 
-    <string name="signup">Signup</string>
+    <string name="signup">Sign Up</string>
 
     <string name="tab_text_message">Message</string>
     <string name="tab_text_calendar">Calendar</string>
@@ -53,7 +53,7 @@
     <string name="sigin_des">More functions after you sigin</string>
     <string name="change_password">Change password</string>
     <string name="dont_have_account">Don’t have an account?</string>
-    <string name="create_a_acccount">Create a Vine account.</string>
+    <string name="create_a_account">Create a Vine account.</string>
 
     <!-- form validation -->
     <string name="prompt_email_invalid">Invalid email address.</string>
@@ -88,5 +88,6 @@
     <string name="education">Education</string>
     <string name="work">Work</string>
     <string name="places">Places</string>
+    <string name="show_password">Show Password</string>
 </resources>
 

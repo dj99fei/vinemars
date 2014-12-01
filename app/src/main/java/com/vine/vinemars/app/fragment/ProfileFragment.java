@@ -29,7 +29,7 @@ public class ProfileFragment extends BaseFragment implements NetworkRequestListe
 
     @InjectView(R.id.list)
     protected RecyclerView recyclerView;
-    @InjectView(R.id.profile_tabs_layout)
+    @InjectView(R.id.layout_profile_tabs)
     protected View profileTabsView;
     @InjectView(R.id.profile_tabs)
     protected RadioGroup tabRadioGroup;

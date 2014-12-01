@@ -8,7 +8,7 @@ import com.vine.vinemars.R;
 /**
  * Created by chengfei on 14-10-25.
  */
-public class SignupFragment extends SigninFragment {
+public class SignupFragment extends SignInFragment {
 
     public static SignupFragment newInstance() {
         return new SignupFragment();
@@ -36,6 +36,11 @@ public class SignupFragment extends SigninFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         okButton.setText(R.string.signup);
-        signupView.setVisibility(View.INVISIBLE);
+        signUpView.setVisibility(View.INVISIBLE);
+    }
+
+    @Override
+    protected void setTitle() {
+        titleText.setText(R.string.signup);
     }
 }

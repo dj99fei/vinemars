@@ -50,7 +50,7 @@ public class MeFragment extends BaseFragment {
 //                        .beginTransaction()
 //                        .add(R.id.container_name, SigninFragment.newInstance())
 //                        .commit();
-                SigninFragment.newInstance().show(getFragmentManager(), null);
+                SignInFragment.newInstance().show(getFragmentManager(), null);
                 break;
             case R.id.info_other2:
                 Intent intent = new Intent(getActivity(), ProfileActivity.class);

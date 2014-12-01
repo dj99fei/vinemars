@@ -5,6 +5,7 @@
     <item type="id" name="cross_fader_content"/>
     <item type="id" name="pager"/>
     <item type="id" name="image"/>
+    <item type="id" name="image_captcha"/>
     <item type="id" name="start_btn"/>
     <item type="id" name="text"/>
     <item type="id" name="indicator1"/>
@@ -27,7 +28,8 @@
     <item type="id" name="btn_clear_old_password"/>
     <item type="id" name="btn_clear_new_password"/>
     <item type="id" name="et_user_name"/>
-    <item type="id" name="container_password"/>
+    <item type="id" name="layout_password"/>
+    <item type="id" name="layout_captcha"/>
     <item type="id" name="btn_clear_password"/>
     <item type="id" name="et_password"/>
     <item type="id" name="et_old_password"/>
@@ -38,7 +40,6 @@
 
     <item type="id" name="action_signup"/>
     <item type="id" name="action_close"/>
-    <item type="id" name="layout_captcha"/>
     <item type="id" name="layout_signin"/>
     <item type="id" name="et_captcha"/>
 
@@ -49,10 +50,10 @@
     <item type="id" name="btn_ok"/>
     <item type="id" name="list"/>
     <item type="id" name="profile_avatar"/>
-    <item type="id" name="profile_avatar_layout"/>
+    <item type="id" name="layout_profile_avatar"/>
     <item type="id" name="profile_cover"/>
     <item type="id" name="profile_abstract"/>
-    <item type="id" name="profile_abstract_layout"/>
+    <item type="id" name="layout_profile_abstract"/>
     <item type="id" name="profile_username"/>
     <item type="id" name="profile_lives"/>
     <item type="id" name="profile_viewed"/>
@@ -66,6 +67,7 @@
     <item type="id" name="item_profile_birthday_edit"/>
     <item type="id" name="profile_tabs"/>
     <item type="id" name="profile_tabs_about"/>
-    <item type="id" name="profile_tabs_layout"/>
-    <item type="id" name="instruction_login_layout"/>
+    <item type="id" name="layout_profile_tabs"/>
+    <item type="id" name="layout_instruction_login"/>
+    <item type="id" name="show_password"/>
 </resources>

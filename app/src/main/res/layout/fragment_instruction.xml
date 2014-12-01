@@ -4,7 +4,7 @@
                 android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@id/instruction_login_layout"
+        android:id="@id/layout_instruction_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/layout_inner_padding_horizontal"
@@ -81,6 +81,6 @@
         android:id="@id/pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/instruction_login_layout"/>
+        android:layout_above="@id/layout_instruction_login"/>
 
 </RelativeLayout>

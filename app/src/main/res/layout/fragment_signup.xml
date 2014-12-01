@@ -42,7 +42,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@id/container_password"
+            android:id="@id/layout_password"
             android:layout_width="match_parent"
             android:layout_height="@dimen/edit_height"
             android:layout_below="@id/container_name"
@@ -79,7 +79,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10.0dip"
-            android:layout_below="@id/container_password">
+            android:layout_below="@id/layout_password">
 
             <EditText
                 android:layout_width="0dp"

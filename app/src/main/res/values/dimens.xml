@@ -47,5 +47,9 @@
     <dimen name="instruction_ic_bg_size">150dp</dimen>
     <dimen name="indicator_size">10dp</dimen>
     <dimen name="instruction_login_height">72dp</dimen>
+    <dimen name="edit_padding">6dp</dimen>
+    <dimen name="edit_cross_size">25dp</dimen>
+    <dimen name="edit_passoword_min_width">144dp</dimen>
+    <dimen name="edit_captcha_min_width">144dp</dimen>
 
 </resources>

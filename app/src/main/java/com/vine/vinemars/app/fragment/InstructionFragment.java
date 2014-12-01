@@ -21,10 +21,12 @@ import android.widget.ImageView;
 import com.nineoldandroids.animation.AnimatorSet;
 import com.nineoldandroids.animation.ObjectAnimator;
 import com.vine.vinemars.R;
+import com.vine.vinemars.bus.LoginEvent;
 import com.vine.vinemars.domain.DeviceInfo;
 import com.vine.vinemars.utils.Constant;
 
 import butterknife.InjectView;
+import de.greenrobot.event.EventBus;
 
 /**
  * Created by chengfei on 14-10-21.
@@ -72,6 +74,7 @@ public class InstructionFragment extends BaseFragment implements ViewPager.OnPag
         signinButton.setOnClickListener(this);
         signupButton.setOnClickListener(this);
         setIndicator(0);
+        EventBus.getDefault().register(this);
     }
     private float scale = 0.4f;
     private float noScale = 1f;
@@ -194,13 +197,19 @@ public class InstructionFragment extends BaseFragment implements ViewPager.OnPag
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btn_signin) {
-            SigninFragment.newInstance().show(getFragmentManager(), "signin");
+            SignInFragment.newInstance().show(getFragmentManager(), "signin");
 //            SigninFragment.newInstance(bitmaps[pager.getCurrentItem()]).show(getFragmentManager(), "signin");
 //                getActivity().startActivity(new Intent(getActivity(), MainActivity.class));
 //                getActivity().finish();
 //                SharedPreferencesHelper.getInstance().withModule(R.string.module_default).withKey(R.string.key_first_open).setData(boolean.class, false).commit();
         } else if (v.getId() == R.id.btn_signup) {
             SignupFragment.newInstance().show(getFragmentManager(), "signup");
+        }
+    }
+
+    public void onEvent(LoginEvent event) {
+        if (event.isLogin()) {
+            getActivity().finish();
         }
     }
 
