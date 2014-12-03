@@ -13,6 +13,8 @@ public class Constant {
 
         public static final String MSG = "intent_key_msg";
         public static final String TITLE = "intent_key_title";
+        public static final String COUNTRY = "intent_key_country";
+        public static final String PHONE_NUMBER = "intent_key_phone_number";
     }
 
 

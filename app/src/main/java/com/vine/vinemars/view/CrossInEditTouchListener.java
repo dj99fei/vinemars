@@ -17,6 +17,7 @@ public class CrossInEditTouchListener implements View.OnTouchListener {
 
     public CrossInEditTouchListener(EditText editText) {
         this.editText = editText;
+        this.editText.addTextChangedListener(new CrossInEditTextWatcher(editText));
     }
 
     /*

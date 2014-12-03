@@ -180,14 +180,14 @@ public class InstructionFragment extends BaseFragment implements ViewPager.OnPag
 
     }
 
-    private Drawable createDrawable(Bitmap bitmap1, Bitmap bitmap2, float componet) {
+    private Drawable createDrawable(Bitmap bitmap1, Bitmap bitmap2, float component) {
         Bitmap newBitmap = Bitmap.createBitmap(bitmap1.getWidth(), bitmap1.getHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(newBitmap);
         Paint p1 = new Paint();
-        p1.setAlpha((int) (componet * 255));
+        p1.setAlpha((int) (component * 255));
 
         Paint p2 = new Paint();
-        p2.setAlpha((int) ((1 - componet) * 255));
+        p2.setAlpha((int) ((1 - component) * 255));
 
         canvas.drawBitmap(bitmap1, 0, 0, p1);
         canvas.drawBitmap(bitmap2, 0, 0, p2);

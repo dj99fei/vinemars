@@ -50,6 +50,7 @@
     <item type="id" name="et_captcha"/>
     <item type="id" name="et_checkcode"/>
     <item type="id" name="btn_get_checkcode"/>
+    <item type="id" name="text_get_checkcode"/>
 
 
     <item type="id" name="calendar_view"/>
@@ -79,5 +80,9 @@
     <item type="id" name="layout_instruction_login"/>
     <item type="id" name="show_password"/>
     <item type="id" name="listview"/>
+    <item type="id" name="toolbar"/>
+    <item type="id" name="text_verification_code_des"/>
+    <item type="id" name="phone_number"/>
+    <item type="id" name="edit_code"/>
 
 </resources>

@@ -92,5 +92,12 @@
     <string name="hint_region_code">Region Code</string>
     <string name="region">Region</string>
     <string name="get_checkcode">Get Check Code<xliff:g>%1$s</xliff:g></string>
+    <string name="title_phone_confirmation">Phone Number Confirmation</string>
+    <string name="message_phone_confirmation">We will send a verification code to the following number:\n\n<xliff:g>%1$s</xliff:g></string>
+    <string name="verification_code">Verification Code</string>
+    <string name="code">Code</string>
+    <string name="re_get_check_code">No verification code received?</string>
+    <string name="next">Next</string>
+    <string name="verification_code_des">Your SMS verification code has been sent to your phone</string>
 </resources>
 

@@ -1,7 +1,6 @@
 package com.vine.vinemars.app.fragment;
 
 import android.app.Dialog;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
@@ -29,8 +28,6 @@ import android.widget.TextView;
 
 import com.android.volley.VolleyError;
 import com.vine.vinemars.R;
-import com.vine.vinemars.app.MainActivity;
-import com.vine.vinemars.bus.LoginEvent;
 import com.vine.vinemars.bus.RegionSelectedEvent;
 import com.vine.vinemars.domain.User;
 import com.vine.vinemars.net.NetworkRequestListener;
@@ -40,7 +37,6 @@ import com.vine.vinemars.utils.Constant;
 import com.vine.vinemars.utils.ImageUtils;
 import com.vine.vinemars.utils.TextCaptcha;
 import com.vine.vinemars.utils.Validator;
-import com.vine.vinemars.view.CrossInEditTextWatcher;
 import com.vine.vinemars.view.CrossInEditTouchListener;
 
 import java.util.Timer;
@@ -142,8 +138,8 @@ public class SignInFragment extends DialogFragment implements View.OnFocusChange
         showPasswordCheckBox.setOnCheckedChangeListener(this);
         passwordEdit.setOnTouchListener(new CrossInEditTouchListener(passwordEdit));
         userNameEdit.setOnTouchListener(new CrossInEditTouchListener(userNameEdit));
-        passwordEdit.addTextChangedListener(new CrossInEditTextWatcher(passwordEdit));
-        userNameEdit.addTextChangedListener(new CrossInEditTextWatcher(userNameEdit));
+//        passwordEdit.addTextChangedListener(new CrossInEditTextWatcher(passwordEdit));
+//        userNameEdit.addTextChangedListener(new CrossInEditTextWatcher(userNameEdit));
 
         Captcha c = new TextCaptcha(300, 100, 5, TextCaptcha.TextOptions.NUMBERS_AND_LETTERS);
         captchaImage.setImageBitmap(c.getImage());
@@ -151,11 +147,21 @@ public class SignInFragment extends DialogFragment implements View.OnFocusChange
         getCheckCodeBtn.setOnClickListener(this);
         regionLayout.setOnClickListener(this);
 
+        getCheckCodeBtn.setText(getString(R.string.get_checkcode, ""));
+
         setTitle();
 
-        SMSSDK.registerEventHandler(new EventHandler());
+        SMSSDK.registerEventHandler(eventHandler);
 
     }
+
+    private EventHandler eventHandler = new EventHandler() {
+        @Override
+        public void afterEvent(int i, int i2, Object o) {
+            super.afterEvent(i, i2, o);
+
+        }
+    };
 
     protected void setTitle() {
         titleText.setText(R.string.action_sign_in);
@@ -197,7 +203,6 @@ public class SignInFragment extends DialogFragment implements View.OnFocusChange
             return true;
         }
 
-        SMSSDK.getSupportedCountries();
         return super.onOptionsItemSelected(item);
     }
 
@@ -212,7 +217,7 @@ public class SignInFragment extends DialogFragment implements View.OnFocusChange
         if (v.getId() == R.id.btn_signin) {
             String email = userNameEdit.getText().toString();
             String password = passwordEdit.getText().toString();
-
+            String country = regionEdit.getText().toString();
             Validator validator = new Validator();
             try {
                 validator.notEmpty(email, R.string.username)
@@ -223,9 +228,12 @@ public class SignInFragment extends DialogFragment implements View.OnFocusChange
                 user.email = email;
                 user.password = password;
 //                MyVolley.getRequestQueue().add(new EnrollRequest(user, "", this));
-                dismiss();
-                EventBus.getDefault().post(new LoginEvent(true));
-                getActivity().startActivity(new Intent(getActivity(), MainActivity.class));
+//                dismiss();
+                country = country.substring(1, country.length());
+                SMSSDK.getVerificationCode(country, email);
+//                EventBus.getDefault().post(new LoginEvent(true));
+//                getActivity().startActivity(new Intent(getActivity(), MainActivity.class));
+               PhoneConfirmationDialogFragment.newInstance(country, email).show(getChildFragmentManager(), null);
             } catch (Validator.ValidateException e) {
                 MessageDialogFragment.newInstance(e.getMessage(), getString(R.string.dialog_title_error))
                         .show(getFragmentManager(), null);
@@ -296,7 +304,7 @@ public class SignInFragment extends DialogFragment implements View.OnFocusChange
     }
 
     public void onEventMainThread(RegionSelectedEvent event) {
-        regionEdit.setText(event.getSelected()[1]);
+        regionEdit.setText("+" + event.getSelected()[1]);
         regionText.setText(event.getSelected()[0]);
     }
 }

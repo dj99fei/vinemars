@@ -8,7 +8,7 @@
 
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@id/toolbar"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
@@ -43,20 +43,22 @@
                 android:id="@id/layout_region"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/edit_height"
-                android:background="@drawable/spinner_background_ab_actionbar">
+                android:background="@drawable/apptheme_spinner_background_holo_light">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/edit_height"
                     android:gravity="center_vertical"
-                    android:text="@string/region"/>
+                    android:text="@string/region"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium.Inverse"/>
 
                 <TextView
+                    android:id="@id/text_region"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
-                    android:id="@id/text_region"
-                    android:text="China"/>
+                    android:gravity="center_vertical"
+                    android:textColor="@color/primary"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -69,13 +71,14 @@
 
                 <EditText
                     android:id="@id/et_region"
-                    android:layout_width="wrap_content"
-                    android:textColor="@android:color/black"
                     style="@style/EditTextAppTheme"
+                    android:layout_width="@dimen/edit_region_min_width"
                     android:layout_height="match_parent"
-                    android:textAppearance="@style/TextAppearance.Small"
                     android:hint="@string/hint_captcha"
-                    android:minWidth="@dimen/edit_region_min_width"/>
+                    android:text="+"
+                    android:editable="false"
+                    android:textAppearance="@style/TextAppearance.Small"
+                    android:textColor="@android:color/black"/>
 
                 <AutoCompleteTextView
                     android:id="@+id/et_user_name"
@@ -104,12 +107,11 @@
                 <AutoCompleteTextView
                     android:id="@id/et_password"
                     style="@style/EditTextAppTheme"
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/edit_passoword_min_width"
                     android:layout_height="match_parent"
                     android:hint="@string/hint_password"
                     android:imeOptions="actionDone"
                     android:inputType="textPassword"
-                    android:minWidth="@dimen/edit_passoword_min_width"
                     android:paddingLeft="@dimen/edit_padding"
                     android:paddingRight="@dimen/edit_padding"
                     android:textAppearance="@style/TextAppearance.Small"/>
@@ -137,10 +139,9 @@
                 <AutoCompleteTextView
                     android:id="@id/et_captcha"
                     style="@style/EditTextAppTheme"
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/edit_captcha_min_width"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_captcha"
-                    android:minWidth="@dimen/edit_captcha_min_width"
                     android:paddingLeft="@dimen/edit_padding"
                     android:paddingRight="@dimen/edit_padding"
                     android:textAppearance="@style/TextAppearance.Small"
@@ -159,15 +160,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/edit_height"
                 android:layout_below="@id/layout_captcha"
+                android:visibility="gone"
                 android:layout_marginTop="@dimen/layout_inner_padding_vertical_small">
 
                 <AutoCompleteTextView
                     android:id="@id/et_checkcode"
                     style="@style/EditTextAppTheme"
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/edit_captcha_min_width"
                     android:layout_height="wrap_content"
                     android:hint="@string/hint_captcha"
-                    android:minWidth="@dimen/edit_captcha_min_width"
                     android:paddingLeft="@dimen/edit_padding"
                     android:paddingRight="@dimen/edit_padding"
                     android:textAppearance="@style/TextAppearance.Small"
@@ -181,8 +182,8 @@
                     android:layout_marginLeft="@dimen/layout_inner_padding_horizontal_small"
                     android:layout_toRightOf="@id/et_checkcode"
                     android:background="@drawable/shape_btn_bg"
-                    android:text="@string/get_checkcode"
-                    android:textAppearance="@style/TextAppearance.Small"/>
+                    android:textColor="?android:attr/textColorSecondaryInverse"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
             </RelativeLayout>
 
             <Button
