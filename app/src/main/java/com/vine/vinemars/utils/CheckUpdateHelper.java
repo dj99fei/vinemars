@@ -7,6 +7,7 @@ import com.vine.vinemars.MyApplication;
 import com.vine.vinemars.R;
 import com.vine.vinemars.domain.Version;
 import com.vine.vinemars.net.NetworkRequestListener;
+import com.vine.vinemars.net.ResponseWrapper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,8 +60,8 @@ public class CheckUpdateHelper implements NetworkRequestListener<Version> {
     }
 
     @Override
-    public void onResponse(Version response) {
-        Version.setLastestVersion(response);
+    public void onResponse(ResponseWrapper<Version> response) {
+        Version.setLastestVersion(response.entity);
         if (listeners != null) {
             for (NetworkRequestListener listener : listeners) {
                 listener.onResponse(response);

@@ -89,5 +89,8 @@
     <string name="work">Work</string>
     <string name="places">Places</string>
     <string name="show_password">Show Password</string>
+    <string name="hint_region_code">Region Code</string>
+    <string name="region">Region</string>
+    <string name="get_checkcode">Get Check Code<xliff:g>%1$s</xliff:g></string>
 </resources>
 

@@ -9,6 +9,8 @@ import com.vine.vinemars.net.NetworkRequestListener;
 
 import java.util.Locale;
 
+import cn.smssdk.SMSSDK;
+
 /**
  * Created by chengfei on 14-10-21.
  */
@@ -21,6 +23,7 @@ public class MyApplication extends Application implements NetworkRequestListener
         super.onCreate();
         myApp = this;
         MyVolley.init(this);
+        SMSSDK.initSDK(this, "47dc764dab0a", "bc1fe7c2bc7cfc4a83e2f03c308b9152");
     }
 
     public static MyApplication get() {
@@ -46,6 +49,5 @@ public class MyApplication extends Application implements NetworkRequestListener
 
     @Override
     public void onResponse(Object response) {
-
     }
 }

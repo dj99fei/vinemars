@@ -31,8 +31,10 @@ import com.android.volley.VolleyError;
 import com.vine.vinemars.R;
 import com.vine.vinemars.app.MainActivity;
 import com.vine.vinemars.bus.LoginEvent;
+import com.vine.vinemars.bus.RegionSelectedEvent;
 import com.vine.vinemars.domain.User;
 import com.vine.vinemars.net.NetworkRequestListener;
+import com.vine.vinemars.net.ResponseWrapper;
 import com.vine.vinemars.utils.Captcha;
 import com.vine.vinemars.utils.Constant;
 import com.vine.vinemars.utils.ImageUtils;
@@ -41,9 +43,14 @@ import com.vine.vinemars.utils.Validator;
 import com.vine.vinemars.view.CrossInEditTextWatcher;
 import com.vine.vinemars.view.CrossInEditTouchListener;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.Optional;
+import cn.smssdk.EventHandler;
+import cn.smssdk.SMSSDK;
 import de.greenrobot.event.EventBus;
 
 /**
@@ -68,6 +75,15 @@ public class SignInFragment extends DialogFragment implements View.OnFocusChange
     protected ImageView captchaImage;
     @InjectView(R.id.title)
     protected TextView titleText;
+    @InjectView(R.id.btn_get_checkcode)
+    protected Button getCheckCodeBtn;
+    @InjectView(R.id.layout_region)
+    protected View regionLayout;
+
+    @InjectView(R.id.et_region)
+    protected EditText regionEdit;
+    @InjectView(R.id.text_region)
+    protected TextView regionText;
 
     public static SignInFragment newInstance() {
         SignInFragment fragment = new SignInFragment();
@@ -102,6 +118,7 @@ public class SignInFragment extends DialogFragment implements View.OnFocusChange
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        EventBus.getDefault().register(this);
         ButterKnife.inject(this, view);
         userNameEdit.setOnFocusChangeListener(this);
         passwordEdit.setOnFocusChangeListener(this);
@@ -119,11 +136,9 @@ public class SignInFragment extends DialogFragment implements View.OnFocusChange
                         return false;
                     }
                 });
-
         if (background != null) {
             view.setBackgroundDrawable(new BitmapDrawable(ImageUtils.fastblur(background, 20)));
         }
-
         showPasswordCheckBox.setOnCheckedChangeListener(this);
         passwordEdit.setOnTouchListener(new CrossInEditTouchListener(passwordEdit));
         userNameEdit.setOnTouchListener(new CrossInEditTouchListener(userNameEdit));
@@ -133,8 +148,12 @@ public class SignInFragment extends DialogFragment implements View.OnFocusChange
         Captcha c = new TextCaptcha(300, 100, 5, TextCaptcha.TextOptions.NUMBERS_AND_LETTERS);
         captchaImage.setImageBitmap(c.getImage());
         captchaImage.getLayoutParams().width = c.getWidth() * 2;
+        getCheckCodeBtn.setOnClickListener(this);
+        regionLayout.setOnClickListener(this);
 
         setTitle();
+
+        SMSSDK.registerEventHandler(new EventHandler());
 
     }
 
@@ -178,6 +197,7 @@ public class SignInFragment extends DialogFragment implements View.OnFocusChange
             return true;
         }
 
+        SMSSDK.getSupportedCountries();
         return super.onOptionsItemSelected(item);
     }
 
@@ -213,6 +233,36 @@ public class SignInFragment extends DialogFragment implements View.OnFocusChange
         } else if (v.getId() == R.id.action_signup) {
             dismiss();
             SignupFragment.newInstance().show(getFragmentManager(), null);
+        } else if (v.getId() == R.id.btn_get_checkcode) {
+            getCheckCodeBtn.setEnabled(false);
+            final Timer timer = new Timer();
+            timer.schedule(new TimerTask() {
+                private int time = 60;
+                @Override
+                public void run() {
+                    if (getActivity() == null) {
+                        cancel();
+                        timer.cancel();
+                        return;
+                    }
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (time - 1 > 0) {
+                                getCheckCodeBtn.setText(getString(R.string.get_checkcode, ("(" + --time + ")")));
+                            } else {
+                                getCheckCodeBtn.setEnabled(true);
+                                getCheckCodeBtn.setText(getString(R.string.get_checkcode, ""));
+                                cancel();
+                                timer.cancel();
+                            }
+                        }
+                    });
+                }
+            }, 0, 1000);
+        } else if (v.getId() == R.id.layout_region) {
+            new CountryListFragment().show(getActivity().getSupportFragmentManager(), null);
+//            getActivity().getSupportFragmentManager().beginTransaction().add(R.id.content_frame, new CountryListFragment()).commit();
         }
     }
 
@@ -223,7 +273,7 @@ public class SignInFragment extends DialogFragment implements View.OnFocusChange
     }
 
     @Override
-    public void onResponse(User user) {
+    public void onResponse(ResponseWrapper<User> responseWrapper) {
         dismiss();
     }
 
@@ -238,4 +288,16 @@ public class SignInFragment extends DialogFragment implements View.OnFocusChange
         }
         passwordEdit.setSelection(start, end);
     }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        EventBus.getDefault().unregister(this);
+    }
+
+    public void onEventMainThread(RegionSelectedEvent event) {
+        regionEdit.setText(event.getSelected()[1]);
+        regionText.setText(event.getSelected()[0]);
+    }
 }
+

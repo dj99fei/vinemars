@@ -153,7 +153,7 @@
         <item name="android:windowExitAnimation">@anim/push_down_out</item>
     </style>
     <style name="ActionBarThemeOverlay">
-        <item name="android:background">@color/primary</item>
+        <item name="android:background">@drawable/ab_background_textured_actionbar</item>
         <item name="android:textColorPrimary">#fff</item>
         <item name="colorControlNormal">#ffff</item>
         <item name="colorControlHighlight">#3fff</item>

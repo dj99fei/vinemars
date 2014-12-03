@@ -198,7 +198,7 @@ public final class EnrollMessage {
      * <code>optional string checkCode = 5;</code>
      *
      * <pre>
-     *校验码
+     *手机校验码
      * </pre>
      */
     boolean hasCheckCode();
@@ -206,7 +206,7 @@ public final class EnrollMessage {
      * <code>optional string checkCode = 5;</code>
      *
      * <pre>
-     *校验码
+     *手机校验码
      * </pre>
      */
     java.lang.String getCheckCode();
@@ -214,15 +214,42 @@ public final class EnrollMessage {
      * <code>optional string checkCode = 5;</code>
      *
      * <pre>
-     *校验码
+     *手机校验码
      * </pre>
      */
     com.google.protobuf.ByteString
         getCheckCodeBytes();
 
-    // optional .LoginType loginType = 6;
+    // optional string validateCode = 6;
     /**
-     * <code>optional .LoginType loginType = 6;</code>
+     * <code>optional string validateCode = 6;</code>
+     *
+     * <pre>
+     *随机校验码
+     * </pre>
+     */
+    boolean hasValidateCode();
+    /**
+     * <code>optional string validateCode = 6;</code>
+     *
+     * <pre>
+     *随机校验码
+     * </pre>
+     */
+    java.lang.String getValidateCode();
+    /**
+     * <code>optional string validateCode = 6;</code>
+     *
+     * <pre>
+     *随机校验码
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getValidateCodeBytes();
+
+    // optional .LoginType loginType = 7;
+    /**
+     * <code>optional .LoginType loginType = 7;</code>
      *
      * <pre>
      *  0：游客登陆	1：用户登陆  2 ：注册  3中断恢复
@@ -230,7 +257,7 @@ public final class EnrollMessage {
      */
     boolean hasLoginType();
     /**
-     * <code>optional .LoginType loginType = 6;</code>
+     * <code>optional .LoginType loginType = 7;</code>
      *
      * <pre>
      *  0：游客登陆	1：用户登陆  2 ：注册  3中断恢复
@@ -310,11 +337,16 @@ public final class EnrollMessage {
               checkCode_ = input.readBytes();
               break;
             }
-            case 48: {
+            case 50: {
+              bitField0_ |= 0x00000020;
+              validateCode_ = input.readBytes();
+              break;
+            }
+            case 56: {
               int rawValue = input.readEnum();
               com.vine.vinemars.net.pb.EnrollMessage.LoginType value = com.vine.vinemars.net.pb.EnrollMessage.LoginType.valueOf(rawValue);
               if (value != null) {
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 loginType_ = value;
               }
               break;
@@ -573,7 +605,7 @@ public final class EnrollMessage {
      * <code>optional string checkCode = 5;</code>
      *
      * <pre>
-     *校验码
+     *手机校验码
      * </pre>
      */
     public boolean hasCheckCode() {
@@ -583,7 +615,7 @@ public final class EnrollMessage {
      * <code>optional string checkCode = 5;</code>
      *
      * <pre>
-     *校验码
+     *手机校验码
      * </pre>
      */
     public java.lang.String getCheckCode() {
@@ -604,7 +636,7 @@ public final class EnrollMessage {
      * <code>optional string checkCode = 5;</code>
      *
      * <pre>
-     *校验码
+     *手机校验码
      * </pre>
      */
     public com.google.protobuf.ByteString
@@ -621,21 +653,76 @@ public final class EnrollMessage {
       }
     }
 
-    // optional .LoginType loginType = 6;
-    public static final int LOGINTYPE_FIELD_NUMBER = 6;
+    // optional string validateCode = 6;
+    public static final int VALIDATECODE_FIELD_NUMBER = 6;
+    private java.lang.Object validateCode_;
+    /**
+     * <code>optional string validateCode = 6;</code>
+     *
+     * <pre>
+     *随机校验码
+     * </pre>
+     */
+    public boolean hasValidateCode() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional string validateCode = 6;</code>
+     *
+     * <pre>
+     *随机校验码
+     * </pre>
+     */
+    public java.lang.String getValidateCode() {
+      java.lang.Object ref = validateCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          validateCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string validateCode = 6;</code>
+     *
+     * <pre>
+     *随机校验码
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getValidateCodeBytes() {
+      java.lang.Object ref = validateCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        validateCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional .LoginType loginType = 7;
+    public static final int LOGINTYPE_FIELD_NUMBER = 7;
     private com.vine.vinemars.net.pb.EnrollMessage.LoginType loginType_;
     /**
-     * <code>optional .LoginType loginType = 6;</code>
+     * <code>optional .LoginType loginType = 7;</code>
      *
      * <pre>
      *  0：游客登陆	1：用户登陆  2 ：注册  3中断恢复
      * </pre>
      */
     public boolean hasLoginType() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
-     * <code>optional .LoginType loginType = 6;</code>
+     * <code>optional .LoginType loginType = 7;</code>
      *
      * <pre>
      *  0：游客登陆	1：用户登陆  2 ：注册  3中断恢复
@@ -651,6 +738,7 @@ public final class EnrollMessage {
       userName_ = "";
       password_ = "";
       checkCode_ = "";
+      validateCode_ = "";
       loginType_ = com.vine.vinemars.net.pb.EnrollMessage.LoginType.GUEST;
     }
     private byte memoizedIsInitialized = -1;
@@ -681,7 +769,10 @@ public final class EnrollMessage {
         output.writeBytes(5, getCheckCodeBytes());
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeEnum(6, loginType_.getNumber());
+        output.writeBytes(6, getValidateCodeBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeEnum(7, loginType_.getNumber());
       }
     }
 
@@ -713,7 +804,11 @@ public final class EnrollMessage {
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(6, loginType_.getNumber());
+          .computeBytesSize(6, getValidateCodeBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(7, loginType_.getNumber());
       }
       memoizedSerializedSize = size;
       return size;
@@ -820,8 +915,10 @@ public final class EnrollMessage {
         bitField0_ = (bitField0_ & ~0x00000008);
         checkCode_ = "";
         bitField0_ = (bitField0_ & ~0x00000010);
-        loginType_ = com.vine.vinemars.net.pb.EnrollMessage.LoginType.GUEST;
+        validateCode_ = "";
         bitField0_ = (bitField0_ & ~0x00000020);
+        loginType_ = com.vine.vinemars.net.pb.EnrollMessage.LoginType.GUEST;
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -868,6 +965,10 @@ public final class EnrollMessage {
         if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000020;
         }
+        result.validateCode_ = validateCode_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
         result.loginType_ = loginType_;
         result.bitField0_ = to_bitField0_;
         return result;
@@ -898,6 +999,11 @@ public final class EnrollMessage {
         if (other.hasCheckCode()) {
           bitField0_ |= 0x00000010;
           checkCode_ = other.checkCode_;
+          
+        }
+        if (other.hasValidateCode()) {
+          bitField0_ |= 0x00000020;
+          validateCode_ = other.validateCode_;
           
         }
         if (other.hasLoginType()) {
@@ -1327,7 +1433,7 @@ public final class EnrollMessage {
        * <code>optional string checkCode = 5;</code>
        *
        * <pre>
-       *校验码
+       *手机校验码
        * </pre>
        */
       public boolean hasCheckCode() {
@@ -1337,7 +1443,7 @@ public final class EnrollMessage {
        * <code>optional string checkCode = 5;</code>
        *
        * <pre>
-       *校验码
+       *手机校验码
        * </pre>
        */
       public java.lang.String getCheckCode() {
@@ -1355,7 +1461,7 @@ public final class EnrollMessage {
        * <code>optional string checkCode = 5;</code>
        *
        * <pre>
-       *校验码
+       *手机校验码
        * </pre>
        */
       public com.google.protobuf.ByteString
@@ -1375,7 +1481,7 @@ public final class EnrollMessage {
        * <code>optional string checkCode = 5;</code>
        *
        * <pre>
-       *校验码
+       *手机校验码
        * </pre>
        */
       public Builder setCheckCode(
@@ -1392,7 +1498,7 @@ public final class EnrollMessage {
        * <code>optional string checkCode = 5;</code>
        *
        * <pre>
-       *校验码
+       *手机校验码
        * </pre>
        */
       public Builder clearCheckCode() {
@@ -1405,7 +1511,7 @@ public final class EnrollMessage {
        * <code>optional string checkCode = 5;</code>
        *
        * <pre>
-       *校验码
+       *手机校验码
        * </pre>
        */
       public Builder setCheckCodeBytes(
@@ -1419,20 +1525,118 @@ public final class EnrollMessage {
         return this;
       }
 
-      // optional .LoginType loginType = 6;
+      // optional string validateCode = 6;
+      private java.lang.Object validateCode_ = "";
+      /**
+       * <code>optional string validateCode = 6;</code>
+       *
+       * <pre>
+       *随机校验码
+       * </pre>
+       */
+      public boolean hasValidateCode() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional string validateCode = 6;</code>
+       *
+       * <pre>
+       *随机校验码
+       * </pre>
+       */
+      public java.lang.String getValidateCode() {
+        java.lang.Object ref = validateCode_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          validateCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string validateCode = 6;</code>
+       *
+       * <pre>
+       *随机校验码
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getValidateCodeBytes() {
+        java.lang.Object ref = validateCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          validateCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string validateCode = 6;</code>
+       *
+       * <pre>
+       *随机校验码
+       * </pre>
+       */
+      public Builder setValidateCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        validateCode_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional string validateCode = 6;</code>
+       *
+       * <pre>
+       *随机校验码
+       * </pre>
+       */
+      public Builder clearValidateCode() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        validateCode_ = getDefaultInstance().getValidateCode();
+        
+        return this;
+      }
+      /**
+       * <code>optional string validateCode = 6;</code>
+       *
+       * <pre>
+       *随机校验码
+       * </pre>
+       */
+      public Builder setValidateCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        validateCode_ = value;
+        
+        return this;
+      }
+
+      // optional .LoginType loginType = 7;
       private com.vine.vinemars.net.pb.EnrollMessage.LoginType loginType_ = com.vine.vinemars.net.pb.EnrollMessage.LoginType.GUEST;
       /**
-       * <code>optional .LoginType loginType = 6;</code>
+       * <code>optional .LoginType loginType = 7;</code>
        *
        * <pre>
        *  0：游客登陆	1：用户登陆  2 ：注册  3中断恢复
        * </pre>
        */
       public boolean hasLoginType() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
-       * <code>optional .LoginType loginType = 6;</code>
+       * <code>optional .LoginType loginType = 7;</code>
        *
        * <pre>
        *  0：游客登陆	1：用户登陆  2 ：注册  3中断恢复
@@ -1442,7 +1646,7 @@ public final class EnrollMessage {
         return loginType_;
       }
       /**
-       * <code>optional .LoginType loginType = 6;</code>
+       * <code>optional .LoginType loginType = 7;</code>
        *
        * <pre>
        *  0：游客登陆	1：用户登陆  2 ：注册  3中断恢复
@@ -1452,20 +1656,20 @@ public final class EnrollMessage {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         loginType_ = value;
         
         return this;
       }
       /**
-       * <code>optional .LoginType loginType = 6;</code>
+       * <code>optional .LoginType loginType = 7;</code>
        *
        * <pre>
        *  0：游客登陆	1：用户登陆  2 ：注册  3中断恢复
        * </pre>
        */
       public Builder clearLoginType() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         loginType_ = com.vine.vinemars.net.pb.EnrollMessage.LoginType.GUEST;
         
         return this;
@@ -1771,7 +1975,7 @@ public final class EnrollMessage {
      * <code>optional string email = 2;</code>
      *
      * <pre>
-     *邮箱地址	
+     *邮箱地址
      * </pre>
      */
     boolean hasEmail();
@@ -1779,7 +1983,7 @@ public final class EnrollMessage {
      * <code>optional string email = 2;</code>
      *
      * <pre>
-     *邮箱地址	
+     *邮箱地址
      * </pre>
      */
     java.lang.String getEmail();
@@ -1787,34 +1991,61 @@ public final class EnrollMessage {
      * <code>optional string email = 2;</code>
      *
      * <pre>
-     *邮箱地址	
+     *邮箱地址
      * </pre>
      */
     com.google.protobuf.ByteString
         getEmailBytes();
 
-    // optional string checkCode = 3;
+    // optional string validateCode = 3;
     /**
-     * <code>optional string checkCode = 3;</code>
+     * <code>optional string validateCode = 3;</code>
      *
      * <pre>
-     *校验码
+     *界面提交的随机校验码
+     * </pre>
+     */
+    boolean hasValidateCode();
+    /**
+     * <code>optional string validateCode = 3;</code>
+     *
+     * <pre>
+     *界面提交的随机校验码
+     * </pre>
+     */
+    java.lang.String getValidateCode();
+    /**
+     * <code>optional string validateCode = 3;</code>
+     *
+     * <pre>
+     *界面提交的随机校验码
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getValidateCodeBytes();
+
+    // optional string checkCode = 4;
+    /**
+     * <code>optional string checkCode = 4;</code>
+     *
+     * <pre>
+     *发给手机或者邮箱的验证码
      * </pre>
      */
     boolean hasCheckCode();
     /**
-     * <code>optional string checkCode = 3;</code>
+     * <code>optional string checkCode = 4;</code>
      *
      * <pre>
-     *校验码
+     *发给手机或者邮箱的验证码
      * </pre>
      */
     java.lang.String getCheckCode();
     /**
-     * <code>optional string checkCode = 3;</code>
+     * <code>optional string checkCode = 4;</code>
      *
      * <pre>
-     *校验码
+     *发给手机或者邮箱的验证码
      * </pre>
      */
     com.google.protobuf.ByteString
@@ -1879,6 +2110,11 @@ public final class EnrollMessage {
             }
             case 26: {
               bitField0_ |= 0x00000004;
+              validateCode_ = input.readBytes();
+              break;
+            }
+            case 34: {
+              bitField0_ |= 0x00000008;
               checkCode_ = input.readBytes();
               break;
             }
@@ -1971,7 +2207,7 @@ public final class EnrollMessage {
      * <code>optional string email = 2;</code>
      *
      * <pre>
-     *邮箱地址	
+     *邮箱地址
      * </pre>
      */
     public boolean hasEmail() {
@@ -1981,7 +2217,7 @@ public final class EnrollMessage {
      * <code>optional string email = 2;</code>
      *
      * <pre>
-     *邮箱地址	
+     *邮箱地址
      * </pre>
      */
     public java.lang.String getEmail() {
@@ -2002,7 +2238,7 @@ public final class EnrollMessage {
      * <code>optional string email = 2;</code>
      *
      * <pre>
-     *邮箱地址	
+     *邮箱地址
      * </pre>
      */
     public com.google.protobuf.ByteString
@@ -2019,24 +2255,79 @@ public final class EnrollMessage {
       }
     }
 
-    // optional string checkCode = 3;
-    public static final int CHECKCODE_FIELD_NUMBER = 3;
-    private java.lang.Object checkCode_;
+    // optional string validateCode = 3;
+    public static final int VALIDATECODE_FIELD_NUMBER = 3;
+    private java.lang.Object validateCode_;
     /**
-     * <code>optional string checkCode = 3;</code>
+     * <code>optional string validateCode = 3;</code>
      *
      * <pre>
-     *校验码
+     *界面提交的随机校验码
      * </pre>
      */
-    public boolean hasCheckCode() {
+    public boolean hasValidateCode() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional string checkCode = 3;</code>
+     * <code>optional string validateCode = 3;</code>
      *
      * <pre>
-     *校验码
+     *界面提交的随机校验码
+     * </pre>
+     */
+    public java.lang.String getValidateCode() {
+      java.lang.Object ref = validateCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          validateCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string validateCode = 3;</code>
+     *
+     * <pre>
+     *界面提交的随机校验码
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getValidateCodeBytes() {
+      java.lang.Object ref = validateCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        validateCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional string checkCode = 4;
+    public static final int CHECKCODE_FIELD_NUMBER = 4;
+    private java.lang.Object checkCode_;
+    /**
+     * <code>optional string checkCode = 4;</code>
+     *
+     * <pre>
+     *发给手机或者邮箱的验证码
+     * </pre>
+     */
+    public boolean hasCheckCode() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional string checkCode = 4;</code>
+     *
+     * <pre>
+     *发给手机或者邮箱的验证码
      * </pre>
      */
     public java.lang.String getCheckCode() {
@@ -2054,10 +2345,10 @@ public final class EnrollMessage {
       }
     }
     /**
-     * <code>optional string checkCode = 3;</code>
+     * <code>optional string checkCode = 4;</code>
      *
      * <pre>
-     *校验码
+     *发给手机或者邮箱的验证码
      * </pre>
      */
     public com.google.protobuf.ByteString
@@ -2077,6 +2368,7 @@ public final class EnrollMessage {
     private void initFields() {
       mobile_ = "";
       email_ = "";
+      validateCode_ = "";
       checkCode_ = "";
     }
     private byte memoizedIsInitialized = -1;
@@ -2098,7 +2390,10 @@ public final class EnrollMessage {
         output.writeBytes(2, getEmailBytes());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getCheckCodeBytes());
+        output.writeBytes(3, getValidateCodeBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getCheckCodeBytes());
       }
     }
 
@@ -2118,7 +2413,11 @@ public final class EnrollMessage {
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getCheckCodeBytes());
+          .computeBytesSize(3, getValidateCodeBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getCheckCodeBytes());
       }
       memoizedSerializedSize = size;
       return size;
@@ -2219,8 +2518,10 @@ public final class EnrollMessage {
         bitField0_ = (bitField0_ & ~0x00000001);
         email_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
-        checkCode_ = "";
+        validateCode_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
+        checkCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -2255,6 +2556,10 @@ public final class EnrollMessage {
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
+        result.validateCode_ = validateCode_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
         result.checkCode_ = checkCode_;
         result.bitField0_ = to_bitField0_;
         return result;
@@ -2272,8 +2577,13 @@ public final class EnrollMessage {
           email_ = other.email_;
           
         }
-        if (other.hasCheckCode()) {
+        if (other.hasValidateCode()) {
           bitField0_ |= 0x00000004;
+          validateCode_ = other.validateCode_;
+          
+        }
+        if (other.hasCheckCode()) {
+          bitField0_ |= 0x00000008;
           checkCode_ = other.checkCode_;
           
         }
@@ -2407,7 +2717,7 @@ public final class EnrollMessage {
        * <code>optional string email = 2;</code>
        *
        * <pre>
-       *邮箱地址	
+       *邮箱地址
        * </pre>
        */
       public boolean hasEmail() {
@@ -2417,7 +2727,7 @@ public final class EnrollMessage {
        * <code>optional string email = 2;</code>
        *
        * <pre>
-       *邮箱地址	
+       *邮箱地址
        * </pre>
        */
       public java.lang.String getEmail() {
@@ -2435,7 +2745,7 @@ public final class EnrollMessage {
        * <code>optional string email = 2;</code>
        *
        * <pre>
-       *邮箱地址	
+       *邮箱地址
        * </pre>
        */
       public com.google.protobuf.ByteString
@@ -2455,7 +2765,7 @@ public final class EnrollMessage {
        * <code>optional string email = 2;</code>
        *
        * <pre>
-       *邮箱地址	
+       *邮箱地址
        * </pre>
        */
       public Builder setEmail(
@@ -2472,7 +2782,7 @@ public final class EnrollMessage {
        * <code>optional string email = 2;</code>
        *
        * <pre>
-       *邮箱地址	
+       *邮箱地址
        * </pre>
        */
       public Builder clearEmail() {
@@ -2485,7 +2795,7 @@ public final class EnrollMessage {
        * <code>optional string email = 2;</code>
        *
        * <pre>
-       *邮箱地址	
+       *邮箱地址
        * </pre>
        */
       public Builder setEmailBytes(
@@ -2499,23 +2809,121 @@ public final class EnrollMessage {
         return this;
       }
 
-      // optional string checkCode = 3;
-      private java.lang.Object checkCode_ = "";
+      // optional string validateCode = 3;
+      private java.lang.Object validateCode_ = "";
       /**
-       * <code>optional string checkCode = 3;</code>
+       * <code>optional string validateCode = 3;</code>
        *
        * <pre>
-       *校验码
+       *界面提交的随机校验码
        * </pre>
        */
-      public boolean hasCheckCode() {
+      public boolean hasValidateCode() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>optional string checkCode = 3;</code>
+       * <code>optional string validateCode = 3;</code>
        *
        * <pre>
-       *校验码
+       *界面提交的随机校验码
+       * </pre>
+       */
+      public java.lang.String getValidateCode() {
+        java.lang.Object ref = validateCode_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          validateCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string validateCode = 3;</code>
+       *
+       * <pre>
+       *界面提交的随机校验码
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getValidateCodeBytes() {
+        java.lang.Object ref = validateCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          validateCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string validateCode = 3;</code>
+       *
+       * <pre>
+       *界面提交的随机校验码
+       * </pre>
+       */
+      public Builder setValidateCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        validateCode_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional string validateCode = 3;</code>
+       *
+       * <pre>
+       *界面提交的随机校验码
+       * </pre>
+       */
+      public Builder clearValidateCode() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        validateCode_ = getDefaultInstance().getValidateCode();
+        
+        return this;
+      }
+      /**
+       * <code>optional string validateCode = 3;</code>
+       *
+       * <pre>
+       *界面提交的随机校验码
+       * </pre>
+       */
+      public Builder setValidateCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        validateCode_ = value;
+        
+        return this;
+      }
+
+      // optional string checkCode = 4;
+      private java.lang.Object checkCode_ = "";
+      /**
+       * <code>optional string checkCode = 4;</code>
+       *
+       * <pre>
+       *发给手机或者邮箱的验证码
+       * </pre>
+       */
+      public boolean hasCheckCode() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional string checkCode = 4;</code>
+       *
+       * <pre>
+       *发给手机或者邮箱的验证码
        * </pre>
        */
       public java.lang.String getCheckCode() {
@@ -2530,10 +2938,10 @@ public final class EnrollMessage {
         }
       }
       /**
-       * <code>optional string checkCode = 3;</code>
+       * <code>optional string checkCode = 4;</code>
        *
        * <pre>
-       *校验码
+       *发给手机或者邮箱的验证码
        * </pre>
        */
       public com.google.protobuf.ByteString
@@ -2550,10 +2958,10 @@ public final class EnrollMessage {
         }
       }
       /**
-       * <code>optional string checkCode = 3;</code>
+       * <code>optional string checkCode = 4;</code>
        *
        * <pre>
-       *校验码
+       *发给手机或者邮箱的验证码
        * </pre>
        */
       public Builder setCheckCode(
@@ -2561,29 +2969,29 @@ public final class EnrollMessage {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000008;
         checkCode_ = value;
         
         return this;
       }
       /**
-       * <code>optional string checkCode = 3;</code>
+       * <code>optional string checkCode = 4;</code>
        *
        * <pre>
-       *校验码
+       *发给手机或者邮箱的验证码
        * </pre>
        */
       public Builder clearCheckCode() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         checkCode_ = getDefaultInstance().getCheckCode();
         
         return this;
       }
       /**
-       * <code>optional string checkCode = 3;</code>
+       * <code>optional string checkCode = 4;</code>
        *
        * <pre>
-       *校验码
+       *发给手机或者邮箱的验证码
        * </pre>
        */
       public Builder setCheckCodeBytes(
@@ -2591,7 +2999,7 @@ public final class EnrollMessage {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000004;
+  bitField0_ |= 0x00000008;
         checkCode_ = value;
         
         return this;
@@ -2692,32 +3100,32 @@ public final class EnrollMessage {
     com.google.protobuf.ByteString
         getNewPasswordBytes();
 
-    // optional string checkCode = 4;
+    // optional string validateCode = 4;
     /**
-     * <code>optional string checkCode = 4;</code>
+     * <code>optional string validateCode = 4;</code>
      *
      * <pre>
-     *校验码
+     *随机校验码
      * </pre>
      */
-    boolean hasCheckCode();
+    boolean hasValidateCode();
     /**
-     * <code>optional string checkCode = 4;</code>
+     * <code>optional string validateCode = 4;</code>
      *
      * <pre>
-     *校验码
+     *随机校验码
      * </pre>
      */
-    java.lang.String getCheckCode();
+    java.lang.String getValidateCode();
     /**
-     * <code>optional string checkCode = 4;</code>
+     * <code>optional string validateCode = 4;</code>
      *
      * <pre>
-     *校验码
+     *随机校验码
      * </pre>
      */
     com.google.protobuf.ByteString
-        getCheckCodeBytes();
+        getValidateCodeBytes();
 
     // optional string token = 5;
     /**
@@ -2794,7 +3202,7 @@ public final class EnrollMessage {
             }
             case 34: {
               bitField0_ |= 0x00000008;
-              checkCode_ = input.readBytes();
+              validateCode_ = input.readBytes();
               break;
             }
             case 42: {
@@ -2994,28 +3402,28 @@ public final class EnrollMessage {
       }
     }
 
-    // optional string checkCode = 4;
-    public static final int CHECKCODE_FIELD_NUMBER = 4;
-    private java.lang.Object checkCode_;
+    // optional string validateCode = 4;
+    public static final int VALIDATECODE_FIELD_NUMBER = 4;
+    private java.lang.Object validateCode_;
     /**
-     * <code>optional string checkCode = 4;</code>
+     * <code>optional string validateCode = 4;</code>
      *
      * <pre>
-     *校验码
+     *随机校验码
      * </pre>
      */
-    public boolean hasCheckCode() {
+    public boolean hasValidateCode() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>optional string checkCode = 4;</code>
+     * <code>optional string validateCode = 4;</code>
      *
      * <pre>
-     *校验码
+     *随机校验码
      * </pre>
      */
-    public java.lang.String getCheckCode() {
-      java.lang.Object ref = checkCode_;
+    public java.lang.String getValidateCode() {
+      java.lang.Object ref = validateCode_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
@@ -3023,26 +3431,26 @@ public final class EnrollMessage {
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          checkCode_ = s;
+          validateCode_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>optional string checkCode = 4;</code>
+     * <code>optional string validateCode = 4;</code>
      *
      * <pre>
-     *校验码
+     *随机校验码
      * </pre>
      */
     public com.google.protobuf.ByteString
-        getCheckCodeBytes() {
-      java.lang.Object ref = checkCode_;
+        getValidateCodeBytes() {
+      java.lang.Object ref = validateCode_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        checkCode_ = b;
+        validateCode_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -3096,7 +3504,7 @@ public final class EnrollMessage {
       userId_ = "";
       oldPassword_ = "";
       newPassword_ = "";
-      checkCode_ = "";
+      validateCode_ = "";
       token_ = "";
     }
     private byte memoizedIsInitialized = -1;
@@ -3121,7 +3529,7 @@ public final class EnrollMessage {
         output.writeBytes(3, getNewPasswordBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(4, getCheckCodeBytes());
+        output.writeBytes(4, getValidateCodeBytes());
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeBytes(5, getTokenBytes());
@@ -3148,7 +3556,7 @@ public final class EnrollMessage {
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, getCheckCodeBytes());
+          .computeBytesSize(4, getValidateCodeBytes());
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
@@ -3251,7 +3659,7 @@ public final class EnrollMessage {
         bitField0_ = (bitField0_ & ~0x00000002);
         newPassword_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
-        checkCode_ = "";
+        validateCode_ = "";
         bitField0_ = (bitField0_ & ~0x00000008);
         token_ = "";
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -3293,7 +3701,7 @@ public final class EnrollMessage {
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        result.checkCode_ = checkCode_;
+        result.validateCode_ = validateCode_;
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
         }
@@ -3319,9 +3727,9 @@ public final class EnrollMessage {
           newPassword_ = other.newPassword_;
           
         }
-        if (other.hasCheckCode()) {
+        if (other.hasValidateCode()) {
           bitField0_ |= 0x00000008;
-          checkCode_ = other.checkCode_;
+          validateCode_ = other.validateCode_;
           
         }
         if (other.hasToken()) {
@@ -3649,100 +4057,100 @@ public final class EnrollMessage {
         return this;
       }
 
-      // optional string checkCode = 4;
-      private java.lang.Object checkCode_ = "";
+      // optional string validateCode = 4;
+      private java.lang.Object validateCode_ = "";
       /**
-       * <code>optional string checkCode = 4;</code>
+       * <code>optional string validateCode = 4;</code>
        *
        * <pre>
-       *校验码
+       *随机校验码
        * </pre>
        */
-      public boolean hasCheckCode() {
+      public boolean hasValidateCode() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>optional string checkCode = 4;</code>
+       * <code>optional string validateCode = 4;</code>
        *
        * <pre>
-       *校验码
+       *随机校验码
        * </pre>
        */
-      public java.lang.String getCheckCode() {
-        java.lang.Object ref = checkCode_;
+      public java.lang.String getValidateCode() {
+        java.lang.Object ref = validateCode_;
         if (!(ref instanceof java.lang.String)) {
           java.lang.String s = ((com.google.protobuf.ByteString) ref)
               .toStringUtf8();
-          checkCode_ = s;
+          validateCode_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string checkCode = 4;</code>
+       * <code>optional string validateCode = 4;</code>
        *
        * <pre>
-       *校验码
+       *随机校验码
        * </pre>
        */
       public com.google.protobuf.ByteString
-          getCheckCodeBytes() {
-        java.lang.Object ref = checkCode_;
+          getValidateCodeBytes() {
+        java.lang.Object ref = validateCode_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          checkCode_ = b;
+          validateCode_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>optional string checkCode = 4;</code>
+       * <code>optional string validateCode = 4;</code>
        *
        * <pre>
-       *校验码
+       *随机校验码
        * </pre>
        */
-      public Builder setCheckCode(
+      public Builder setValidateCode(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000008;
-        checkCode_ = value;
+        validateCode_ = value;
         
         return this;
       }
       /**
-       * <code>optional string checkCode = 4;</code>
+       * <code>optional string validateCode = 4;</code>
        *
        * <pre>
-       *校验码
+       *随机校验码
        * </pre>
        */
-      public Builder clearCheckCode() {
+      public Builder clearValidateCode() {
         bitField0_ = (bitField0_ & ~0x00000008);
-        checkCode_ = getDefaultInstance().getCheckCode();
+        validateCode_ = getDefaultInstance().getValidateCode();
         
         return this;
       }
       /**
-       * <code>optional string checkCode = 4;</code>
+       * <code>optional string validateCode = 4;</code>
        *
        * <pre>
-       *校验码
+       *随机校验码
        * </pre>
        */
-      public Builder setCheckCodeBytes(
+      public Builder setValidateCodeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000008;
-        checkCode_ = value;
+        validateCode_ = value;
         
         return this;
       }
@@ -10842,6 +11250,1399 @@ public final class EnrollMessage {
     }
 
     // @@protoc_insertion_point(class_scope:RetrieveUserBasicInfoRet)
+  }
+
+  public interface AuthenticateUserOrBuilder
+      extends com.google.protobuf.MessageLiteOrBuilder {
+
+    // optional string mobile = 1;
+    /**
+     * <code>optional string mobile = 1;</code>
+     *
+     * <pre>
+     *手机号
+     * </pre>
+     */
+    boolean hasMobile();
+    /**
+     * <code>optional string mobile = 1;</code>
+     *
+     * <pre>
+     *手机号
+     * </pre>
+     */
+    java.lang.String getMobile();
+    /**
+     * <code>optional string mobile = 1;</code>
+     *
+     * <pre>
+     *手机号
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getMobileBytes();
+
+    // optional string email = 2;
+    /**
+     * <code>optional string email = 2;</code>
+     *
+     * <pre>
+     *邮箱地址
+     * </pre>
+     */
+    boolean hasEmail();
+    /**
+     * <code>optional string email = 2;</code>
+     *
+     * <pre>
+     *邮箱地址
+     * </pre>
+     */
+    java.lang.String getEmail();
+    /**
+     * <code>optional string email = 2;</code>
+     *
+     * <pre>
+     *邮箱地址
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getEmailBytes();
+
+    // optional string jsonData = 3;
+    /**
+     * <code>optional string jsonData = 3;</code>
+     *
+     * <pre>
+     *预留字段，用于其他身份验证信息
+     * </pre>
+     */
+    boolean hasJsonData();
+    /**
+     * <code>optional string jsonData = 3;</code>
+     *
+     * <pre>
+     *预留字段，用于其他身份验证信息
+     * </pre>
+     */
+    java.lang.String getJsonData();
+    /**
+     * <code>optional string jsonData = 3;</code>
+     *
+     * <pre>
+     *预留字段，用于其他身份验证信息
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getJsonDataBytes();
+
+    // optional string validateCode = 4;
+    /**
+     * <code>optional string validateCode = 4;</code>
+     *
+     * <pre>
+     *界面提交的随机校验码
+     * </pre>
+     */
+    boolean hasValidateCode();
+    /**
+     * <code>optional string validateCode = 4;</code>
+     *
+     * <pre>
+     *界面提交的随机校验码
+     * </pre>
+     */
+    java.lang.String getValidateCode();
+    /**
+     * <code>optional string validateCode = 4;</code>
+     *
+     * <pre>
+     *界面提交的随机校验码
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getValidateCodeBytes();
+
+    // optional string checkCode = 5;
+    /**
+     * <code>optional string checkCode = 5;</code>
+     *
+     * <pre>
+     *发给手机或者邮箱的验证码
+     * </pre>
+     */
+    boolean hasCheckCode();
+    /**
+     * <code>optional string checkCode = 5;</code>
+     *
+     * <pre>
+     *发给手机或者邮箱的验证码
+     * </pre>
+     */
+    java.lang.String getCheckCode();
+    /**
+     * <code>optional string checkCode = 5;</code>
+     *
+     * <pre>
+     *发给手机或者邮箱的验证码
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getCheckCodeBytes();
+
+    // optional int32 flag = 6;
+    /**
+     * <code>optional int32 flag = 6;</code>
+     *
+     * <pre>
+     *身份标示  1：mobile，2：email，3：idcard，4：未定
+     * </pre>
+     */
+    boolean hasFlag();
+    /**
+     * <code>optional int32 flag = 6;</code>
+     *
+     * <pre>
+     *身份标示  1：mobile，2：email，3：idcard，4：未定
+     * </pre>
+     */
+    int getFlag();
+  }
+  /**
+   * Protobuf type {@code AuthenticateUser}
+   *
+   * <pre>
+   *----------------------认证用户----------------------
+   * </pre>
+   */
+  public static final class AuthenticateUser extends
+      com.google.protobuf.GeneratedMessageLite
+      implements AuthenticateUserOrBuilder {
+    // Use AuthenticateUser.newBuilder() to construct.
+    private AuthenticateUser(com.google.protobuf.GeneratedMessageLite.Builder builder) {
+      super(builder);
+
+    }
+    private AuthenticateUser(boolean noInit) {}
+
+    private static final AuthenticateUser defaultInstance;
+    public static AuthenticateUser getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public AuthenticateUser getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private AuthenticateUser(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              mobile_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              email_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
+              jsonData_ = input.readBytes();
+              break;
+            }
+            case 34: {
+              bitField0_ |= 0x00000008;
+              validateCode_ = input.readBytes();
+              break;
+            }
+            case 42: {
+              bitField0_ |= 0x00000010;
+              checkCode_ = input.readBytes();
+              break;
+            }
+            case 48: {
+              bitField0_ |= 0x00000020;
+              flag_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static com.google.protobuf.Parser<AuthenticateUser> PARSER =
+        new com.google.protobuf.AbstractParser<AuthenticateUser>() {
+      public AuthenticateUser parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AuthenticateUser(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AuthenticateUser> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // optional string mobile = 1;
+    public static final int MOBILE_FIELD_NUMBER = 1;
+    private java.lang.Object mobile_;
+    /**
+     * <code>optional string mobile = 1;</code>
+     *
+     * <pre>
+     *手机号
+     * </pre>
+     */
+    public boolean hasMobile() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional string mobile = 1;</code>
+     *
+     * <pre>
+     *手机号
+     * </pre>
+     */
+    public java.lang.String getMobile() {
+      java.lang.Object ref = mobile_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          mobile_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string mobile = 1;</code>
+     *
+     * <pre>
+     *手机号
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getMobileBytes() {
+      java.lang.Object ref = mobile_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        mobile_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional string email = 2;
+    public static final int EMAIL_FIELD_NUMBER = 2;
+    private java.lang.Object email_;
+    /**
+     * <code>optional string email = 2;</code>
+     *
+     * <pre>
+     *邮箱地址
+     * </pre>
+     */
+    public boolean hasEmail() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string email = 2;</code>
+     *
+     * <pre>
+     *邮箱地址
+     * </pre>
+     */
+    public java.lang.String getEmail() {
+      java.lang.Object ref = email_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          email_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string email = 2;</code>
+     *
+     * <pre>
+     *邮箱地址
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getEmailBytes() {
+      java.lang.Object ref = email_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        email_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional string jsonData = 3;
+    public static final int JSONDATA_FIELD_NUMBER = 3;
+    private java.lang.Object jsonData_;
+    /**
+     * <code>optional string jsonData = 3;</code>
+     *
+     * <pre>
+     *预留字段，用于其他身份验证信息
+     * </pre>
+     */
+    public boolean hasJsonData() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional string jsonData = 3;</code>
+     *
+     * <pre>
+     *预留字段，用于其他身份验证信息
+     * </pre>
+     */
+    public java.lang.String getJsonData() {
+      java.lang.Object ref = jsonData_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          jsonData_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string jsonData = 3;</code>
+     *
+     * <pre>
+     *预留字段，用于其他身份验证信息
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getJsonDataBytes() {
+      java.lang.Object ref = jsonData_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        jsonData_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional string validateCode = 4;
+    public static final int VALIDATECODE_FIELD_NUMBER = 4;
+    private java.lang.Object validateCode_;
+    /**
+     * <code>optional string validateCode = 4;</code>
+     *
+     * <pre>
+     *界面提交的随机校验码
+     * </pre>
+     */
+    public boolean hasValidateCode() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional string validateCode = 4;</code>
+     *
+     * <pre>
+     *界面提交的随机校验码
+     * </pre>
+     */
+    public java.lang.String getValidateCode() {
+      java.lang.Object ref = validateCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          validateCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string validateCode = 4;</code>
+     *
+     * <pre>
+     *界面提交的随机校验码
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getValidateCodeBytes() {
+      java.lang.Object ref = validateCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        validateCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional string checkCode = 5;
+    public static final int CHECKCODE_FIELD_NUMBER = 5;
+    private java.lang.Object checkCode_;
+    /**
+     * <code>optional string checkCode = 5;</code>
+     *
+     * <pre>
+     *发给手机或者邮箱的验证码
+     * </pre>
+     */
+    public boolean hasCheckCode() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional string checkCode = 5;</code>
+     *
+     * <pre>
+     *发给手机或者邮箱的验证码
+     * </pre>
+     */
+    public java.lang.String getCheckCode() {
+      java.lang.Object ref = checkCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          checkCode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string checkCode = 5;</code>
+     *
+     * <pre>
+     *发给手机或者邮箱的验证码
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getCheckCodeBytes() {
+      java.lang.Object ref = checkCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        checkCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional int32 flag = 6;
+    public static final int FLAG_FIELD_NUMBER = 6;
+    private int flag_;
+    /**
+     * <code>optional int32 flag = 6;</code>
+     *
+     * <pre>
+     *身份标示  1：mobile，2：email，3：idcard，4：未定
+     * </pre>
+     */
+    public boolean hasFlag() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional int32 flag = 6;</code>
+     *
+     * <pre>
+     *身份标示  1：mobile，2：email，3：idcard，4：未定
+     * </pre>
+     */
+    public int getFlag() {
+      return flag_;
+    }
+
+    private void initFields() {
+      mobile_ = "";
+      email_ = "";
+      jsonData_ = "";
+      validateCode_ = "";
+      checkCode_ = "";
+      flag_ = 0;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getMobileBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getEmailBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getJsonDataBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getValidateCodeBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeBytes(5, getCheckCodeBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeInt32(6, flag_);
+      }
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getMobileBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getEmailBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getJsonDataBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getValidateCodeBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, getCheckCodeBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, flag_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.vine.vinemars.net.pb.EnrollMessage.AuthenticateUser parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.vine.vinemars.net.pb.EnrollMessage.AuthenticateUser parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.vine.vinemars.net.pb.EnrollMessage.AuthenticateUser parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.vine.vinemars.net.pb.EnrollMessage.AuthenticateUser parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.vine.vinemars.net.pb.EnrollMessage.AuthenticateUser parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.vine.vinemars.net.pb.EnrollMessage.AuthenticateUser parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.vine.vinemars.net.pb.EnrollMessage.AuthenticateUser parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.vine.vinemars.net.pb.EnrollMessage.AuthenticateUser parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.vine.vinemars.net.pb.EnrollMessage.AuthenticateUser parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.vine.vinemars.net.pb.EnrollMessage.AuthenticateUser parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.vine.vinemars.net.pb.EnrollMessage.AuthenticateUser prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    /**
+     * Protobuf type {@code AuthenticateUser}
+     *
+     * <pre>
+     *----------------------认证用户----------------------
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageLite.Builder<
+          com.vine.vinemars.net.pb.EnrollMessage.AuthenticateUser, Builder>
+        implements com.vine.vinemars.net.pb.EnrollMessage.AuthenticateUserOrBuilder {
+      // Construct using com.vine.vinemars.net.pb.EnrollMessage.AuthenticateUser.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        mobile_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        email_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        jsonData_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        validateCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
+        checkCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000010);
+        flag_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.vine.vinemars.net.pb.EnrollMessage.AuthenticateUser getDefaultInstanceForType() {
+        return com.vine.vinemars.net.pb.EnrollMessage.AuthenticateUser.getDefaultInstance();
+      }
+
+      public com.vine.vinemars.net.pb.EnrollMessage.AuthenticateUser build() {
+        com.vine.vinemars.net.pb.EnrollMessage.AuthenticateUser result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.vine.vinemars.net.pb.EnrollMessage.AuthenticateUser buildPartial() {
+        com.vine.vinemars.net.pb.EnrollMessage.AuthenticateUser result = new com.vine.vinemars.net.pb.EnrollMessage.AuthenticateUser(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.mobile_ = mobile_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.email_ = email_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.jsonData_ = jsonData_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.validateCode_ = validateCode_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.checkCode_ = checkCode_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.flag_ = flag_;
+        result.bitField0_ = to_bitField0_;
+        return result;
+      }
+
+      public Builder mergeFrom(com.vine.vinemars.net.pb.EnrollMessage.AuthenticateUser other) {
+        if (other == com.vine.vinemars.net.pb.EnrollMessage.AuthenticateUser.getDefaultInstance()) return this;
+        if (other.hasMobile()) {
+          bitField0_ |= 0x00000001;
+          mobile_ = other.mobile_;
+          
+        }
+        if (other.hasEmail()) {
+          bitField0_ |= 0x00000002;
+          email_ = other.email_;
+          
+        }
+        if (other.hasJsonData()) {
+          bitField0_ |= 0x00000004;
+          jsonData_ = other.jsonData_;
+          
+        }
+        if (other.hasValidateCode()) {
+          bitField0_ |= 0x00000008;
+          validateCode_ = other.validateCode_;
+          
+        }
+        if (other.hasCheckCode()) {
+          bitField0_ |= 0x00000010;
+          checkCode_ = other.checkCode_;
+          
+        }
+        if (other.hasFlag()) {
+          setFlag(other.getFlag());
+        }
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.vine.vinemars.net.pb.EnrollMessage.AuthenticateUser parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.vine.vinemars.net.pb.EnrollMessage.AuthenticateUser) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // optional string mobile = 1;
+      private java.lang.Object mobile_ = "";
+      /**
+       * <code>optional string mobile = 1;</code>
+       *
+       * <pre>
+       *手机号
+       * </pre>
+       */
+      public boolean hasMobile() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional string mobile = 1;</code>
+       *
+       * <pre>
+       *手机号
+       * </pre>
+       */
+      public java.lang.String getMobile() {
+        java.lang.Object ref = mobile_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          mobile_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string mobile = 1;</code>
+       *
+       * <pre>
+       *手机号
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getMobileBytes() {
+        java.lang.Object ref = mobile_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          mobile_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string mobile = 1;</code>
+       *
+       * <pre>
+       *手机号
+       * </pre>
+       */
+      public Builder setMobile(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        mobile_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional string mobile = 1;</code>
+       *
+       * <pre>
+       *手机号
+       * </pre>
+       */
+      public Builder clearMobile() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        mobile_ = getDefaultInstance().getMobile();
+        
+        return this;
+      }
+      /**
+       * <code>optional string mobile = 1;</code>
+       *
+       * <pre>
+       *手机号
+       * </pre>
+       */
+      public Builder setMobileBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        mobile_ = value;
+        
+        return this;
+      }
+
+      // optional string email = 2;
+      private java.lang.Object email_ = "";
+      /**
+       * <code>optional string email = 2;</code>
+       *
+       * <pre>
+       *邮箱地址
+       * </pre>
+       */
+      public boolean hasEmail() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string email = 2;</code>
+       *
+       * <pre>
+       *邮箱地址
+       * </pre>
+       */
+      public java.lang.String getEmail() {
+        java.lang.Object ref = email_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          email_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string email = 2;</code>
+       *
+       * <pre>
+       *邮箱地址
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getEmailBytes() {
+        java.lang.Object ref = email_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          email_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string email = 2;</code>
+       *
+       * <pre>
+       *邮箱地址
+       * </pre>
+       */
+      public Builder setEmail(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        email_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional string email = 2;</code>
+       *
+       * <pre>
+       *邮箱地址
+       * </pre>
+       */
+      public Builder clearEmail() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        email_ = getDefaultInstance().getEmail();
+        
+        return this;
+      }
+      /**
+       * <code>optional string email = 2;</code>
+       *
+       * <pre>
+       *邮箱地址
+       * </pre>
+       */
+      public Builder setEmailBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        email_ = value;
+        
+        return this;
+      }
+
+      // optional string jsonData = 3;
+      private java.lang.Object jsonData_ = "";
+      /**
+       * <code>optional string jsonData = 3;</code>
+       *
+       * <pre>
+       *预留字段，用于其他身份验证信息
+       * </pre>
+       */
+      public boolean hasJsonData() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional string jsonData = 3;</code>
+       *
+       * <pre>
+       *预留字段，用于其他身份验证信息
+       * </pre>
+       */
+      public java.lang.String getJsonData() {
+        java.lang.Object ref = jsonData_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          jsonData_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string jsonData = 3;</code>
+       *
+       * <pre>
+       *预留字段，用于其他身份验证信息
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getJsonDataBytes() {
+        java.lang.Object ref = jsonData_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          jsonData_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string jsonData = 3;</code>
+       *
+       * <pre>
+       *预留字段，用于其他身份验证信息
+       * </pre>
+       */
+      public Builder setJsonData(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        jsonData_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional string jsonData = 3;</code>
+       *
+       * <pre>
+       *预留字段，用于其他身份验证信息
+       * </pre>
+       */
+      public Builder clearJsonData() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        jsonData_ = getDefaultInstance().getJsonData();
+        
+        return this;
+      }
+      /**
+       * <code>optional string jsonData = 3;</code>
+       *
+       * <pre>
+       *预留字段，用于其他身份验证信息
+       * </pre>
+       */
+      public Builder setJsonDataBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        jsonData_ = value;
+        
+        return this;
+      }
+
+      // optional string validateCode = 4;
+      private java.lang.Object validateCode_ = "";
+      /**
+       * <code>optional string validateCode = 4;</code>
+       *
+       * <pre>
+       *界面提交的随机校验码
+       * </pre>
+       */
+      public boolean hasValidateCode() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional string validateCode = 4;</code>
+       *
+       * <pre>
+       *界面提交的随机校验码
+       * </pre>
+       */
+      public java.lang.String getValidateCode() {
+        java.lang.Object ref = validateCode_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          validateCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string validateCode = 4;</code>
+       *
+       * <pre>
+       *界面提交的随机校验码
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getValidateCodeBytes() {
+        java.lang.Object ref = validateCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          validateCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string validateCode = 4;</code>
+       *
+       * <pre>
+       *界面提交的随机校验码
+       * </pre>
+       */
+      public Builder setValidateCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        validateCode_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional string validateCode = 4;</code>
+       *
+       * <pre>
+       *界面提交的随机校验码
+       * </pre>
+       */
+      public Builder clearValidateCode() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        validateCode_ = getDefaultInstance().getValidateCode();
+        
+        return this;
+      }
+      /**
+       * <code>optional string validateCode = 4;</code>
+       *
+       * <pre>
+       *界面提交的随机校验码
+       * </pre>
+       */
+      public Builder setValidateCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        validateCode_ = value;
+        
+        return this;
+      }
+
+      // optional string checkCode = 5;
+      private java.lang.Object checkCode_ = "";
+      /**
+       * <code>optional string checkCode = 5;</code>
+       *
+       * <pre>
+       *发给手机或者邮箱的验证码
+       * </pre>
+       */
+      public boolean hasCheckCode() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional string checkCode = 5;</code>
+       *
+       * <pre>
+       *发给手机或者邮箱的验证码
+       * </pre>
+       */
+      public java.lang.String getCheckCode() {
+        java.lang.Object ref = checkCode_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          checkCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string checkCode = 5;</code>
+       *
+       * <pre>
+       *发给手机或者邮箱的验证码
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getCheckCodeBytes() {
+        java.lang.Object ref = checkCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          checkCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string checkCode = 5;</code>
+       *
+       * <pre>
+       *发给手机或者邮箱的验证码
+       * </pre>
+       */
+      public Builder setCheckCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        checkCode_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional string checkCode = 5;</code>
+       *
+       * <pre>
+       *发给手机或者邮箱的验证码
+       * </pre>
+       */
+      public Builder clearCheckCode() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        checkCode_ = getDefaultInstance().getCheckCode();
+        
+        return this;
+      }
+      /**
+       * <code>optional string checkCode = 5;</code>
+       *
+       * <pre>
+       *发给手机或者邮箱的验证码
+       * </pre>
+       */
+      public Builder setCheckCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        checkCode_ = value;
+        
+        return this;
+      }
+
+      // optional int32 flag = 6;
+      private int flag_ ;
+      /**
+       * <code>optional int32 flag = 6;</code>
+       *
+       * <pre>
+       *身份标示  1：mobile，2：email，3：idcard，4：未定
+       * </pre>
+       */
+      public boolean hasFlag() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional int32 flag = 6;</code>
+       *
+       * <pre>
+       *身份标示  1：mobile，2：email，3：idcard，4：未定
+       * </pre>
+       */
+      public int getFlag() {
+        return flag_;
+      }
+      /**
+       * <code>optional int32 flag = 6;</code>
+       *
+       * <pre>
+       *身份标示  1：mobile，2：email，3：idcard，4：未定
+       * </pre>
+       */
+      public Builder setFlag(int value) {
+        bitField0_ |= 0x00000020;
+        flag_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional int32 flag = 6;</code>
+       *
+       * <pre>
+       *身份标示  1：mobile，2：email，3：idcard，4：未定
+       * </pre>
+       */
+      public Builder clearFlag() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        flag_ = 0;
+        
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:AuthenticateUser)
+    }
+
+    static {
+      defaultInstance = new AuthenticateUser(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:AuthenticateUser)
   }
 
 

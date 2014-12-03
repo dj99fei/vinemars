@@ -7,7 +7,10 @@ import android.graphics.Color;
 import android.graphics.Paint;
 
 import com.android.volley.VolleyError;
+import com.vine.vinemars.net.MyVolley;
 import com.vine.vinemars.net.NetworkRequestListener;
+import com.vine.vinemars.net.ResponseWrapper;
+import com.vine.vinemars.net.request.GetCaptchaRequest;
 
 import java.io.CharArrayWriter;
 import java.util.ArrayList;
@@ -26,9 +29,10 @@ public class TextCaptcha extends Captcha implements NetworkRequestListener<Strin
     }
 
     @Override
-    public void onResponse(String response) {
-        this.captchaText = response;
+    public void onResponse(ResponseWrapper<String> response) {
+
     }
+
 //	private int wordLength;
 	
 	public enum TextOptions{
@@ -104,7 +108,7 @@ public class TextCaptcha extends Captcha implements NetworkRequestListener<Strin
 	}
 
     public void refresh() {
-//        MyVolley.getRequestQueue().add(new )
+        MyVolley.getRequestQueue().add(new GetCaptchaRequest(this));
     }
 
 }

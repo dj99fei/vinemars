@@ -29,11 +29,17 @@
     <item type="id" name="btn_clear_new_password"/>
     <item type="id" name="et_user_name"/>
     <item type="id" name="layout_password"/>
+    <item type="id" name="layout_username"/>
+    <item type="id" name="layout_region"/>
     <item type="id" name="layout_captcha"/>
+    <item type="id" name="layout_checkcode"/>
     <item type="id" name="btn_clear_password"/>
     <item type="id" name="et_password"/>
+    <item type="id" name="et_region"/>
+    <item type="id" name="spinner_region"/>
     <item type="id" name="et_old_password"/>
     <item type="id" name="et_new_password"/>
+    <item type="id" name="text_region"/>
     <item type="id" name="tv_register"/>
     <item type="id" name="btn_login_with_sina_weibo"/>
 
@@ -42,6 +48,8 @@
     <item type="id" name="action_close"/>
     <item type="id" name="layout_signin"/>
     <item type="id" name="et_captcha"/>
+    <item type="id" name="et_checkcode"/>
+    <item type="id" name="btn_get_checkcode"/>
 
 
     <item type="id" name="calendar_view"/>
@@ -70,4 +78,6 @@
     <item type="id" name="layout_profile_tabs"/>
     <item type="id" name="layout_instruction_login"/>
     <item type="id" name="show_password"/>
+    <item type="id" name="listview"/>
+
 </resources>

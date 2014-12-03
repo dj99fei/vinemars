@@ -104,6 +104,7 @@
     <orderEntry type="library" exported="" name="appcompat-v7-21.0.0" level="project" />
     <orderEntry type="library" exported="" name="butterknife-5.1.2" level="project" />
     <orderEntry type="module" module-name="pullToRefreshViewPager" exported="" />
+    <orderEntry type="module" module-name="sMSSDK" exported="" />
   </component>
 </module>
 

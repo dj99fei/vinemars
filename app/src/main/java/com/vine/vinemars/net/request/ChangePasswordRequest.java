@@ -5,7 +5,7 @@ import com.android.volley.NetworkResponse;
 import com.vine.vinemars.net.HOpCodeEx;
 import com.vine.vinemars.net.NetworkRequestListener;
 import com.vine.vinemars.net.ParseError;
-import com.vine.vinemars.net.pb.EnrollPacket;
+import com.vine.vinemars.net.pb.EnrollMessage;
 
 /**
  * Created by chengfei on 14/10/29.
@@ -23,8 +23,8 @@ public class ChangePasswordRequest extends BaseRequest<Boolean> {
 
     @Override
     public byte[] getBody() throws AuthFailureError {
-        EnrollPacket.ResetPassword.Builder builder = EnrollPacket.ResetPassword.newBuilder();
-        builder.setCheckCode("");
+        EnrollMessage.ResetPassword.Builder builder = EnrollMessage.ResetPassword.newBuilder();
+        builder.setValidateCode("");
         builder.setNewPassword(newPassword);
         builder.setOldPassword(oldPassword);
         builder.setUserId("c21c3d193bd3440693fa1b3dfca5705b");

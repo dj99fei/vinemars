@@ -11,6 +11,7 @@ import com.vine.vinemars.net.AppHead;
 import com.vine.vinemars.net.NetworkRequestListener;
 import com.vine.vinemars.net.PackageHead;
 import com.vine.vinemars.net.ParseError;
+import com.vine.vinemars.net.ResponseWrapper;
 import com.vine.vinemars.utils.LogUtils;
 
 import java.util.HashMap;
@@ -19,7 +20,7 @@ import java.util.Map;
 /**
  * Created by chengfei on 14-10-13.
  */
-public abstract class BaseRequest<T> extends Request<T> {
+public abstract class BaseRequest<T> extends Request<ResponseWrapper<T>> {
     private static final String TAG = BaseRequest.class.getSimpleName();
 
     /**
@@ -34,7 +35,7 @@ public abstract class BaseRequest<T> extends Request<T> {
     protected NetworkRequestListener listener;
     protected int requestId;
 
-    public BaseRequest(String checkCode, int requestId, NetworkRequestListener listener) {
+    public BaseRequest(String checkCode, int requestId, NetworkRequestListener<ResponseWrapper<T>> listener) {
         super(Method.POST, Config.BASE_URL, listener);
         this.checkCode = checkCode;
         this.listener = listener;
@@ -56,14 +57,16 @@ public abstract class BaseRequest<T> extends Request<T> {
     }
 
     @Override
-    protected Response<T> parseNetworkResponse(NetworkResponse response) {
+    protected Response<ResponseWrapper<T>> parseNetworkResponse(NetworkResponse response) {
         Map<String, String> header = response.headers;
         for (Map.Entry<String, String> entry : header.entrySet() ) {
             LogUtils.d(TAG, "key = %s, value = %s" ,entry.getKey(), entry.getValue());
         }
-        if (successed(response)) {
+
+        PackageHead packageHead = parseHead(response);
+        if (successed(packageHead)) {
             try {
-                return Response.success(parse(response), HttpHeaderParser.parseCacheHeaders(response));
+                return Response.success(new ResponseWrapper<T>(packageHead, parse(response)), HttpHeaderParser.parseCacheHeaders(response));
             } catch (ParseError parseError) {
                 return Response.error(parseError);
             }
@@ -73,17 +76,21 @@ public abstract class BaseRequest<T> extends Request<T> {
     }
 
     @Override
-    protected void deliverResponse(T response) {
+    protected void deliverResponse(ResponseWrapper<T> response) {
         if (listener != null) {
             listener.onResponse(response);
         }
     }
 
-    protected boolean successed(NetworkResponse response) {
+    protected boolean successed(PackageHead packageHead) {
+        return packageHead.retCode == 1;
+    }
+
+    private PackageHead parseHead(NetworkResponse response) {
         Map<String, String> header = response.headers;
         String packetHeadStr = header.get("packetHead");
         PackageHead packageHead = new Gson().fromJson(packetHeadStr, PackageHead.class);
-        return packageHead.retCode == 1;
+        return packageHead;
     }
 
     abstract protected T parse(NetworkResponse response) throws ParseError;

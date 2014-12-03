@@ -1,11 +1,49 @@
 package com.vine.vinemars.net;
 //Auto Generate File, Do NOT Modify!!!!!!!!!!!!!!!
 public class HOpCodeEx extends HOpCode {
-	public static final int Enroll = 10001;
-	public static final int EnrollRet = 10002;
-	public static final int Logout = 10003;
-	public static final int UserInfoEdit = 10004;
-	public static final int ForgetPassword = 10005;
-	public static final int ResetPassword = 10006;
-
+    public static final int Enroll = 10001;
+    public static final int Logout = 10002;
+    public static final int ForgetPassword = 10003;
+    public static final int ResetPassword = 10004;
+    public static final int GetValidateCode = 10005;
+    public static final int GetValidateCodeRet = 10006;
+    public static final int RetrieveCheckCode = 10007;
+    public static final int RetrieveCheckCodeRet = 10008;
+    public static final int UpdateUserBasicInfo = 10009;
+    public static final int RetrieveUserBasicInfo = 10010;
+    public static final int RetrieveUserBasicInfoRet = 10011;
+    public static final int AuthenticateUser = 10012;
+    public static final int AddTopic = 12001;
+    public static final int DeleteTopic = 12002;
+    public static final int UpdateTopic = 12003;
+    public static final int ListPublicTopic = 12004;
+    public static final int ListTopicRet = 12005;
+    public static final int ListTopicByUid = 12006;
+    public static final int ListFriendTopic = 12007;
+    public static final int ListMyFavoriteTopic = 12008;
+    public static final int DoLike = 12009;
+    public static final int DoComment = 12010;
+    public static final int DoForward = 12011;
+    public static final int DoFavorite = 12012;
+    public static final int ListFriendRequest = 12013;
+    public static final int ListFriendRequestRet = 12014;
+    public static final int UpdateFriendRequest = 12015;
+    public static final int AddFriend = 12016;
+    public static final int DeleteFriend = 12017;
+    public static final int ListFriend = 12018;
+    public static final int ListFriendRet = 12019;
+    public static final int ListNotification = 12020;
+    public static final int ListNotificationRet = 12021;
+    public static final int UpdateNotification = 12022;
+    public static final int DeleteNotification = 12023;
+    public static final int AddLetter = 12024;
+    public static final int UpdateLetter = 12025;
+    public static final int DeleteLetter = 12026;
+    public static final int ListLetter = 12027;
+    public static final int ListLetterRet = 12028;
+    public static final int TopicObj = 12029;
+    public static final int FriendRequestObj = 12030;
+    public static final int NoticeObj = 12031;
+    public static final int LetterObj = 12032;
+    public static final int FriendObj = 12033;
 }
