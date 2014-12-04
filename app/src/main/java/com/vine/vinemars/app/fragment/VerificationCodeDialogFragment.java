@@ -1,5 +1,6 @@
 package com.vine.vinemars.app.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
@@ -15,7 +16,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.VolleyError;
+import com.vine.vinemars.MyApplication;
 import com.vine.vinemars.R;
+import com.vine.vinemars.app.MainActivity;
+import com.vine.vinemars.domain.User;
+import com.vine.vinemars.net.MyVolley;
+import com.vine.vinemars.net.NetworkRequestListener;
+import com.vine.vinemars.net.ResponseWrapper;
+import com.vine.vinemars.net.request.EnrollRequest;
 import com.vine.vinemars.utils.Constant;
 import com.vine.vinemars.utils.Validator;
 import com.vine.vinemars.view.CrossInEditTouchListener;
@@ -28,7 +37,7 @@ import cn.smssdk.SMSSDK;
 /**
  * Created by chengfei on 14/12/3.
  */
-public class VerificationCodeDialogFragment extends DialogFragment implements View.OnClickListener {
+public class VerificationCodeDialogFragment extends DialogFragment implements View.OnClickListener, NetworkRequestListener<User> {
 
     private String phoneNumber;
     private String country;
@@ -136,6 +145,8 @@ public class VerificationCodeDialogFragment extends DialogFragment implements Vi
                         Toast.makeText(getActivity(), "verify successed", Toast.LENGTH_LONG).show();
                     }
                 });
+                EnrollRequest request = new EnrollRequest(MyApplication.getUser(), "", VerificationCodeDialogFragment.this);
+                MyVolley.getRequestQueue().add(request);
             }
         }
     };
@@ -144,5 +155,18 @@ public class VerificationCodeDialogFragment extends DialogFragment implements Vi
     public void onDestroyView() {
         super.onDestroyView();
         SMSSDK.unregisterEventHandler(eventHandler);
+    }
+
+    @Override
+    public void onErrorResponse(VolleyError error) {
+        Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onResponse(ResponseWrapper<User> response) {
+        User user = response.entity;
+        user.save();
+        getActivity().startActivity(new Intent(getActivity(), MainActivity.class));
+        getActivity().finish();
     }
 }

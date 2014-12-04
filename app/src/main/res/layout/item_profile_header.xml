@@ -37,6 +37,12 @@
                 android:textAppearance="@style/TextAppearance.Large.CardTitle"/>
 
             <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/background_dark"
+                android:layout_marginTop="@dimen/layout_inner_padding_horizontal_small"
+                android:id="@id/profile_signature"/>
+            <TextView
                 android:id="@id/profile_abstract"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -113,9 +113,13 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.BaseProf
                         RoundedBitmapDrawableFactory.create(res, src);
                 dr.setCornerRadius(Math.max(src.getWidth(), src.getHeight()) / 2.0f);
                 headerViewHolder.avatarImage.setImageDrawable(dr);
+                headerViewHolder.signatrueText.setText(user.signature);
+                headerViewHolder.nickName.setText(user.nickname);
                 break;
             case TYPE_BASIC_INFO:
                 viewHolder.titleText.setText(R.string.basic_info);
+                BasicInfoViewHolder basicInfoViewHolder = (BasicInfoViewHolder) viewHolder;
+                basicInfoViewHolder.genderText.setText(user.getGender());
                 break;
             case TYPE_WORK:
                 viewHolder.titleText.setText(R.string.work);
@@ -160,7 +164,6 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.BaseProf
         public BaseProfileViewHolder(View itemView) {
             super(itemView);
             ButterKnife.inject(this, itemView);
-//            titleText = (TextView) itemView.findViewById(R.id.item_profile_title);
 
         }
 
@@ -202,10 +205,13 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.BaseProf
 
         @InjectView(R.id.profile_avatar)
         protected ImageView avatarImage;
+        @InjectView(R.id.profile_signature)
+        protected TextView signatrueText;
+        @InjectView(R.id.profile_username)
+        protected TextView nickName;
 
         public HeaderViewHolder(View itemView) {
             super(itemView);
-//            ButterKnife.inject(this, itemView);
         }
     }
 

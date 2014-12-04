@@ -11,10 +11,10 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
+import com.vine.vinemars.MyApplication;
 import com.vine.vinemars.R;
 import com.vine.vinemars.adapter.ProfileAdapter;
 import com.vine.vinemars.bus.ProfileHeaderMessuredEvent;
-import com.vine.vinemars.domain.User;
 import com.vine.vinemars.net.NetworkRequestListener;
 import com.vine.vinemars.view.VerticalScrollDetctor;
 
@@ -55,7 +55,7 @@ public class ProfileFragment extends BaseFragment implements NetworkRequestListe
         EventBus.getDefault().register(this);
         final LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(new ProfileAdapter(new User()));
+        recyclerView.setAdapter(new ProfileAdapter(MyApplication.getUser()));
 //        headerHeight = getResources().getDimensionPixelOffset(R.dimen.profile_cover_height) + getResources().getDimensionPixelOffset(R.dimen.profile_header_tabs_height);
         tabsHeight = getResources().getDimensionPixelOffset(R.dimen.profile_header_tabs_height);
         tabRadioGroup.check(R.id.profile_tabs_about);

@@ -27,7 +27,7 @@ public abstract class BaseRequest<T> extends Request<ResponseWrapper<T>> {
      * 网络请求配置信息
      */
     public static final class Config {
-        public static final String BASE_URL = "http://192.168.1.107:8081/vineapp/server";
+        public static final String BASE_URL = "http://192.168.1.104:8081/vineapp/server";
     }
 
 
@@ -52,7 +52,7 @@ public abstract class BaseRequest<T> extends Request<ResponseWrapper<T>> {
         Map<String, String> headers = new HashMap<String, String>();
         PackageHead packageHead = new PackageHead(requestId);
         headers.put("packetHead", new Gson().toJson(packageHead));
-        headers.put("appHead", new Gson().toJson(new AppHead("1")));
+        headers.put("appHead", new Gson().toJson(new AppHead()));
         return headers;
     }
 
@@ -63,10 +63,11 @@ public abstract class BaseRequest<T> extends Request<ResponseWrapper<T>> {
             LogUtils.d(TAG, "key = %s, value = %s" ,entry.getKey(), entry.getValue());
         }
 
-        PackageHead packageHead = parseHead(response);
+        PackageHead packageHead = parsePackageHead(response);
+        AppHead appHead = parseAppHead(response);
         if (successed(packageHead)) {
             try {
-                return Response.success(new ResponseWrapper<T>(packageHead, parse(response)), HttpHeaderParser.parseCacheHeaders(response));
+                return Response.success(new ResponseWrapper<T>(packageHead, parse(appHead, response)), HttpHeaderParser.parseCacheHeaders(response));
             } catch (ParseError parseError) {
                 return Response.error(parseError);
             }
@@ -86,12 +87,19 @@ public abstract class BaseRequest<T> extends Request<ResponseWrapper<T>> {
         return packageHead.retCode == 1;
     }
 
-    private PackageHead parseHead(NetworkResponse response) {
+    private PackageHead parsePackageHead(NetworkResponse response) {
         Map<String, String> header = response.headers;
         String packetHeadStr = header.get("packetHead");
         PackageHead packageHead = new Gson().fromJson(packetHeadStr, PackageHead.class);
         return packageHead;
     }
 
-    abstract protected T parse(NetworkResponse response) throws ParseError;
+    private AppHead parseAppHead(NetworkResponse response) {
+        Map<String, String> header = response.headers;
+        String appHeadStr = header.get("appHead");
+        AppHead appHead = new Gson().fromJson(appHeadStr, AppHead.class);
+        return appHead;
+    }
+
+    abstract protected T parse(AppHead appHead, NetworkResponse response) throws ParseError;
 }

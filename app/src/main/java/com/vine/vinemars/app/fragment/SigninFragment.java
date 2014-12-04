@@ -27,6 +27,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.volley.VolleyError;
+import com.vine.vinemars.MyApplication;
 import com.vine.vinemars.R;
 import com.vine.vinemars.bus.RegionSelectedEvent;
 import com.vine.vinemars.domain.User;
@@ -225,12 +226,13 @@ public class SignInFragment extends DialogFragment implements View.OnFocusChange
                         .notEmpty(password, R.string.password)
                         .isLengthValid(email, getResources().getInteger(R.integer.password_min_length), getResources().getInteger(R.integer.password_max_length), R.string.password);
                 User user = new User();
-                user.email = email;
+                user.username = email;
                 user.password = password;
 //                MyVolley.getRequestQueue().add(new EnrollRequest(user, "", this));
 //                dismiss();
                 country = country.substring(1, country.length());
                 SMSSDK.getVerificationCode(country, email);
+                MyApplication.setUser(user);
 //                EventBus.getDefault().post(new LoginEvent(true));
 //                getActivity().startActivity(new Intent(getActivity(), MainActivity.class));
                PhoneConfirmationDialogFragment.newInstance(country, email).show(getChildFragmentManager(), null);

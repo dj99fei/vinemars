@@ -7,7 +7,6 @@ public class PackageHead {
     public int packetId;
     public long stamp;
     public int retCode;
-    public int flag;
 
     public PackageHead(int packetId) {
         this.packetId = packetId;
