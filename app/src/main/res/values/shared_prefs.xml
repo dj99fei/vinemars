@@ -4,6 +4,7 @@
     <string name="module_default">@string/app_name</string>
     <string name="key_poped_version_code">key_poped_version_code</string>
     <string name="key_uuid">key_uuid</string>
-    <string name="key_user_ifo">user_info</string>
+    <string name="key_user_info">user_info</string>
+    <string name="module_user">user</string>
 
 </resources>

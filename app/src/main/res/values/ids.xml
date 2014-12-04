@@ -62,6 +62,7 @@
     <item type="id" name="layout_profile_avatar"/>
     <item type="id" name="profile_cover"/>
     <item type="id" name="profile_abstract"/>
+    <item type="id" name="profile_signature"/>
     <item type="id" name="layout_profile_abstract"/>
     <item type="id" name="profile_username"/>
     <item type="id" name="profile_lives"/>

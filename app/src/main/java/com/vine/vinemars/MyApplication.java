@@ -24,6 +24,7 @@ public class MyApplication extends Application implements NetworkRequestListener
         myApp = this;
         MyVolley.init(this);
         SMSSDK.initSDK(this, "47dc764dab0a", "bc1fe7c2bc7cfc4a83e2f03c308b9152");
+        user = User.loadFromLocal();
     }
 
     public static MyApplication get() {
@@ -50,4 +51,9 @@ public class MyApplication extends Application implements NetworkRequestListener
     @Override
     public void onResponse(Object response) {
     }
+
+    public static User getUser() {
+        return user;
+    }
+
 }
