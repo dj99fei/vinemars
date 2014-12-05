@@ -197,13 +197,9 @@ public class InstructionFragment extends BaseFragment implements ViewPager.OnPag
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btn_signin) {
-            SignInFragment.newInstance().show(getFragmentManager(), "signin");
-//            SigninFragment.newInstance(bitmaps[pager.getCurrentItem()]).show(getFragmentManager(), "signin");
-//                getActivity().startActivity(new Intent(getActivity(), MainActivity.class));
-//                getActivity().finish();
-//                SharedPreferencesHelper.getInstance().withModule(R.string.module_default).withKey(R.string.key_first_open).setData(boolean.class, false).commit();
+            SignInfragment.newInstance().show(getChildFragmentManager(), "signin");
         } else if (v.getId() == R.id.btn_signup) {
-            SignupFragment.newInstance().show(getFragmentManager(), "signup");
+            SignupFragment.newInstance().show(getChildFragmentManager(), "signup");
         }
     }
 

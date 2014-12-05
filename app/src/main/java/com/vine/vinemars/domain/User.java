@@ -24,7 +24,6 @@ public class User implements Parcelable {
     public int gender;
     public String signature;
     public int GENDER_FEMALE = 0;
-    public int GENDER_MALE = 1;
 
     public User() {
     }

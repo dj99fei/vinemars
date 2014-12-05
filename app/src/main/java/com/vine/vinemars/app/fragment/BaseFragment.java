@@ -9,7 +9,6 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
@@ -150,17 +149,12 @@ public abstract class BaseFragment extends Fragment implements BaseFragmentFeatu
 
     @Override
     public BaseActivityFeature getActivityFeature() {
-        return fragmentDelegate.getActivityFeature();
+        return (BaseActivityFeature) getActivity();
     }
 
     @Override
     public int getFragmentContainerId() {
         return R.id.content_frame;
-    }
-
-    @Override
-    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-        return fragmentDelegate.onFling(e1, e2, velocityX, velocityY);
     }
 
     @Override

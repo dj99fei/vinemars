@@ -27,7 +27,7 @@ public abstract class BaseRequest<T> extends Request<ResponseWrapper<T>> {
      * 网络请求配置信息
      */
     public static final class Config {
-        public static final String BASE_URL = "http://192.168.1.104:8081/vineapp/server";
+        public static final String BASE_URL = "http://211.149.228.55:8082/vineapp/server";
     }
 
 

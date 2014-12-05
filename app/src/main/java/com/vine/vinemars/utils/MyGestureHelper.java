@@ -44,7 +44,8 @@ public class MyGestureHelper implements OnGestureListener, OnTouchListener {
 
     @Override
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-	return activity.onFling(e1, e2, velocityX, velocityY);
+//	return activity.onFling(e1, e2, velocityX, velocityY);
+        return false;
     }
 
     @Override

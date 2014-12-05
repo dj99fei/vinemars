@@ -20,10 +20,16 @@ public class EnrollRequest extends BaseRequest<User> {
 
     private static final String TAG = EnrollRequest.class.getSimpleName();
     private User user;
-    public EnrollRequest(User user,String checkCode, NetworkRequestListener listener) {
+    private EnrollMessage.LoginType loginType;
+    public EnrollRequest(User user, String checkCode, NetworkRequestListener listener) {
         super(checkCode, HOpCodeEx.Enroll, listener);
         this.user = user;
         setRetryPolicy(new DefaultRetryPolicy(DefaultRetryPolicy.DEFAULT_TIMEOUT_MS, 0, 0));
+    }
+
+    public EnrollRequest(User user, EnrollMessage.LoginType type, NetworkRequestListener listener) {
+        this(user, "", listener);
+        this.loginType = type;
     }
 
     @Override
@@ -32,7 +38,7 @@ public class EnrollRequest extends BaseRequest<User> {
 //        builder.setEmail(user.email);
         builder.setMobile(user.username);
         builder.setPassword(user.password);
-        builder.setLoginType(EnrollMessage.LoginType.ENROLL);
+        builder.setLoginType(loginType);
 //        builder.setCheckCode(checkCode);
         return builder.build().toByteArray();
     }

@@ -3,7 +3,6 @@ package com.vine.vinemars.app.fragment;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -25,9 +24,9 @@ import butterknife.ButterKnife;
  */
 public class BaseFragmentDelegate implements BaseFragmentFeature, FragmentLifecycleCabllbacks {
 
-    private BaseFragment fragment;
+    private BaseFragmentFeature fragment;
     Bundle bundle = new Bundle();
-    private BaseActivity activity;
+    private BaseActivityFeature activity;
     private Crossfader crossfader;
     private boolean destroyed;
     private static final List<String> flipToBackMask;
@@ -39,9 +38,9 @@ public class BaseFragmentDelegate implements BaseFragmentFeature, FragmentLifecy
 //        flipToBackMask.add(MainActivity.class.getName());
 //        flipToBackMask.add(EntryActivity.class.getName());
     }
-    public BaseFragmentDelegate(BaseFragment fragment) {
+    public BaseFragmentDelegate(BaseFragmentFeature fragment) {
         this.fragment = fragment;
-        this.activity = (BaseActivity) fragment.getActivity();
+        this.activity = (BaseActivity) fragment.getActivityFeature();
         this.crossfader = new Crossfader(this);
     }
 
@@ -63,12 +62,6 @@ public class BaseFragmentDelegate implements BaseFragmentFeature, FragmentLifecy
         if (savedInstanceState != null) {
             bundle = savedInstanceState.getBundle(Constant.KEY_RESULT);
             bundle = bundle == null ? new Bundle() : bundle;
-        }
-        if (fragment != null && !flipToBackMask.contains(activity.getComponentName().getClassName())) {
-            View v = fragment.getView();
-            if (v != null) {
-//                MyGestureHelper.newInstance(fragment, v);
-            }
         }
         ButterKnife.inject(fragment, view);
     }
@@ -165,20 +158,20 @@ public class BaseFragmentDelegate implements BaseFragmentFeature, FragmentLifecy
         return R.id.content_frame;
     }
 
-    @Override
-    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-        final int GESTURE_MOVE_X = 200;
-        if (e2 == null || e1 == null) {
-            return false;
-        }
-        if (e2.getX() - e1.getX() > GESTURE_MOVE_X && Math.abs(e2.getY() - e1.getY()) < GESTURE_MOVE_X) {
-            if (!flipToBackMask.contains(activity.getComponentName().getClassName())) {
-                activity.finish();
-            }
-            return true;
-        }
-        return false;
-    }
+//    @Override
+//    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+//        final int GESTURE_MOVE_X = 200;
+//        if (e2 == null || e1 == null) {
+//            return false;
+//        }
+//        if (e2.getX() - e1.getX() > GESTURE_MOVE_X && Math.abs(e2.getY() - e1.getY()) < GESTURE_MOVE_X) {
+//            if (!flipToBackMask.contains(activity.getComponentName().getClassName())) {
+//                activity.finish();
+//            }
+//            return true;
+//        }
+//        return false;
+//    }
 
     @Override
     public boolean hasDestroyed() {

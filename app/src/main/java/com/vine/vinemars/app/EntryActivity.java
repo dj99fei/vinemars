@@ -1,8 +1,10 @@
 package com.vine.vinemars.app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.vine.vinemars.MyApplication;
 import com.vine.vinemars.R;
 import com.vine.vinemars.app.fragment.InstructionFragment;
 import com.vine.vinemars.app.fragment.SplashFragment;
@@ -28,12 +30,13 @@ public class EntryActivity extends BaseActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+
+                if (MyApplication.isSignined()) {
+                    startActivity(new Intent(EntryActivity.this, MainActivity.class));
+                    finish();
+                } else {
                     getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new InstructionFragment()).disallowAddToBackStack().commit();
-//                if (spHelper.get(boolean.class, true)) {
-//                } else {
-//                    startActivity(new Intent(EntryActivity.this, MainActivity.class));
-//                    finish();
-//                }
+                }
             }
         }, 2000);
     }
