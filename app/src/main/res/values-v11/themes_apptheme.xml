@@ -7,7 +7,7 @@
 
     <style name="_AppTheme" parent="Theme.Actionbar">
 
-        <item name="colorPrimary">@drawable/ab_background_textured_actionbar</item>
+        <!--<item name="colorPrimary">@drawable/ab_background_textured_actionbar</item>-->
         <item name="android:windowBackground">@color/bg</item>
         <item name="android:editTextBackground">@drawable/apptheme_edit_text_holo_light</item>
         <item name="android:textColorHighlight">#99cc0000</item>
