@@ -33,7 +33,6 @@ public class SignInfragment extends SignupFragment {
         super.onViewCreated(view, savedInstanceState);
         signUpView.setOnClickListener(this);
     }
-
     @Override
     protected EnrollMessage.LoginType getLoginType() {
         return EnrollMessage.LoginType.LOGIN;
