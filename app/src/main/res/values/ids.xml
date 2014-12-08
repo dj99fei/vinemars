@@ -85,5 +85,6 @@
     <item type="id" name="text_verification_code_des"/>
     <item type="id" name="phone_number"/>
     <item type="id" name="edit_code"/>
+    <item type="id" name="drawer_layout"/>
 
 </resources>

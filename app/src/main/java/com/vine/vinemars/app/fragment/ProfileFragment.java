@@ -4,10 +4,8 @@ import android.os.Bundle;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
@@ -16,7 +14,6 @@ import com.vine.vinemars.R;
 import com.vine.vinemars.adapter.ProfileAdapter;
 import com.vine.vinemars.bus.ProfileHeaderMessuredEvent;
 import com.vine.vinemars.net.NetworkRequestListener;
-import com.vine.vinemars.view.VerticalScrollDetctor;
 
 import butterknife.InjectView;
 import de.greenrobot.event.EventBus;
@@ -29,10 +26,6 @@ public class ProfileFragment extends BaseFragment implements NetworkRequestListe
 
     @InjectView(R.id.list)
     protected RecyclerView recyclerView;
-    @InjectView(R.id.layout_profile_tabs)
-    protected View profileTabsView;
-    @InjectView(R.id.profile_tabs)
-    protected RadioGroup tabRadioGroup;
     private int headerHeight;
     private int tabsHeight;
 
@@ -58,24 +51,6 @@ public class ProfileFragment extends BaseFragment implements NetworkRequestListe
         recyclerView.setAdapter(new ProfileAdapter(MyApplication.getUser()));
 //        headerHeight = getResources().getDimensionPixelOffset(R.dimen.profile_cover_height) + getResources().getDimensionPixelOffset(R.dimen.profile_header_tabs_height);
         tabsHeight = getResources().getDimensionPixelOffset(R.dimen.profile_header_tabs_height);
-        tabRadioGroup.check(R.id.profile_tabs_about);
-        final GestureDetector gestureDetector = new GestureDetector(new VerticalScrollDetctor());
-        for (int i = 0; i < tabRadioGroup.getChildCount(); i++) {
-//            tabRadioGroup.getChildAt(i).setOnTouchListener(new View.OnTouchListener() {
-//                @Override
-//                public boolean onTouch(View view, MotionEvent motionEvent) {
-//                    if (gestureDetector.onTouchEvent(motionEvent)) {
-//                        return recyclerView.onTouchEvent(motionEvent);
-//                    }
-//                    view.onTouchEve Ont(motionEvent);
-////
-//                    return true;
-//                }
-//            });
-            tabRadioGroup.getChildAt(i).getParent().requestDisallowInterceptTouchEvent(false);
-//            tabRadioGroup.getChildAt(i).setOnTouchListener(new MyTouchListener());
-        }
-        tabRadioGroup.setOnTouchListener(new MyTouchListener());
         recyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
@@ -85,12 +60,7 @@ public class ProfileFragment extends BaseFragment implements NetworkRequestListe
                 if (layoutManager.findFirstVisibleItemPosition() == 0) {
                     ViewCompat.setTranslationY( header.findViewById(R.id.profile_cover), -header.getTop() / 2);
                 }
-                if (layoutManager.findFirstVisibleItemPosition() > 0) {
-                    ViewCompat.setTranslationY(profileTabsView, 0);
-                    return;
-                }
                 int top = header.getTop();
-                translateTabs(top);
             }
 
             @Override
@@ -107,31 +77,9 @@ public class ProfileFragment extends BaseFragment implements NetworkRequestListe
 
         @Override
         public boolean onTouch(View view, MotionEvent motionEvent) {
-//            switch (motionEvent.getAction()) {
-//                case MotionEvent.ACTION_DOWN:
-//                    xDistance = yDistance = 0f;
-//                    lastX = motionEvent.getX();
-//                    lastY = motionEvent.getY();
-//                    break;
-//                case MotionEvent.ACTION_MOVE:
-//                    final float curX = motionEvent.getX();
-//                    final float curY = motionEvent.getY();
-//                    xDistance += Math.abs(curX - lastX);
-//                    yDistance += Math.abs(curY - lastY);
-//                    lastX = curX;
-//                    lastY = curY;
-//                    if(xDistance < yDistance && yDistance > 20)
-//                        return recyclerView.onTouchEvent(motionEvent);
-//            }
-//            return view.onTouchEvent(motionEvent);
             return recyclerView.onTouchEvent(motionEvent);
 
         }
-    }
-
-    private void translateTabs(int top) {
-        int delta = headerHeight - tabsHeight;
-        ViewCompat.setTranslationY(profileTabsView, Math.max(0, delta + top));
     }
 
     // TODO: Load data from server
@@ -141,10 +89,6 @@ public class ProfileFragment extends BaseFragment implements NetworkRequestListe
 
     @Override
     public void onClick(View v) {
-//        if (v.getId() == R.id.change_password) {
-//            startActivity(new Intent(getActivity(), ChangePasswordActivity.class));
-//            MyVolley.getRequestQueue().add(new ChangePasswordRequest(this));
-//        }
     }
 
     @Override
@@ -159,7 +103,6 @@ public class ProfileFragment extends BaseFragment implements NetworkRequestListe
 
     public void onEventMainThread(ProfileHeaderMessuredEvent event) {
         headerHeight = event.getHeight();
-        translateTabs(0);
     }
 
     @Override
@@ -168,3 +111,4 @@ public class ProfileFragment extends BaseFragment implements NetworkRequestListe
         EventBus.getDefault().unregister(this);
     }
 }
+

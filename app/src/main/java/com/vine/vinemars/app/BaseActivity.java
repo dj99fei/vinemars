@@ -13,8 +13,6 @@ import com.google.analytics.tracking.android.EasyTracker;
 import com.vine.vinemars.app.fragment.UpdateDialogFragment;
 import com.vine.vinemars.utils.CheckUpdateHelper;
 
-import butterknife.ButterKnife;
-
 /**
  * Created by chengfei on 14-9-22.
  */
@@ -25,7 +23,6 @@ public class BaseActivity extends ActionBarActivity implements BaseActivityFeatu
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ButterKnife.inject(this);
         actionBar = getSupportActionBar();
         if (CheckUpdateHelper.getInstance().needToNotify()) {
             UpdateDialogFragment fragment = UpdateDialogFragment.newInstance();

@@ -39,8 +39,8 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.BaseProf
     private static final int TYPE_EDUCATION = 10;
     private static final int TYPE_PLACE = 11;
     private static final int TYPE_LINKS = 20;
-    private static final int TYPE_SET[] = new int[]{TYPE_HEADER, TYPE_BASIC_INFO, TYPE_WORK,
-            TYPE_EDUCATION, TYPE_PLACE, TYPE_LINKS};
+    private static final int TYPE_SET[] = new int[]{TYPE_HEADER, TYPE_BASIC_INFO,/* TYPE_WORK,
+            TYPE_EDUCATION, TYPE_PLACE, */TYPE_LINKS};
 
     private static final int TYPE_COUNT = TYPE_SET.length;
     private LayoutInflater layoutInflater;

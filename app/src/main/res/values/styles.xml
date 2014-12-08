@@ -152,10 +152,10 @@
         <item name="android:windowEnterAnimation">@anim/push_down_in</item>
         <item name="android:windowExitAnimation">@anim/push_down_out</item>
     </style>
-    <style name="ActionBarThemeOverlay">
-        <item name="android:background">@drawable/ab_background_textured_actionbar</item>
-        <item name="android:textColorPrimary">#fff</item>
-        <item name="colorControlNormal">#ffff</item>
-        <item name="colorControlHighlight">#3fff</item>
+    <style name="Theme.Toolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:background">?attr/colorPrimary</item>
+    </style>
+    <style name="Theme.ToolbarPopup" parent="ThemeOverlay.AppCompat.Dark">
+        <item name="android:background">@android:color/white</item>
     </style>
 </resources>
