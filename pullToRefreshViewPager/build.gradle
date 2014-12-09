@@ -5,14 +5,14 @@ android {
     buildToolsVersion '21.1.1'
 
     defaultConfig {
-        applicationId "com.handmark.pulltorefresh.extras.viewpager"
+//        applicationId "com.handmark.pulltorefresh.extras.viewpager"
         minSdkVersion 4
-        targetSdkVersion 20
+        targetSdkVersion 21
     }
 
     buildTypes {
         release {
-            runProguard false
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
@@ -20,5 +20,5 @@ android {
 
 dependencies {
     compile project(':library')
-    compile 'com.android.support:support-v4:20.+'
+    compile 'com.android.support:support-v4:21.+'
 }
