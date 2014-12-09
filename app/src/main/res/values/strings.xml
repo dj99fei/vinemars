@@ -103,7 +103,6 @@
     <string name="invalid_username_password">Invalid account or password. Please enter again</string>
     <!-- server error end -->
 
-<<<<<<< HEAD
     <!-- Feedback  page-->
     <string name="feedback_label">Feedback and Suggestions</string>
     <string name="feedback_hint">Please help us improve it !</string>
@@ -111,10 +110,8 @@
     <string name="feedback_contact_hint">please leave your contacts(such as email,mobile or other contacts.)</string>
     <string name="feedback_button_label">Submit</string>
     <!-- Feedback  page end-->
-=======
     <string name="open">Open</string>
     <string name="close">Close</string>
->>>>>>> ee4444c6972b97b76019e5256799e27d33d1424f
 
 </resources>
 
