@@ -8,7 +8,43 @@
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:fillViewport="false"
+            android:orientation="vertical"
             >
+    <TextView
+        android:id="@id/lable_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.Large"
+        android:text="@string/feedback_label"/>
 
+    <EditText
+        android:id="@id/feedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.Large"
+        android:hint="@string/feedback"/>
+
+
+    <TextView
+        android:id="@id/lable_feedback_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.Large"
+        android:text="@string/feedback_contact_label"/>
+    <EditText
+        android:id="@id/feedback_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.Large"
+        android:hint="@string/feedback_contact"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@id/btn_feedback_submit"
+        style="@style/ButtonAppTheme"
+        android:background="@drawable/apptheme_btn_default_holo_light"
+        android:text="@string/feedback_button_label"/>
 
 </RelativeLayout>
