@@ -104,6 +104,13 @@
     <string name="invalid_username_password">Invalid account or password. Please enter again</string>
     <!-- server error end -->
 
+    <!-- Feedback  page-->
+    <string name="feedback_label">Feedback and Suggestions</string>
+    <string name="feedback_hint">Please help us improve it !</string>
+    <string name="feedback_contact_label">Your contacts</string>
+    <string name="feedback_contact_hint">please leave your contacts(such as email,mobile or other contacts.)</string>
+    <string name="feedback_button_label">Submit</string>
+    <!-- Feedback  page end-->
 
 </resources>
 

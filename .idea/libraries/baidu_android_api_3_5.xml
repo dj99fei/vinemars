@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="baidu_android_api_3_5">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/app/libs/baidu_android_api_3_5.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
