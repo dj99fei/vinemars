@@ -12,5 +12,8 @@
     <color name="button_color">@color/green</color>
     <color name="gray">#ff999999</color>
     <color name="green">#ff5cbc7d</color>
-    <color name="primary">#99cc0a0f</color>
+    <color name="primary">#F44336</color>
+    <color name="colorPrimary">#F44336</color>
+    <color name="colorPrimaryDark">#D32F2F</color>
+    <color name="colorAccent">#C62828</color>
 </resources>

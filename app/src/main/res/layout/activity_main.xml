@@ -1,23 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical" >
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <FrameLayout
-        android:id="@id/content_frame"
+    <android.support.v7.widget.Toolbar
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@android:id/tabhost"
-        android:paddingBottom="@dimen/tab_height"
-         />
+        android:layout_height="?attr/actionBarSize"
+        app:theme="@style/Theme.Toolbar"
+        />
 
-    <android.support.v4.app.FragmentTabHost
-        android:id="@id/tabhost"
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" >
-    </android.support.v4.app.FragmentTabHost>
+        android:layout_height="match_parent">
 
+        <!-- The main content view -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </RelativeLayout>
 
-</RelativeLayout>
+        <!-- The navigation drawer -->
+        <fragment
+            android:id="@+id/navigation_drawer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            class="com.vine.vinemars.app.fragment.ProfileFragment"/>
+    </android.support.v4.widget.DrawerLayout>
+
+</LinearLayout>

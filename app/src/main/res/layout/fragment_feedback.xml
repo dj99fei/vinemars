@@ -8,7 +8,7 @@
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:fillViewport="false"
-            android:gravity="center_vertical"
+            android:orientation="vertical"
             >
     <TextView
         android:id="@id/lable_feedback"

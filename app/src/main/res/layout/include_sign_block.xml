@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
+<LinearLayout
     android:id="@id/layout_signin"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="@dimen/layout_inner_padding_horizontal_small"
+    android:theme="@style/AppTheme"
     android:layout_marginRight="@dimen/layout_inner_padding_horizontal_small"
     android:layout_marginTop="@dimen/layout_padding_vertical"
     >
@@ -22,9 +23,8 @@
             android:layout_marginTop="@dimen/layout_inner_padding_vertical_small"
             >
 
-            <AutoCompleteTextView
+            <EditText
                 android:id="@+id/et_user_name"
-                style="@style/EditTextAppTheme"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/edit_height"
                 android:hint="@string/hint_username"
@@ -44,9 +44,8 @@
             android:gravity="bottom"
             >
 
-            <AutoCompleteTextView
+            <EditText
                 android:id="@id/et_password"
-                style="@style/EditTextAppTheme"
                 android:layout_width="@dimen/edit_passoword_min_width"
                 android:layout_height="match_parent"
                 android:hint="@string/hint_password"
@@ -58,7 +57,6 @@
 
             <CheckBox
                 android:id="@id/show_password"
-                style="@style/CheckBoxAppTheme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@id/et_password"
@@ -80,4 +78,4 @@
 
     </RelativeLayout>
 
-</android.support.v7.widget.CardView>
+</LinearLayout>
