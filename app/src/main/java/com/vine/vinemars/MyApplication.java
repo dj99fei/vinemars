@@ -3,6 +3,7 @@ package com.vine.vinemars;
 import android.app.Application;
 
 import com.android.volley.VolleyError;
+import com.vine.vinemars.domain.Feedback;
 import com.vine.vinemars.domain.User;
 import com.vine.vinemars.net.MyVolley;
 import com.vine.vinemars.net.NetworkRequestListener;
@@ -17,6 +18,7 @@ import cn.smssdk.SMSSDK;
 public class MyApplication extends Application implements NetworkRequestListener {
     static MyApplication myApp;
     static User user;
+    static Feedback feedback;
 
     @Override
     public void onCreate() {
@@ -25,6 +27,7 @@ public class MyApplication extends Application implements NetworkRequestListener
         MyVolley.init(this);
         SMSSDK.initSDK(this, "47dc764dab0a", "bc1fe7c2bc7cfc4a83e2f03c308b9152");
         user = User.loadFromLocal();
+        feedback = Feedback.loadFromLocal();
     }
 
     public static MyApplication get() {
@@ -55,5 +58,10 @@ public class MyApplication extends Application implements NetworkRequestListener
     public static User getUser() {
         return user;
     }
+
+    public static void setFeedback(Feedback feedback) {
+        MyApplication.feedback = feedback;
+    }
+    public static Feedback getFeedback() {return  feedback;}
 
 }

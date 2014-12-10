@@ -46,4 +46,6 @@ public class HOpCodeEx extends HOpCode {
     public static final int NoticeObj = 12031;
     public static final int LetterObj = 12032;
     public static final int FriendObj = 12033;
+
+    public static final int PostFeedback = 13001;
 }
