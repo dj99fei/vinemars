@@ -87,4 +87,6 @@
     <item type="id" name="edit_code"/>
     <item type="id" name="drawer_layout"/>
 
+    <item type="id" name="action_feedback"/>
+
 </resources>
