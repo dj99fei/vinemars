@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,14 +17,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/feedback_label"
+        android:layout_weight="0"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
         android:textAppearance="@style/TextAppearance.Large"/>
 
     <EditText
         android:id="@+id/feedback"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.Large"/>
-        <!--android:hint="@string/feedback"-->
+        android:hint="@string/feedback_hint"
+        android:lines="3"/>
+
+        <!---->android:textAppearance="@style/TextAppearance.Large"
+    <!---->
 
 
     <TextView
@@ -32,22 +38,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/feedback_contact_label"
+        android:textStyle="bold"
         android:textAppearance="@style/TextAppearance.Large"/>
 
     <EditText
         android:id="@+id/feedback_contact"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.Large"/>
-        <!--android:hint="@string/feedback_contact"-->
+        android:textAppearance="@style/TextAppearance.Large"
+        android:layout_marginTop="10dp"
+        android:hint="@string/feedback_contact_hint"/>
+
 
     <Button
         android:id="@+id/btn_feedback_submit"
         style="@style/ButtonAppTheme"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@drawable/apptheme_btn_default_holo_light"
+        android:layout_below="@id/layout_password"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:text="@string/feedback_button_label"/>
+    <!--@dimen/layout_inner_padding_vertical-->
 
-</RelativeLayout>
+</LinearLayout>

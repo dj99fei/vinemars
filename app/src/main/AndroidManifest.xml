@@ -98,6 +98,16 @@
             android:label="@string/change_password"
             />
         <activity
+            android:name=".app.TestActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/change_password"
+            />
+        <activity
+            android:name=".app.FeedbackActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/change_password"
+            />
+        <activity
             android:name="cn.smssdk.SMSSDKUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"

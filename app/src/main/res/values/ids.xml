@@ -88,5 +88,9 @@
     <item type="id" name="drawer_layout"/>
 
     <item type="id" name="action_feedback"/>
-
+    <item type="id" name="lable_feedback"/>
+    <item type="id" name="feedback"/>
+    <item type="id" name="lable_feedback_contact"/>
+    <item type="id" name="feedback_contact"/>
+    <item type="id" name="btn_feedback_submit"/>
 </resources>
