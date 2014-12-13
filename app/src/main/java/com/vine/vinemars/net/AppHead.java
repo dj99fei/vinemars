@@ -1,5 +1,7 @@
 package com.vine.vinemars.net;
 
+import com.vine.vinemars.MyApplication;
+
 /**
  * Created by chengfei on 14-10-25.
  */
@@ -41,5 +43,9 @@ public class AppHead {
 
     public AppHead() {
         versionCode = "1";
+        if (MyApplication.isSignined()) {
+            userId = MyApplication.getUser().userId;
+            token = MyApplication.getUser().token;
+        }
     }
 }

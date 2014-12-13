@@ -6,23 +6,38 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.NavUtils;
 import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.ActionBar;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.vine.vinemars.R;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+
 /**
  * Created by chengfei on 14-10-25.
  */
-public abstract  class CommonActivity extends BaseActivity {
+public abstract class CommonActivity extends BaseActivity {
+
+    protected ActionBar actionBar;
+    @InjectView(R.id.toolbar)
+    protected Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (actionBar != null) {
-            actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_HOME_AS_UP | ActionBar.DISPLAY_SHOW_HOME);
-        }
         setContentView(getContentViewId());
+        ButterKnife.inject(this);
+        setSupportActionBar(toolbar);
+        actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            setDisplayOptions();
+        }
         getSupportFragmentManager().beginTransaction().add(R.id.content_frame, getFragment()).disallowAddToBackStack().commit();
+    }
+
+    protected void setDisplayOptions() {
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_HOME_AS_UP | ActionBar.DISPLAY_SHOW_HOME);
     }
 
     abstract Fragment getFragment();
@@ -34,7 +49,6 @@ public abstract  class CommonActivity extends BaseActivity {
     int getContentViewId() {
         return R.layout.activity_common;
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -62,4 +76,15 @@ public abstract  class CommonActivity extends BaseActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void setTitle(CharSequence title) {
+        super.setTitle(title);
+        actionBar.setTitle(title);
+    }
+
+    @Override
+    public void setTitle(int titleId) {
+        super.setTitle(titleId);
+        actionBar.setTitle(titleId);
+    }
 }

@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -120,6 +121,11 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.BaseProf
                 viewHolder.titleText.setText(R.string.basic_info);
                 BasicInfoViewHolder basicInfoViewHolder = (BasicInfoViewHolder) viewHolder;
                 basicInfoViewHolder.genderText.setText(user.getGender());
+                basicInfoViewHolder.editGenderButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                    }
+                });
                 break;
             case TYPE_WORK:
                 viewHolder.titleText.setText(R.string.work);
@@ -149,6 +155,8 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.BaseProf
         @InjectView(R.id.item_profile_gender)
         public TextView genderText;
 
+        @InjectView(R.id.item_profile_gender_edit)
+        public ImageButton editGenderButton;
 
         public BasicInfoViewHolder(View itemView) {
             super(itemView);
