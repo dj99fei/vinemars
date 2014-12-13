@@ -93,4 +93,6 @@
     <item type="id" name="lable_feedback_contact"/>
     <item type="id" name="feedback_contact"/>
     <item type="id" name="btn_feedback_submit"/>
+
+    <item type="id" name="action_publishTopic"/>
 </resources>

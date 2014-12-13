@@ -110,6 +110,10 @@
     <string name="feedback_contact_hint">please leave your contacts(such as email,mobile or other contacts.)</string>
     <string name="feedback_button_label">Submit</string>
     <!-- Feedback  page end-->
+
+    <!-- Topic page -->
+    <string name="publishTopic_label">Publish a Topic</string>
+
     <string name="open">Open</string>
     <string name="close">Close</string>
 
