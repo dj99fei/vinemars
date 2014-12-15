@@ -73,7 +73,7 @@
             android:name=".app.SignupActivity"
             android:screenOrientation="portrait"
             android:parentActivityName=".app.SigninActivity"
-            android:label="@string/" >
+            android:label="@string/signin" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".app.SigninActivity"/>
