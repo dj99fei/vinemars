@@ -45,7 +45,7 @@
             >
 
             <EditText
-                android:id="@id/et_password"
+                android:id="@id/edit_password"
                 android:layout_width="@dimen/edit_passoword_min_width"
                 android:layout_height="match_parent"
                 android:hint="@string/hint_password"
@@ -59,9 +59,9 @@
                 android:id="@id/show_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/et_password"
+                android:layout_alignBottom="@id/edit_password"
                 android:layout_alignParentRight="true"
-                android:layout_toRightOf="@id/et_password"
+                android:layout_toRightOf="@id/edit_password"
                 android:text="@string/show_password"/>
 
         </RelativeLayout>

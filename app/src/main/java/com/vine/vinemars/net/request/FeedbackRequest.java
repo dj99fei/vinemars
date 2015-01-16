@@ -5,14 +5,11 @@ import android.util.Log;
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NetworkResponse;
-import com.google.protobuf.InvalidProtocolBufferException;
 import com.vine.vinemars.domain.Feedback;
-import com.vine.vinemars.domain.User;
 import com.vine.vinemars.net.AppHead;
 import com.vine.vinemars.net.HOpCodeEx;
 import com.vine.vinemars.net.NetworkRequestListener;
 import com.vine.vinemars.net.ParseError;
-import com.vine.vinemars.net.pb.EnrollMessage;
 import com.vine.vinemars.net.pb.StarMessage;
 
 import java.util.Map;
@@ -34,7 +31,7 @@ public class FeedbackRequest extends BaseRequest<Feedback>  {
 
     @Override
     public byte[] getBody() throws AuthFailureError {
-        StarMessage.PostFeedback.Builder builder =StarMessage.PostFeedback.newBuilder();
+        StarMessage.PostFeedback.Builder builder = StarMessage.PostFeedback.newBuilder();
 //        builder.setEmail(user.email);
         builder.setFeedback(feedback.feedback);
         builder.setContact(feedback.contact);

@@ -57,9 +57,9 @@ public class ValidatePhoneNumberFragment extends DialogFragment implements View.
 
     @InjectView(R.id.btn_signin)
     protected Button okButton;
-    @InjectView(R.id.et_password)
+    @InjectView(R.id.edit_password)
     protected EditText passwordEdit;
-    @InjectView(R.id.et_user_name)
+    @InjectView(R.id.edit_user_name)
     protected EditText userNameEdit;
     @Optional
     @InjectView(R.id.action_signup)
@@ -77,7 +77,7 @@ public class ValidatePhoneNumberFragment extends DialogFragment implements View.
     @InjectView(R.id.layout_region)
     protected View regionLayout;
 
-    @InjectView(R.id.et_region)
+    @InjectView(R.id.edit_region)
     protected EditText regionEdit;
     @InjectView(R.id.text_region)
     protected TextView regionText;

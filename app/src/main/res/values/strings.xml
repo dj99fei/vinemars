@@ -17,6 +17,7 @@
     <string name="action_settings">Settings</string>
     <string name="action_signup">@string/signup</string>
     <string name="action_close">@string/close</string>
+    <string name="action_send">@string/send</string>
     <!-- menu end-->
 
     <string name="signup">Sign Up</string>
@@ -27,6 +28,7 @@
     <string name="tab_text_discover">Discover</string>
     <string name="tab_text_me">Me</string>
     <string name="signin">Sign In</string>
+    <string name="send">Send</string>
 
 
     <!-- net exception-->
@@ -112,10 +114,12 @@
     <!-- Feedback  page end-->
 
     <!-- Topic page -->
-    <string name="publishTopic_label">Publish a Topic</string>
+    <string name="post">Post</string>
+    <string name="publish_topic">Publish Topic</string>
 
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="share_to">To: </string>
 
 </resources>
 

@@ -24,9 +24,9 @@ import butterknife.InjectView;
  */
 public class EditProfileFragment extends DialogFragment implements View.OnClickListener, NetworkRequestListener {
 
-    @InjectView(R.id.et_old_password)
+    @InjectView(R.id.edit_old_password)
     protected EditText oldPasswordEdit;
-    @InjectView(R.id.et_new_password)
+    @InjectView(R.id.edit_new_password)
     protected EditText newPasswordEdit;
     @InjectView(R.id.btn_ok)
     protected Button okButton;

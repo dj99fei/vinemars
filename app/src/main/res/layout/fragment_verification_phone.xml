@@ -70,7 +70,7 @@
                 >
 
                 <EditText
-                    android:id="@id/et_region"
+                    android:id="@id/edit_region"
                     style="@style/EditTextAppTheme"
                     android:layout_width="@dimen/edit_region_min_width"
                     android:layout_height="match_parent"
@@ -86,7 +86,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/edit_height"
                     android:layout_marginLeft="@dimen/layout_inner_padding_horizontal_small"
-                    android:layout_toRightOf="@id/et_region"
+                    android:layout_toRightOf="@id/edit_region"
                     android:hint="@string/hint_username"
                     android:imeOptions="actionNext"
                     android:inputType="textEmailAddress"
@@ -105,7 +105,7 @@
                 >
 
                 <AutoCompleteTextView
-                    android:id="@id/et_password"
+                    android:id="@id/edit_password"
                     style="@style/EditTextAppTheme"
                     android:layout_width="@dimen/edit_passoword_min_width"
                     android:layout_height="match_parent"
@@ -121,9 +121,9 @@
                     style="@style/CheckBoxAppTheme"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignBottom="@id/et_password"
+                    android:layout_alignBottom="@id/edit_password"
                     android:layout_alignParentRight="true"
-                    android:layout_toRightOf="@id/et_password"
+                    android:layout_toRightOf="@id/edit_password"
                     android:text="@string/show_password"/>
 
             </RelativeLayout>
@@ -137,7 +137,7 @@
                 android:visibility="gone">
 
                 <AutoCompleteTextView
-                    android:id="@id/et_captcha"
+                    android:id="@id/edit_captcha"
                     style="@style/EditTextAppTheme"
                     android:layout_width="@dimen/edit_captcha_min_width"
                     android:layout_height="wrap_content"
@@ -151,8 +151,8 @@
                     android:id="@id/image_captcha"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignBottom="@id/et_captcha"
-                    android:layout_toRightOf="@id/et_captcha"/>
+                    android:layout_alignBottom="@id/edit_captcha"
+                    android:layout_toRightOf="@id/edit_captcha"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -164,7 +164,7 @@
                 android:layout_marginTop="@dimen/layout_inner_padding_vertical_small">
 
                 <AutoCompleteTextView
-                    android:id="@id/et_checkcode"
+                    android:id="@id/edit_checkcode"
                     style="@style/EditTextAppTheme"
                     android:layout_width="@dimen/edit_captcha_min_width"
                     android:layout_height="wrap_content"
@@ -178,9 +178,9 @@
                     android:id="@id/btn_get_checkcode"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignBottom="@id/et_checkcode"
+                    android:layout_alignBottom="@id/edit_checkcode"
                     android:layout_marginLeft="@dimen/layout_inner_padding_horizontal_small"
-                    android:layout_toRightOf="@id/et_checkcode"
+                    android:layout_toRightOf="@id/edit_checkcode"
                     android:background="@drawable/shape_btn_bg"
                     android:textColor="?android:attr/textColorSecondaryInverse"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"/>

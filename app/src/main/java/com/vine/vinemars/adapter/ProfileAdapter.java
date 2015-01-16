@@ -41,7 +41,7 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.BaseProf
     private static final int TYPE_PLACE = 11;
     private static final int TYPE_LINKS = 20;
     private static final int TYPE_SET[] = new int[]{TYPE_HEADER, TYPE_BASIC_INFO,/* TYPE_WORK,
-            TYPE_EDUCATION, TYPE_PLACE, */TYPE_LINKS};
+            TYPE_EDUCATION, TYPE_PLACE, TYPE_LINKS */};
 
     private static final int TYPE_COUNT = TYPE_SET.length;
     private LayoutInflater layoutInflater;
@@ -192,7 +192,7 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.BaseProf
 
     public static final class ProfileHeaderViewHolder extends BaseProfileViewHolder {
 
-        @InjectView(R.id.profile_avatar)
+        @InjectView(R.id.avatar)
         protected ImageView avatarImage;
         @InjectView(R.id.profile_cover)
         protected ImageView coverImage;
@@ -211,7 +211,7 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.BaseProf
 
     public static class HeaderViewHolder extends BaseProfileViewHolder {
 
-        @InjectView(R.id.profile_avatar)
+        @InjectView(R.id.avatar)
         protected ImageView avatarImage;
         @InjectView(R.id.profile_signature)
         protected TextView signatrueText;

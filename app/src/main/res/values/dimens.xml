@@ -54,4 +54,6 @@
     <dimen name="edit_captcha_min_width">144dp</dimen>
     <dimen name="edit_region_min_width">72dp</dimen>
 
+    <dimen name="post_avatar_size">72dp</dimen>
+
 </resources>

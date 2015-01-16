@@ -64,7 +64,7 @@
                 >
 
                 <TextView
-                    android:id="@id/et_user_name"
+                    android:id="@id/edit_user_name"
                     style="@style/EditTextAppTheme"
                     android:layout_width="@dimen/edit_region_min_width"
                     android:layout_height="match_parent"
@@ -81,7 +81,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/edit_height"
                     android:layout_marginLeft="@dimen/layout_inner_padding_horizontal_small"
-                    android:layout_toRightOf="@id/et_user_name"
+                    android:layout_toRightOf="@id/edit_user_name"
                     android:hint="@string/hint_username"
                     android:background="@android:color/transparent"
                     android:imeOptions="actionNext"

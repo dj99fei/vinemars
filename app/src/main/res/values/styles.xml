@@ -92,12 +92,16 @@
 
     <style name="TextAppearance.Medium">
         <item name="android:textSize">16dp</item>
-        <item name="android:textColor">?android:attr/textColorSecondary</item>
+        <item name="android:textColor">?android:attr/textColorSecondaryInverse</item>
+    </style>
+
+    <style name="TextAppearance.Medium.Href">
+        <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
     <style name="TextAppearance.Small">
         <item name="android:textSize">12dp</item>
-        <item name="android:textColor">?android:attr/textColorTertiary</item>
+        <item name="android:textColor">?android:attr/textColorTertiaryInverse</item>
     </style>
 
     <style name="TextAppearance.Small.Tab">

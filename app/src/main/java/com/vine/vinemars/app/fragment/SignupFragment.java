@@ -44,9 +44,9 @@ public class SignupFragment extends BaseDialogFragment implements View.OnClickLi
 
     @InjectView(R.id.btn_ok)
     protected Button okButton;
-    @InjectView(R.id.et_password)
+    @InjectView(R.id.edit_password)
     protected EditText passwordEdit;
-    @InjectView(R.id.et_user_name)
+    @InjectView(R.id.edit_user_name)
     protected EditText userNameEdit;
     @InjectView(R.id.toolbar)
     protected Toolbar toolbar;

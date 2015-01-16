@@ -27,18 +27,19 @@
     <item type="id" name="btn_clear_name"/>
     <item type="id" name="btn_clear_old_password"/>
     <item type="id" name="btn_clear_new_password"/>
-    <item type="id" name="et_user_name"/>
+    <item type="id" name="edit_user_name"/>
     <item type="id" name="layout_password"/>
     <item type="id" name="layout_username"/>
     <item type="id" name="layout_region"/>
     <item type="id" name="layout_captcha"/>
     <item type="id" name="layout_checkcode"/>
     <item type="id" name="btn_clear_password"/>
-    <item type="id" name="et_password"/>
-    <item type="id" name="et_region"/>
+    <item type="id" name="edit_password"/>
+    <item type="id" name="edit_content"/>
+    <item type="id" name="edit_region"/>
     <item type="id" name="spinner_region"/>
-    <item type="id" name="et_old_password"/>
-    <item type="id" name="et_new_password"/>
+    <item type="id" name="edit_old_password"/>
+    <item type="id" name="edit_new_password"/>
     <item type="id" name="text_region"/>
     <item type="id" name="tv_register"/>
     <item type="id" name="btn_login_with_sina_weibo"/>
@@ -46,9 +47,10 @@
 
     <item type="id" name="action_signup"/>
     <item type="id" name="action_close"/>
+    <item type="id" name="action_send"/>
     <item type="id" name="layout_signin"/>
-    <item type="id" name="et_captcha"/>
-    <item type="id" name="et_checkcode"/>
+    <item type="id" name="edit_captcha"/>
+    <item type="id" name="edit_checkcode"/>
     <item type="id" name="btn_get_checkcode"/>
     <item type="id" name="text_get_checkcode"/>
 
@@ -58,7 +60,9 @@
     <item type="id" name="line_label_user_info"/>
     <item type="id" name="btn_ok"/>
     <item type="id" name="list"/>
-    <item type="id" name="profile_avatar"/>
+    <item type="id" name="avatar"/>
+    <item type="id" name="nickname"/>
+    <item type="id" name="share_to"/>
     <item type="id" name="layout_profile_avatar"/>
     <item type="id" name="profile_cover"/>
     <item type="id" name="profile_abstract"/>
@@ -95,4 +99,5 @@
     <item type="id" name="btn_feedback_submit"/>
 
     <item type="id" name="action_publishTopic"/>
+    <item type="id" name="camera"/>
 </resources>

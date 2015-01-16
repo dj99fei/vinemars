@@ -11,7 +11,6 @@ public class FeedbackActivity extends CommonActivity {
 
     @Override
     Fragment getFragment() {
-        //TODO: return FeedbackFragment
         return FeedbackFragment.newInstance();
     }
 }

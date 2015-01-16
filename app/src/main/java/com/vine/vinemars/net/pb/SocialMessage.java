@@ -92,59 +92,59 @@ public final class SocialMessage {
     com.google.protobuf.ByteString
         getThumbnailBytes();
 
-    // optional string image = 6;
+    // optional string picture = 6;
     /**
-     * <code>optional string image = 6;</code>
+     * <code>optional string picture = 6;</code>
      *
      * <pre>
      *话题原图
      * </pre>
      */
-    boolean hasImage();
+    boolean hasPicture();
     /**
-     * <code>optional string image = 6;</code>
+     * <code>optional string picture = 6;</code>
      *
      * <pre>
      *话题原图
      * </pre>
      */
-    java.lang.String getImage();
+    java.lang.String getPicture();
     /**
-     * <code>optional string image = 6;</code>
+     * <code>optional string picture = 6;</code>
      *
      * <pre>
      *话题原图
      * </pre>
      */
     com.google.protobuf.ByteString
-        getImageBytes();
+        getPictureBytes();
 
-    // optional string localImage = 7;
+    // optional string localPicture = 7;
     /**
-     * <code>optional string localImage = 7;</code>
+     * <code>optional string localPicture = 7;</code>
      *
      * <pre>
      *话题本地图 ???
      * </pre>
      */
-    boolean hasLocalImage();
+    boolean hasLocalPicture();
     /**
-     * <code>optional string localImage = 7;</code>
+     * <code>optional string localPicture = 7;</code>
      *
      * <pre>
      *话题本地图 ???
      * </pre>
      */
-    java.lang.String getLocalImage();
+    java.lang.String getLocalPicture();
     /**
-     * <code>optional string localImage = 7;</code>
+     * <code>optional string localPicture = 7;</code>
      *
      * <pre>
      *话题本地图 ???
      * </pre>
      */
     com.google.protobuf.ByteString
-        getLocalImageBytes();
+        getLocalPictureBytes();
 
     // optional int32 visibleCircle = 8;
     /**
@@ -168,7 +168,6 @@ public final class SocialMessage {
    * Protobuf type {@code AddTopic}
    *
    * <pre>
-   *------------------------------服务器接口---------------------------
    *-------------发表一个主题---------------
    * </pre>
    */
@@ -229,12 +228,12 @@ public final class SocialMessage {
             }
             case 50: {
               bitField0_ |= 0x00000008;
-              image_ = input.readBytes();
+              picture_ = input.readBytes();
               break;
             }
             case 58: {
               bitField0_ |= 0x00000010;
-              localImage_ = input.readBytes();
+              localPicture_ = input.readBytes();
               break;
             }
             case 64: {
@@ -434,28 +433,28 @@ public final class SocialMessage {
       }
     }
 
-    // optional string image = 6;
-    public static final int IMAGE_FIELD_NUMBER = 6;
-    private java.lang.Object image_;
+    // optional string picture = 6;
+    public static final int PICTURE_FIELD_NUMBER = 6;
+    private java.lang.Object picture_;
     /**
-     * <code>optional string image = 6;</code>
+     * <code>optional string picture = 6;</code>
      *
      * <pre>
      *话题原图
      * </pre>
      */
-    public boolean hasImage() {
+    public boolean hasPicture() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>optional string image = 6;</code>
+     * <code>optional string picture = 6;</code>
      *
      * <pre>
      *话题原图
      * </pre>
      */
-    public java.lang.String getImage() {
-      java.lang.Object ref = image_;
+    public java.lang.String getPicture() {
+      java.lang.Object ref = picture_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
@@ -463,54 +462,54 @@ public final class SocialMessage {
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          image_ = s;
+          picture_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>optional string image = 6;</code>
+     * <code>optional string picture = 6;</code>
      *
      * <pre>
      *话题原图
      * </pre>
      */
     public com.google.protobuf.ByteString
-        getImageBytes() {
-      java.lang.Object ref = image_;
+        getPictureBytes() {
+      java.lang.Object ref = picture_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        image_ = b;
+        picture_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    // optional string localImage = 7;
-    public static final int LOCALIMAGE_FIELD_NUMBER = 7;
-    private java.lang.Object localImage_;
+    // optional string localPicture = 7;
+    public static final int LOCALPICTURE_FIELD_NUMBER = 7;
+    private java.lang.Object localPicture_;
     /**
-     * <code>optional string localImage = 7;</code>
+     * <code>optional string localPicture = 7;</code>
      *
      * <pre>
      *话题本地图 ???
      * </pre>
      */
-    public boolean hasLocalImage() {
+    public boolean hasLocalPicture() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>optional string localImage = 7;</code>
+     * <code>optional string localPicture = 7;</code>
      *
      * <pre>
      *话题本地图 ???
      * </pre>
      */
-    public java.lang.String getLocalImage() {
-      java.lang.Object ref = localImage_;
+    public java.lang.String getLocalPicture() {
+      java.lang.Object ref = localPicture_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
@@ -518,26 +517,26 @@ public final class SocialMessage {
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          localImage_ = s;
+          localPicture_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>optional string localImage = 7;</code>
+     * <code>optional string localPicture = 7;</code>
      *
      * <pre>
      *话题本地图 ???
      * </pre>
      */
     public com.google.protobuf.ByteString
-        getLocalImageBytes() {
-      java.lang.Object ref = localImage_;
+        getLocalPictureBytes() {
+      java.lang.Object ref = localPicture_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        localImage_ = b;
+        localPicture_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -572,8 +571,8 @@ public final class SocialMessage {
       title_ = "";
       content_ = "";
       thumbnail_ = "";
-      image_ = "";
-      localImage_ = "";
+      picture_ = "";
+      localPicture_ = "";
       visibleCircle_ = 0;
     }
     private byte memoizedIsInitialized = -1;
@@ -598,10 +597,10 @@ public final class SocialMessage {
         output.writeBytes(5, getThumbnailBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(6, getImageBytes());
+        output.writeBytes(6, getPictureBytes());
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeBytes(7, getLocalImageBytes());
+        output.writeBytes(7, getLocalPictureBytes());
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeInt32(8, visibleCircle_);
@@ -628,11 +627,11 @@ public final class SocialMessage {
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(6, getImageBytes());
+          .computeBytesSize(6, getPictureBytes());
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(7, getLocalImageBytes());
+          .computeBytesSize(7, getLocalPictureBytes());
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
@@ -713,7 +712,6 @@ public final class SocialMessage {
      * Protobuf type {@code AddTopic}
      *
      * <pre>
-     *------------------------------服务器接口---------------------------
      *-------------发表一个主题---------------
      * </pre>
      */
@@ -740,9 +738,9 @@ public final class SocialMessage {
         bitField0_ = (bitField0_ & ~0x00000002);
         thumbnail_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
-        image_ = "";
+        picture_ = "";
         bitField0_ = (bitField0_ & ~0x00000008);
-        localImage_ = "";
+        localPicture_ = "";
         bitField0_ = (bitField0_ & ~0x00000010);
         visibleCircle_ = 0;
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -784,11 +782,11 @@ public final class SocialMessage {
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        result.image_ = image_;
+        result.picture_ = picture_;
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
         }
-        result.localImage_ = localImage_;
+        result.localPicture_ = localPicture_;
         if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000020;
         }
@@ -814,14 +812,14 @@ public final class SocialMessage {
           thumbnail_ = other.thumbnail_;
           
         }
-        if (other.hasImage()) {
+        if (other.hasPicture()) {
           bitField0_ |= 0x00000008;
-          image_ = other.image_;
+          picture_ = other.picture_;
           
         }
-        if (other.hasLocalImage()) {
+        if (other.hasLocalPicture()) {
           bitField0_ |= 0x00000010;
-          localImage_ = other.localImage_;
+          localPicture_ = other.localPicture_;
           
         }
         if (other.hasVisibleCircle()) {
@@ -1147,198 +1145,198 @@ public final class SocialMessage {
         return this;
       }
 
-      // optional string image = 6;
-      private java.lang.Object image_ = "";
+      // optional string picture = 6;
+      private java.lang.Object picture_ = "";
       /**
-       * <code>optional string image = 6;</code>
+       * <code>optional string picture = 6;</code>
        *
        * <pre>
        *话题原图
        * </pre>
        */
-      public boolean hasImage() {
+      public boolean hasPicture() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>optional string image = 6;</code>
+       * <code>optional string picture = 6;</code>
        *
        * <pre>
        *话题原图
        * </pre>
        */
-      public java.lang.String getImage() {
-        java.lang.Object ref = image_;
+      public java.lang.String getPicture() {
+        java.lang.Object ref = picture_;
         if (!(ref instanceof java.lang.String)) {
           java.lang.String s = ((com.google.protobuf.ByteString) ref)
               .toStringUtf8();
-          image_ = s;
+          picture_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string image = 6;</code>
+       * <code>optional string picture = 6;</code>
        *
        * <pre>
        *话题原图
        * </pre>
        */
       public com.google.protobuf.ByteString
-          getImageBytes() {
-        java.lang.Object ref = image_;
+          getPictureBytes() {
+        java.lang.Object ref = picture_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          image_ = b;
+          picture_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>optional string image = 6;</code>
+       * <code>optional string picture = 6;</code>
        *
        * <pre>
        *话题原图
        * </pre>
        */
-      public Builder setImage(
+      public Builder setPicture(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000008;
-        image_ = value;
+        picture_ = value;
         
         return this;
       }
       /**
-       * <code>optional string image = 6;</code>
+       * <code>optional string picture = 6;</code>
        *
        * <pre>
        *话题原图
        * </pre>
        */
-      public Builder clearImage() {
+      public Builder clearPicture() {
         bitField0_ = (bitField0_ & ~0x00000008);
-        image_ = getDefaultInstance().getImage();
+        picture_ = getDefaultInstance().getPicture();
         
         return this;
       }
       /**
-       * <code>optional string image = 6;</code>
+       * <code>optional string picture = 6;</code>
        *
        * <pre>
        *话题原图
        * </pre>
        */
-      public Builder setImageBytes(
+      public Builder setPictureBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000008;
-        image_ = value;
+        picture_ = value;
         
         return this;
       }
 
-      // optional string localImage = 7;
-      private java.lang.Object localImage_ = "";
+      // optional string localPicture = 7;
+      private java.lang.Object localPicture_ = "";
       /**
-       * <code>optional string localImage = 7;</code>
+       * <code>optional string localPicture = 7;</code>
        *
        * <pre>
        *话题本地图 ???
        * </pre>
        */
-      public boolean hasLocalImage() {
+      public boolean hasLocalPicture() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>optional string localImage = 7;</code>
+       * <code>optional string localPicture = 7;</code>
        *
        * <pre>
        *话题本地图 ???
        * </pre>
        */
-      public java.lang.String getLocalImage() {
-        java.lang.Object ref = localImage_;
+      public java.lang.String getLocalPicture() {
+        java.lang.Object ref = localPicture_;
         if (!(ref instanceof java.lang.String)) {
           java.lang.String s = ((com.google.protobuf.ByteString) ref)
               .toStringUtf8();
-          localImage_ = s;
+          localPicture_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string localImage = 7;</code>
+       * <code>optional string localPicture = 7;</code>
        *
        * <pre>
        *话题本地图 ???
        * </pre>
        */
       public com.google.protobuf.ByteString
-          getLocalImageBytes() {
-        java.lang.Object ref = localImage_;
+          getLocalPictureBytes() {
+        java.lang.Object ref = localPicture_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          localImage_ = b;
+          localPicture_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>optional string localImage = 7;</code>
+       * <code>optional string localPicture = 7;</code>
        *
        * <pre>
        *话题本地图 ???
        * </pre>
        */
-      public Builder setLocalImage(
+      public Builder setLocalPicture(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000010;
-        localImage_ = value;
+        localPicture_ = value;
         
         return this;
       }
       /**
-       * <code>optional string localImage = 7;</code>
+       * <code>optional string localPicture = 7;</code>
        *
        * <pre>
        *话题本地图 ???
        * </pre>
        */
-      public Builder clearLocalImage() {
+      public Builder clearLocalPicture() {
         bitField0_ = (bitField0_ & ~0x00000010);
-        localImage_ = getDefaultInstance().getLocalImage();
+        localPicture_ = getDefaultInstance().getLocalPicture();
         
         return this;
       }
       /**
-       * <code>optional string localImage = 7;</code>
+       * <code>optional string localPicture = 7;</code>
        *
        * <pre>
        *话题本地图 ???
        * </pre>
        */
-      public Builder setLocalImageBytes(
+      public Builder setLocalPictureBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000010;
-        localImage_ = value;
+        localPicture_ = value;
         
         return this;
       }
@@ -1851,59 +1849,59 @@ public final class SocialMessage {
     com.google.protobuf.ByteString
         getContentBytes();
 
-    // optional string image = 6;
+    // optional string picture = 6;
     /**
-     * <code>optional string image = 6;</code>
+     * <code>optional string picture = 6;</code>
      *
      * <pre>
      *话题原图
      * </pre>
      */
-    boolean hasImage();
+    boolean hasPicture();
     /**
-     * <code>optional string image = 6;</code>
+     * <code>optional string picture = 6;</code>
      *
      * <pre>
      *话题原图
      * </pre>
      */
-    java.lang.String getImage();
+    java.lang.String getPicture();
     /**
-     * <code>optional string image = 6;</code>
+     * <code>optional string picture = 6;</code>
      *
      * <pre>
      *话题原图
      * </pre>
      */
     com.google.protobuf.ByteString
-        getImageBytes();
+        getPictureBytes();
 
-    // optional string localImage = 7;
+    // optional string localPicture = 7;
     /**
-     * <code>optional string localImage = 7;</code>
+     * <code>optional string localPicture = 7;</code>
      *
      * <pre>
      *话题本地图 ???
      * </pre>
      */
-    boolean hasLocalImage();
+    boolean hasLocalPicture();
     /**
-     * <code>optional string localImage = 7;</code>
+     * <code>optional string localPicture = 7;</code>
      *
      * <pre>
      *话题本地图 ???
      * </pre>
      */
-    java.lang.String getLocalImage();
+    java.lang.String getLocalPicture();
     /**
-     * <code>optional string localImage = 7;</code>
+     * <code>optional string localPicture = 7;</code>
      *
      * <pre>
      *话题本地图 ???
      * </pre>
      */
     com.google.protobuf.ByteString
-        getLocalImageBytes();
+        getLocalPictureBytes();
 
     // optional int32 visibleCircle = 8;
     /**
@@ -1987,12 +1985,12 @@ public final class SocialMessage {
             }
             case 50: {
               bitField0_ |= 0x00000008;
-              image_ = input.readBytes();
+              picture_ = input.readBytes();
               break;
             }
             case 58: {
               bitField0_ |= 0x00000010;
-              localImage_ = input.readBytes();
+              localPicture_ = input.readBytes();
               break;
             }
             case 64: {
@@ -2161,28 +2159,28 @@ public final class SocialMessage {
       }
     }
 
-    // optional string image = 6;
-    public static final int IMAGE_FIELD_NUMBER = 6;
-    private java.lang.Object image_;
+    // optional string picture = 6;
+    public static final int PICTURE_FIELD_NUMBER = 6;
+    private java.lang.Object picture_;
     /**
-     * <code>optional string image = 6;</code>
+     * <code>optional string picture = 6;</code>
      *
      * <pre>
      *话题原图
      * </pre>
      */
-    public boolean hasImage() {
+    public boolean hasPicture() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>optional string image = 6;</code>
+     * <code>optional string picture = 6;</code>
      *
      * <pre>
      *话题原图
      * </pre>
      */
-    public java.lang.String getImage() {
-      java.lang.Object ref = image_;
+    public java.lang.String getPicture() {
+      java.lang.Object ref = picture_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
@@ -2190,54 +2188,54 @@ public final class SocialMessage {
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          image_ = s;
+          picture_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>optional string image = 6;</code>
+     * <code>optional string picture = 6;</code>
      *
      * <pre>
      *话题原图
      * </pre>
      */
     public com.google.protobuf.ByteString
-        getImageBytes() {
-      java.lang.Object ref = image_;
+        getPictureBytes() {
+      java.lang.Object ref = picture_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        image_ = b;
+        picture_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    // optional string localImage = 7;
-    public static final int LOCALIMAGE_FIELD_NUMBER = 7;
-    private java.lang.Object localImage_;
+    // optional string localPicture = 7;
+    public static final int LOCALPICTURE_FIELD_NUMBER = 7;
+    private java.lang.Object localPicture_;
     /**
-     * <code>optional string localImage = 7;</code>
+     * <code>optional string localPicture = 7;</code>
      *
      * <pre>
      *话题本地图 ???
      * </pre>
      */
-    public boolean hasLocalImage() {
+    public boolean hasLocalPicture() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>optional string localImage = 7;</code>
+     * <code>optional string localPicture = 7;</code>
      *
      * <pre>
      *话题本地图 ???
      * </pre>
      */
-    public java.lang.String getLocalImage() {
-      java.lang.Object ref = localImage_;
+    public java.lang.String getLocalPicture() {
+      java.lang.Object ref = localPicture_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
@@ -2245,26 +2243,26 @@ public final class SocialMessage {
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          localImage_ = s;
+          localPicture_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>optional string localImage = 7;</code>
+     * <code>optional string localPicture = 7;</code>
      *
      * <pre>
      *话题本地图 ???
      * </pre>
      */
     public com.google.protobuf.ByteString
-        getLocalImageBytes() {
-      java.lang.Object ref = localImage_;
+        getLocalPictureBytes() {
+      java.lang.Object ref = localPicture_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        localImage_ = b;
+        localPicture_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -2299,8 +2297,8 @@ public final class SocialMessage {
       id_ = 0L;
       title_ = "";
       content_ = "";
-      image_ = "";
-      localImage_ = "";
+      picture_ = "";
+      localPicture_ = "";
       visibleCircle_ = 0;
     }
     private byte memoizedIsInitialized = -1;
@@ -2325,10 +2323,10 @@ public final class SocialMessage {
         output.writeBytes(4, getContentBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(6, getImageBytes());
+        output.writeBytes(6, getPictureBytes());
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeBytes(7, getLocalImageBytes());
+        output.writeBytes(7, getLocalPictureBytes());
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeInt32(8, visibleCircle_);
@@ -2355,11 +2353,11 @@ public final class SocialMessage {
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(6, getImageBytes());
+          .computeBytesSize(6, getPictureBytes());
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(7, getLocalImageBytes());
+          .computeBytesSize(7, getLocalPictureBytes());
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
@@ -2466,9 +2464,9 @@ public final class SocialMessage {
         bitField0_ = (bitField0_ & ~0x00000002);
         content_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
-        image_ = "";
+        picture_ = "";
         bitField0_ = (bitField0_ & ~0x00000008);
-        localImage_ = "";
+        localPicture_ = "";
         bitField0_ = (bitField0_ & ~0x00000010);
         visibleCircle_ = 0;
         bitField0_ = (bitField0_ & ~0x00000020);
@@ -2510,11 +2508,11 @@ public final class SocialMessage {
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        result.image_ = image_;
+        result.picture_ = picture_;
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
         }
-        result.localImage_ = localImage_;
+        result.localPicture_ = localPicture_;
         if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000020;
         }
@@ -2538,14 +2536,14 @@ public final class SocialMessage {
           content_ = other.content_;
           
         }
-        if (other.hasImage()) {
+        if (other.hasPicture()) {
           bitField0_ |= 0x00000008;
-          image_ = other.image_;
+          picture_ = other.picture_;
           
         }
-        if (other.hasLocalImage()) {
+        if (other.hasLocalPicture()) {
           bitField0_ |= 0x00000010;
-          localImage_ = other.localImage_;
+          localPicture_ = other.localPicture_;
           
         }
         if (other.hasVisibleCircle()) {
@@ -2822,198 +2820,198 @@ public final class SocialMessage {
         return this;
       }
 
-      // optional string image = 6;
-      private java.lang.Object image_ = "";
+      // optional string picture = 6;
+      private java.lang.Object picture_ = "";
       /**
-       * <code>optional string image = 6;</code>
+       * <code>optional string picture = 6;</code>
        *
        * <pre>
        *话题原图
        * </pre>
        */
-      public boolean hasImage() {
+      public boolean hasPicture() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>optional string image = 6;</code>
+       * <code>optional string picture = 6;</code>
        *
        * <pre>
        *话题原图
        * </pre>
        */
-      public java.lang.String getImage() {
-        java.lang.Object ref = image_;
+      public java.lang.String getPicture() {
+        java.lang.Object ref = picture_;
         if (!(ref instanceof java.lang.String)) {
           java.lang.String s = ((com.google.protobuf.ByteString) ref)
               .toStringUtf8();
-          image_ = s;
+          picture_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string image = 6;</code>
+       * <code>optional string picture = 6;</code>
        *
        * <pre>
        *话题原图
        * </pre>
        */
       public com.google.protobuf.ByteString
-          getImageBytes() {
-        java.lang.Object ref = image_;
+          getPictureBytes() {
+        java.lang.Object ref = picture_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          image_ = b;
+          picture_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>optional string image = 6;</code>
+       * <code>optional string picture = 6;</code>
        *
        * <pre>
        *话题原图
        * </pre>
        */
-      public Builder setImage(
+      public Builder setPicture(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000008;
-        image_ = value;
+        picture_ = value;
         
         return this;
       }
       /**
-       * <code>optional string image = 6;</code>
+       * <code>optional string picture = 6;</code>
        *
        * <pre>
        *话题原图
        * </pre>
        */
-      public Builder clearImage() {
+      public Builder clearPicture() {
         bitField0_ = (bitField0_ & ~0x00000008);
-        image_ = getDefaultInstance().getImage();
+        picture_ = getDefaultInstance().getPicture();
         
         return this;
       }
       /**
-       * <code>optional string image = 6;</code>
+       * <code>optional string picture = 6;</code>
        *
        * <pre>
        *话题原图
        * </pre>
        */
-      public Builder setImageBytes(
+      public Builder setPictureBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000008;
-        image_ = value;
+        picture_ = value;
         
         return this;
       }
 
-      // optional string localImage = 7;
-      private java.lang.Object localImage_ = "";
+      // optional string localPicture = 7;
+      private java.lang.Object localPicture_ = "";
       /**
-       * <code>optional string localImage = 7;</code>
+       * <code>optional string localPicture = 7;</code>
        *
        * <pre>
        *话题本地图 ???
        * </pre>
        */
-      public boolean hasLocalImage() {
+      public boolean hasLocalPicture() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>optional string localImage = 7;</code>
+       * <code>optional string localPicture = 7;</code>
        *
        * <pre>
        *话题本地图 ???
        * </pre>
        */
-      public java.lang.String getLocalImage() {
-        java.lang.Object ref = localImage_;
+      public java.lang.String getLocalPicture() {
+        java.lang.Object ref = localPicture_;
         if (!(ref instanceof java.lang.String)) {
           java.lang.String s = ((com.google.protobuf.ByteString) ref)
               .toStringUtf8();
-          localImage_ = s;
+          localPicture_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string localImage = 7;</code>
+       * <code>optional string localPicture = 7;</code>
        *
        * <pre>
        *话题本地图 ???
        * </pre>
        */
       public com.google.protobuf.ByteString
-          getLocalImageBytes() {
-        java.lang.Object ref = localImage_;
+          getLocalPictureBytes() {
+        java.lang.Object ref = localPicture_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          localImage_ = b;
+          localPicture_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>optional string localImage = 7;</code>
+       * <code>optional string localPicture = 7;</code>
        *
        * <pre>
        *话题本地图 ???
        * </pre>
        */
-      public Builder setLocalImage(
+      public Builder setLocalPicture(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000010;
-        localImage_ = value;
+        localPicture_ = value;
         
         return this;
       }
       /**
-       * <code>optional string localImage = 7;</code>
+       * <code>optional string localPicture = 7;</code>
        *
        * <pre>
        *话题本地图 ???
        * </pre>
        */
-      public Builder clearLocalImage() {
+      public Builder clearLocalPicture() {
         bitField0_ = (bitField0_ & ~0x00000010);
-        localImage_ = getDefaultInstance().getLocalImage();
+        localPicture_ = getDefaultInstance().getLocalPicture();
         
         return this;
       }
       /**
-       * <code>optional string localImage = 7;</code>
+       * <code>optional string localPicture = 7;</code>
        *
        * <pre>
        *话题本地图 ???
        * </pre>
        */
-      public Builder setLocalImageBytes(
+      public Builder setLocalPictureBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000010;
-        localImage_ = value;
+        localPicture_ = value;
         
         return this;
       }
@@ -3084,32 +3082,74 @@ public final class SocialMessage {
     // optional int32 topicClass = 1;
     /**
      * <code>optional int32 topicClass = 1;</code>
+     *
+     * <pre>
+     *话题分类
+     * </pre>
      */
     boolean hasTopicClass();
     /**
      * <code>optional int32 topicClass = 1;</code>
+     *
+     * <pre>
+     *话题分类
+     * </pre>
      */
     int getTopicClass();
 
     // optional int32 currentPage = 2;
     /**
      * <code>optional int32 currentPage = 2;</code>
+     *
+     * <pre>
+     *当前页码 首次上传为0
+     * </pre>
      */
     boolean hasCurrentPage();
     /**
      * <code>optional int32 currentPage = 2;</code>
+     *
+     * <pre>
+     *当前页码 首次上传为0
+     * </pre>
      */
     int getCurrentPage();
 
     // optional int32 pageSize = 3;
     /**
      * <code>optional int32 pageSize = 3;</code>
+     *
+     * <pre>
+     *每页显示条数
+     * </pre>
      */
     boolean hasPageSize();
     /**
      * <code>optional int32 pageSize = 3;</code>
+     *
+     * <pre>
+     *每页显示条数
+     * </pre>
      */
     int getPageSize();
+
+    // optional int64 startIndex = 5;
+    /**
+     * <code>optional int64 startIndex = 5;</code>
+     *
+     * <pre>
+     *服务器下送，再次请求时上传，首次上传为0
+     * </pre>
+     */
+    boolean hasStartIndex();
+    /**
+     * <code>optional int64 startIndex = 5;</code>
+     *
+     * <pre>
+     *服务器下送，再次请求时上传，首次上传为0
+     * </pre>
+     */
+    long getStartIndex();
   }
   /**
    * Protobuf type {@code ListPublicTopic}
@@ -3173,6 +3213,11 @@ public final class SocialMessage {
               pageSize_ = input.readInt32();
               break;
             }
+            case 40: {
+              bitField0_ |= 0x00000008;
+              startIndex_ = input.readInt64();
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -3205,12 +3250,20 @@ public final class SocialMessage {
     private int topicClass_;
     /**
      * <code>optional int32 topicClass = 1;</code>
+     *
+     * <pre>
+     *话题分类
+     * </pre>
      */
     public boolean hasTopicClass() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
      * <code>optional int32 topicClass = 1;</code>
+     *
+     * <pre>
+     *话题分类
+     * </pre>
      */
     public int getTopicClass() {
       return topicClass_;
@@ -3221,12 +3274,20 @@ public final class SocialMessage {
     private int currentPage_;
     /**
      * <code>optional int32 currentPage = 2;</code>
+     *
+     * <pre>
+     *当前页码 首次上传为0
+     * </pre>
      */
     public boolean hasCurrentPage() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>optional int32 currentPage = 2;</code>
+     *
+     * <pre>
+     *当前页码 首次上传为0
+     * </pre>
      */
     public int getCurrentPage() {
       return currentPage_;
@@ -3237,21 +3298,54 @@ public final class SocialMessage {
     private int pageSize_;
     /**
      * <code>optional int32 pageSize = 3;</code>
+     *
+     * <pre>
+     *每页显示条数
+     * </pre>
      */
     public boolean hasPageSize() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <code>optional int32 pageSize = 3;</code>
+     *
+     * <pre>
+     *每页显示条数
+     * </pre>
      */
     public int getPageSize() {
       return pageSize_;
+    }
+
+    // optional int64 startIndex = 5;
+    public static final int STARTINDEX_FIELD_NUMBER = 5;
+    private long startIndex_;
+    /**
+     * <code>optional int64 startIndex = 5;</code>
+     *
+     * <pre>
+     *服务器下送，再次请求时上传，首次上传为0
+     * </pre>
+     */
+    public boolean hasStartIndex() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional int64 startIndex = 5;</code>
+     *
+     * <pre>
+     *服务器下送，再次请求时上传，首次上传为0
+     * </pre>
+     */
+    public long getStartIndex() {
+      return startIndex_;
     }
 
     private void initFields() {
       topicClass_ = 0;
       currentPage_ = 0;
       pageSize_ = 0;
+      startIndex_ = 0L;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -3274,6 +3368,9 @@ public final class SocialMessage {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeInt32(3, pageSize_);
       }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeInt64(5, startIndex_);
+      }
     }
 
     private int memoizedSerializedSize = -1;
@@ -3293,6 +3390,10 @@ public final class SocialMessage {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, pageSize_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, startIndex_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -3395,6 +3496,8 @@ public final class SocialMessage {
         bitField0_ = (bitField0_ & ~0x00000002);
         pageSize_ = 0;
         bitField0_ = (bitField0_ & ~0x00000004);
+        startIndex_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -3430,6 +3533,10 @@ public final class SocialMessage {
           to_bitField0_ |= 0x00000004;
         }
         result.pageSize_ = pageSize_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.startIndex_ = startIndex_;
         result.bitField0_ = to_bitField0_;
         return result;
       }
@@ -3444,6 +3551,9 @@ public final class SocialMessage {
         }
         if (other.hasPageSize()) {
           setPageSize(other.getPageSize());
+        }
+        if (other.hasStartIndex()) {
+          setStartIndex(other.getStartIndex());
         }
         return this;
       }
@@ -3475,18 +3585,30 @@ public final class SocialMessage {
       private int topicClass_ ;
       /**
        * <code>optional int32 topicClass = 1;</code>
+       *
+       * <pre>
+       *话题分类
+       * </pre>
        */
       public boolean hasTopicClass() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
        * <code>optional int32 topicClass = 1;</code>
+       *
+       * <pre>
+       *话题分类
+       * </pre>
        */
       public int getTopicClass() {
         return topicClass_;
       }
       /**
        * <code>optional int32 topicClass = 1;</code>
+       *
+       * <pre>
+       *话题分类
+       * </pre>
        */
       public Builder setTopicClass(int value) {
         bitField0_ |= 0x00000001;
@@ -3496,6 +3618,10 @@ public final class SocialMessage {
       }
       /**
        * <code>optional int32 topicClass = 1;</code>
+       *
+       * <pre>
+       *话题分类
+       * </pre>
        */
       public Builder clearTopicClass() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -3508,18 +3634,30 @@ public final class SocialMessage {
       private int currentPage_ ;
       /**
        * <code>optional int32 currentPage = 2;</code>
+       *
+       * <pre>
+       *当前页码 首次上传为0
+       * </pre>
        */
       public boolean hasCurrentPage() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>optional int32 currentPage = 2;</code>
+       *
+       * <pre>
+       *当前页码 首次上传为0
+       * </pre>
        */
       public int getCurrentPage() {
         return currentPage_;
       }
       /**
        * <code>optional int32 currentPage = 2;</code>
+       *
+       * <pre>
+       *当前页码 首次上传为0
+       * </pre>
        */
       public Builder setCurrentPage(int value) {
         bitField0_ |= 0x00000002;
@@ -3529,6 +3667,10 @@ public final class SocialMessage {
       }
       /**
        * <code>optional int32 currentPage = 2;</code>
+       *
+       * <pre>
+       *当前页码 首次上传为0
+       * </pre>
        */
       public Builder clearCurrentPage() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -3541,18 +3683,30 @@ public final class SocialMessage {
       private int pageSize_ ;
       /**
        * <code>optional int32 pageSize = 3;</code>
+       *
+       * <pre>
+       *每页显示条数
+       * </pre>
        */
       public boolean hasPageSize() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <code>optional int32 pageSize = 3;</code>
+       *
+       * <pre>
+       *每页显示条数
+       * </pre>
        */
       public int getPageSize() {
         return pageSize_;
       }
       /**
        * <code>optional int32 pageSize = 3;</code>
+       *
+       * <pre>
+       *每页显示条数
+       * </pre>
        */
       public Builder setPageSize(int value) {
         bitField0_ |= 0x00000004;
@@ -3562,10 +3716,63 @@ public final class SocialMessage {
       }
       /**
        * <code>optional int32 pageSize = 3;</code>
+       *
+       * <pre>
+       *每页显示条数
+       * </pre>
        */
       public Builder clearPageSize() {
         bitField0_ = (bitField0_ & ~0x00000004);
         pageSize_ = 0;
+        
+        return this;
+      }
+
+      // optional int64 startIndex = 5;
+      private long startIndex_ ;
+      /**
+       * <code>optional int64 startIndex = 5;</code>
+       *
+       * <pre>
+       *服务器下送，再次请求时上传，首次上传为0
+       * </pre>
+       */
+      public boolean hasStartIndex() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional int64 startIndex = 5;</code>
+       *
+       * <pre>
+       *服务器下送，再次请求时上传，首次上传为0
+       * </pre>
+       */
+      public long getStartIndex() {
+        return startIndex_;
+      }
+      /**
+       * <code>optional int64 startIndex = 5;</code>
+       *
+       * <pre>
+       *服务器下送，再次请求时上传，首次上传为0
+       * </pre>
+       */
+      public Builder setStartIndex(long value) {
+        bitField0_ |= 0x00000008;
+        startIndex_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional int64 startIndex = 5;</code>
+       *
+       * <pre>
+       *服务器下送，再次请求时上传，首次上传为0
+       * </pre>
+       */
+      public Builder clearStartIndex() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        startIndex_ = 0L;
         
         return this;
       }
@@ -3584,32 +3791,50 @@ public final class SocialMessage {
   public interface ListTopicRetOrBuilder
       extends com.google.protobuf.MessageLiteOrBuilder {
 
-    // repeated .TopicObj topics = 1;
+    // optional int64 startIndex = 2;
     /**
-     * <code>repeated .TopicObj topics = 1;</code>
+     * <code>optional int64 startIndex = 2;</code>
+     *
+     * <pre>
+     *当前页结束Id号，服务返回
+     * </pre>
+     */
+    boolean hasStartIndex();
+    /**
+     * <code>optional int64 startIndex = 2;</code>
+     *
+     * <pre>
+     *当前页结束Id号，服务返回
+     * </pre>
+     */
+    long getStartIndex();
+
+    // repeated .TopicObj topicList = 3;
+    /**
+     * <code>repeated .TopicObj topicList = 3;</code>
      *
      * <pre>
      *话题列表
      * </pre>
      */
     java.util.List<com.vine.vinemars.net.pb.SocialMessage.TopicObj> 
-        getTopicsList();
+        getTopicListList();
     /**
-     * <code>repeated .TopicObj topics = 1;</code>
+     * <code>repeated .TopicObj topicList = 3;</code>
      *
      * <pre>
      *话题列表
      * </pre>
      */
-    com.vine.vinemars.net.pb.SocialMessage.TopicObj getTopics(int index);
+    com.vine.vinemars.net.pb.SocialMessage.TopicObj getTopicList(int index);
     /**
-     * <code>repeated .TopicObj topics = 1;</code>
+     * <code>repeated .TopicObj topicList = 3;</code>
      *
      * <pre>
      *话题列表
      * </pre>
      */
-    int getTopicsCount();
+    int getTopicListCount();
   }
   /**
    * Protobuf type {@code ListTopicRet}
@@ -3654,12 +3879,17 @@ public final class SocialMessage {
               }
               break;
             }
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                topics_ = new java.util.ArrayList<com.vine.vinemars.net.pb.SocialMessage.TopicObj>();
-                mutable_bitField0_ |= 0x00000001;
+            case 16: {
+              bitField0_ |= 0x00000001;
+              startIndex_ = input.readInt64();
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                topicList_ = new java.util.ArrayList<com.vine.vinemars.net.pb.SocialMessage.TopicObj>();
+                mutable_bitField0_ |= 0x00000002;
               }
-              topics_.add(input.readMessage(com.vine.vinemars.net.pb.SocialMessage.TopicObj.PARSER, extensionRegistry));
+              topicList_.add(input.readMessage(com.vine.vinemars.net.pb.SocialMessage.TopicObj.PARSER, extensionRegistry));
               break;
             }
           }
@@ -3670,8 +3900,8 @@ public final class SocialMessage {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          topics_ = java.util.Collections.unmodifiableList(topics_);
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          topicList_ = java.util.Collections.unmodifiableList(topicList_);
         }
         makeExtensionsImmutable();
       }
@@ -3691,64 +3921,90 @@ public final class SocialMessage {
       return PARSER;
     }
 
-    // repeated .TopicObj topics = 1;
-    public static final int TOPICS_FIELD_NUMBER = 1;
-    private java.util.List<com.vine.vinemars.net.pb.SocialMessage.TopicObj> topics_;
+    private int bitField0_;
+    // optional int64 startIndex = 2;
+    public static final int STARTINDEX_FIELD_NUMBER = 2;
+    private long startIndex_;
     /**
-     * <code>repeated .TopicObj topics = 1;</code>
+     * <code>optional int64 startIndex = 2;</code>
+     *
+     * <pre>
+     *当前页结束Id号，服务返回
+     * </pre>
+     */
+    public boolean hasStartIndex() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional int64 startIndex = 2;</code>
+     *
+     * <pre>
+     *当前页结束Id号，服务返回
+     * </pre>
+     */
+    public long getStartIndex() {
+      return startIndex_;
+    }
+
+    // repeated .TopicObj topicList = 3;
+    public static final int TOPICLIST_FIELD_NUMBER = 3;
+    private java.util.List<com.vine.vinemars.net.pb.SocialMessage.TopicObj> topicList_;
+    /**
+     * <code>repeated .TopicObj topicList = 3;</code>
      *
      * <pre>
      *话题列表
      * </pre>
      */
-    public java.util.List<com.vine.vinemars.net.pb.SocialMessage.TopicObj> getTopicsList() {
-      return topics_;
+    public java.util.List<com.vine.vinemars.net.pb.SocialMessage.TopicObj> getTopicListList() {
+      return topicList_;
     }
     /**
-     * <code>repeated .TopicObj topics = 1;</code>
+     * <code>repeated .TopicObj topicList = 3;</code>
      *
      * <pre>
      *话题列表
      * </pre>
      */
     public java.util.List<? extends com.vine.vinemars.net.pb.SocialMessage.TopicObjOrBuilder> 
-        getTopicsOrBuilderList() {
-      return topics_;
+        getTopicListOrBuilderList() {
+      return topicList_;
     }
     /**
-     * <code>repeated .TopicObj topics = 1;</code>
+     * <code>repeated .TopicObj topicList = 3;</code>
      *
      * <pre>
      *话题列表
      * </pre>
      */
-    public int getTopicsCount() {
-      return topics_.size();
+    public int getTopicListCount() {
+      return topicList_.size();
     }
     /**
-     * <code>repeated .TopicObj topics = 1;</code>
+     * <code>repeated .TopicObj topicList = 3;</code>
      *
      * <pre>
      *话题列表
      * </pre>
      */
-    public com.vine.vinemars.net.pb.SocialMessage.TopicObj getTopics(int index) {
-      return topics_.get(index);
+    public com.vine.vinemars.net.pb.SocialMessage.TopicObj getTopicList(int index) {
+      return topicList_.get(index);
     }
     /**
-     * <code>repeated .TopicObj topics = 1;</code>
+     * <code>repeated .TopicObj topicList = 3;</code>
      *
      * <pre>
      *话题列表
      * </pre>
      */
-    public com.vine.vinemars.net.pb.SocialMessage.TopicObjOrBuilder getTopicsOrBuilder(
+    public com.vine.vinemars.net.pb.SocialMessage.TopicObjOrBuilder getTopicListOrBuilder(
         int index) {
-      return topics_.get(index);
+      return topicList_.get(index);
     }
 
     private void initFields() {
-      topics_ = java.util.Collections.emptyList();
+      startIndex_ = 0L;
+      topicList_ = java.util.Collections.emptyList();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -3762,8 +4018,11 @@ public final class SocialMessage {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      for (int i = 0; i < topics_.size(); i++) {
-        output.writeMessage(1, topics_.get(i));
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt64(2, startIndex_);
+      }
+      for (int i = 0; i < topicList_.size(); i++) {
+        output.writeMessage(3, topicList_.get(i));
       }
     }
 
@@ -3773,9 +4032,13 @@ public final class SocialMessage {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < topics_.size(); i++) {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, topics_.get(i));
+          .computeInt64Size(2, startIndex_);
+      }
+      for (int i = 0; i < topicList_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, topicList_.get(i));
       }
       memoizedSerializedSize = size;
       return size;
@@ -3868,8 +4131,10 @@ public final class SocialMessage {
 
       public Builder clear() {
         super.clear();
-        topics_ = java.util.Collections.emptyList();
+        startIndex_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
+        topicList_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -3892,23 +4157,32 @@ public final class SocialMessage {
       public com.vine.vinemars.net.pb.SocialMessage.ListTopicRet buildPartial() {
         com.vine.vinemars.net.pb.SocialMessage.ListTopicRet result = new com.vine.vinemars.net.pb.SocialMessage.ListTopicRet(this);
         int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          topics_ = java.util.Collections.unmodifiableList(topics_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
         }
-        result.topics_ = topics_;
+        result.startIndex_ = startIndex_;
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          topicList_ = java.util.Collections.unmodifiableList(topicList_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.topicList_ = topicList_;
+        result.bitField0_ = to_bitField0_;
         return result;
       }
 
       public Builder mergeFrom(com.vine.vinemars.net.pb.SocialMessage.ListTopicRet other) {
         if (other == com.vine.vinemars.net.pb.SocialMessage.ListTopicRet.getDefaultInstance()) return this;
-        if (!other.topics_.isEmpty()) {
-          if (topics_.isEmpty()) {
-            topics_ = other.topics_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+        if (other.hasStartIndex()) {
+          setStartIndex(other.getStartIndex());
+        }
+        if (!other.topicList_.isEmpty()) {
+          if (topicList_.isEmpty()) {
+            topicList_ = other.topicList_;
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
-            ensureTopicsIsMutable();
-            topics_.addAll(other.topics_);
+            ensureTopicListIsMutable();
+            topicList_.addAll(other.topicList_);
           }
           
         }
@@ -3938,175 +4212,224 @@ public final class SocialMessage {
       }
       private int bitField0_;
 
-      // repeated .TopicObj topics = 1;
-      private java.util.List<com.vine.vinemars.net.pb.SocialMessage.TopicObj> topics_ =
+      // optional int64 startIndex = 2;
+      private long startIndex_ ;
+      /**
+       * <code>optional int64 startIndex = 2;</code>
+       *
+       * <pre>
+       *当前页结束Id号，服务返回
+       * </pre>
+       */
+      public boolean hasStartIndex() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional int64 startIndex = 2;</code>
+       *
+       * <pre>
+       *当前页结束Id号，服务返回
+       * </pre>
+       */
+      public long getStartIndex() {
+        return startIndex_;
+      }
+      /**
+       * <code>optional int64 startIndex = 2;</code>
+       *
+       * <pre>
+       *当前页结束Id号，服务返回
+       * </pre>
+       */
+      public Builder setStartIndex(long value) {
+        bitField0_ |= 0x00000001;
+        startIndex_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional int64 startIndex = 2;</code>
+       *
+       * <pre>
+       *当前页结束Id号，服务返回
+       * </pre>
+       */
+      public Builder clearStartIndex() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        startIndex_ = 0L;
+        
+        return this;
+      }
+
+      // repeated .TopicObj topicList = 3;
+      private java.util.List<com.vine.vinemars.net.pb.SocialMessage.TopicObj> topicList_ =
         java.util.Collections.emptyList();
-      private void ensureTopicsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          topics_ = new java.util.ArrayList<com.vine.vinemars.net.pb.SocialMessage.TopicObj>(topics_);
-          bitField0_ |= 0x00000001;
+      private void ensureTopicListIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          topicList_ = new java.util.ArrayList<com.vine.vinemars.net.pb.SocialMessage.TopicObj>(topicList_);
+          bitField0_ |= 0x00000002;
          }
       }
 
       /**
-       * <code>repeated .TopicObj topics = 1;</code>
+       * <code>repeated .TopicObj topicList = 3;</code>
        *
        * <pre>
        *话题列表
        * </pre>
        */
-      public java.util.List<com.vine.vinemars.net.pb.SocialMessage.TopicObj> getTopicsList() {
-        return java.util.Collections.unmodifiableList(topics_);
+      public java.util.List<com.vine.vinemars.net.pb.SocialMessage.TopicObj> getTopicListList() {
+        return java.util.Collections.unmodifiableList(topicList_);
       }
       /**
-       * <code>repeated .TopicObj topics = 1;</code>
+       * <code>repeated .TopicObj topicList = 3;</code>
        *
        * <pre>
        *话题列表
        * </pre>
        */
-      public int getTopicsCount() {
-        return topics_.size();
+      public int getTopicListCount() {
+        return topicList_.size();
       }
       /**
-       * <code>repeated .TopicObj topics = 1;</code>
+       * <code>repeated .TopicObj topicList = 3;</code>
        *
        * <pre>
        *话题列表
        * </pre>
        */
-      public com.vine.vinemars.net.pb.SocialMessage.TopicObj getTopics(int index) {
-        return topics_.get(index);
+      public com.vine.vinemars.net.pb.SocialMessage.TopicObj getTopicList(int index) {
+        return topicList_.get(index);
       }
       /**
-       * <code>repeated .TopicObj topics = 1;</code>
+       * <code>repeated .TopicObj topicList = 3;</code>
        *
        * <pre>
        *话题列表
        * </pre>
        */
-      public Builder setTopics(
+      public Builder setTopicList(
           int index, com.vine.vinemars.net.pb.SocialMessage.TopicObj value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureTopicsIsMutable();
-        topics_.set(index, value);
+        ensureTopicListIsMutable();
+        topicList_.set(index, value);
 
         return this;
       }
       /**
-       * <code>repeated .TopicObj topics = 1;</code>
+       * <code>repeated .TopicObj topicList = 3;</code>
        *
        * <pre>
        *话题列表
        * </pre>
        */
-      public Builder setTopics(
+      public Builder setTopicList(
           int index, com.vine.vinemars.net.pb.SocialMessage.TopicObj.Builder builderForValue) {
-        ensureTopicsIsMutable();
-        topics_.set(index, builderForValue.build());
+        ensureTopicListIsMutable();
+        topicList_.set(index, builderForValue.build());
 
         return this;
       }
       /**
-       * <code>repeated .TopicObj topics = 1;</code>
+       * <code>repeated .TopicObj topicList = 3;</code>
        *
        * <pre>
        *话题列表
        * </pre>
        */
-      public Builder addTopics(com.vine.vinemars.net.pb.SocialMessage.TopicObj value) {
+      public Builder addTopicList(com.vine.vinemars.net.pb.SocialMessage.TopicObj value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureTopicsIsMutable();
-        topics_.add(value);
+        ensureTopicListIsMutable();
+        topicList_.add(value);
 
         return this;
       }
       /**
-       * <code>repeated .TopicObj topics = 1;</code>
+       * <code>repeated .TopicObj topicList = 3;</code>
        *
        * <pre>
        *话题列表
        * </pre>
        */
-      public Builder addTopics(
+      public Builder addTopicList(
           int index, com.vine.vinemars.net.pb.SocialMessage.TopicObj value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureTopicsIsMutable();
-        topics_.add(index, value);
+        ensureTopicListIsMutable();
+        topicList_.add(index, value);
 
         return this;
       }
       /**
-       * <code>repeated .TopicObj topics = 1;</code>
+       * <code>repeated .TopicObj topicList = 3;</code>
        *
        * <pre>
        *话题列表
        * </pre>
        */
-      public Builder addTopics(
+      public Builder addTopicList(
           com.vine.vinemars.net.pb.SocialMessage.TopicObj.Builder builderForValue) {
-        ensureTopicsIsMutable();
-        topics_.add(builderForValue.build());
+        ensureTopicListIsMutable();
+        topicList_.add(builderForValue.build());
 
         return this;
       }
       /**
-       * <code>repeated .TopicObj topics = 1;</code>
+       * <code>repeated .TopicObj topicList = 3;</code>
        *
        * <pre>
        *话题列表
        * </pre>
        */
-      public Builder addTopics(
+      public Builder addTopicList(
           int index, com.vine.vinemars.net.pb.SocialMessage.TopicObj.Builder builderForValue) {
-        ensureTopicsIsMutable();
-        topics_.add(index, builderForValue.build());
+        ensureTopicListIsMutable();
+        topicList_.add(index, builderForValue.build());
 
         return this;
       }
       /**
-       * <code>repeated .TopicObj topics = 1;</code>
+       * <code>repeated .TopicObj topicList = 3;</code>
        *
        * <pre>
        *话题列表
        * </pre>
        */
-      public Builder addAllTopics(
+      public Builder addAllTopicList(
           java.lang.Iterable<? extends com.vine.vinemars.net.pb.SocialMessage.TopicObj> values) {
-        ensureTopicsIsMutable();
-        super.addAll(values, topics_);
+        ensureTopicListIsMutable();
+        super.addAll(values, topicList_);
 
         return this;
       }
       /**
-       * <code>repeated .TopicObj topics = 1;</code>
+       * <code>repeated .TopicObj topicList = 3;</code>
        *
        * <pre>
        *话题列表
        * </pre>
        */
-      public Builder clearTopics() {
-        topics_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      public Builder clearTopicList() {
+        topicList_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
 
         return this;
       }
       /**
-       * <code>repeated .TopicObj topics = 1;</code>
+       * <code>repeated .TopicObj topicList = 3;</code>
        *
        * <pre>
        *话题列表
        * </pre>
        */
-      public Builder removeTopics(int index) {
-        ensureTopicsIsMutable();
-        topics_.remove(index);
+      public Builder removeTopicList(int index) {
+        ensureTopicListIsMutable();
+        topicList_.remove(index);
 
         return this;
       }
@@ -7259,32 +7582,32 @@ public final class SocialMessage {
   public interface ListFriendRequestRetOrBuilder
       extends com.google.protobuf.MessageLiteOrBuilder {
 
-    // repeated .FriendRequestObj requests = 1;
+    // repeated .FriendRequestObj requestList = 1;
     /**
-     * <code>repeated .FriendRequestObj requests = 1;</code>
+     * <code>repeated .FriendRequestObj requestList = 1;</code>
      *
      * <pre>
      *还有请求列表
      * </pre>
      */
     java.util.List<com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj> 
-        getRequestsList();
+        getRequestListList();
     /**
-     * <code>repeated .FriendRequestObj requests = 1;</code>
+     * <code>repeated .FriendRequestObj requestList = 1;</code>
      *
      * <pre>
      *还有请求列表
      * </pre>
      */
-    com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj getRequests(int index);
+    com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj getRequestList(int index);
     /**
-     * <code>repeated .FriendRequestObj requests = 1;</code>
+     * <code>repeated .FriendRequestObj requestList = 1;</code>
      *
      * <pre>
      *还有请求列表
      * </pre>
      */
-    int getRequestsCount();
+    int getRequestListCount();
   }
   /**
    * Protobuf type {@code ListFriendRequestRet}
@@ -7335,10 +7658,10 @@ public final class SocialMessage {
             }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                requests_ = new java.util.ArrayList<com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj>();
+                requestList_ = new java.util.ArrayList<com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              requests_.add(input.readMessage(com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj.PARSER, extensionRegistry));
+              requestList_.add(input.readMessage(com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj.PARSER, extensionRegistry));
               break;
             }
           }
@@ -7350,7 +7673,7 @@ public final class SocialMessage {
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          requests_ = java.util.Collections.unmodifiableList(requests_);
+          requestList_ = java.util.Collections.unmodifiableList(requestList_);
         }
         makeExtensionsImmutable();
       }
@@ -7370,64 +7693,64 @@ public final class SocialMessage {
       return PARSER;
     }
 
-    // repeated .FriendRequestObj requests = 1;
-    public static final int REQUESTS_FIELD_NUMBER = 1;
-    private java.util.List<com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj> requests_;
+    // repeated .FriendRequestObj requestList = 1;
+    public static final int REQUESTLIST_FIELD_NUMBER = 1;
+    private java.util.List<com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj> requestList_;
     /**
-     * <code>repeated .FriendRequestObj requests = 1;</code>
+     * <code>repeated .FriendRequestObj requestList = 1;</code>
      *
      * <pre>
      *还有请求列表
      * </pre>
      */
-    public java.util.List<com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj> getRequestsList() {
-      return requests_;
+    public java.util.List<com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj> getRequestListList() {
+      return requestList_;
     }
     /**
-     * <code>repeated .FriendRequestObj requests = 1;</code>
+     * <code>repeated .FriendRequestObj requestList = 1;</code>
      *
      * <pre>
      *还有请求列表
      * </pre>
      */
     public java.util.List<? extends com.vine.vinemars.net.pb.SocialMessage.FriendRequestObjOrBuilder> 
-        getRequestsOrBuilderList() {
-      return requests_;
+        getRequestListOrBuilderList() {
+      return requestList_;
     }
     /**
-     * <code>repeated .FriendRequestObj requests = 1;</code>
+     * <code>repeated .FriendRequestObj requestList = 1;</code>
      *
      * <pre>
      *还有请求列表
      * </pre>
      */
-    public int getRequestsCount() {
-      return requests_.size();
+    public int getRequestListCount() {
+      return requestList_.size();
     }
     /**
-     * <code>repeated .FriendRequestObj requests = 1;</code>
+     * <code>repeated .FriendRequestObj requestList = 1;</code>
      *
      * <pre>
      *还有请求列表
      * </pre>
      */
-    public com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj getRequests(int index) {
-      return requests_.get(index);
+    public com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj getRequestList(int index) {
+      return requestList_.get(index);
     }
     /**
-     * <code>repeated .FriendRequestObj requests = 1;</code>
+     * <code>repeated .FriendRequestObj requestList = 1;</code>
      *
      * <pre>
      *还有请求列表
      * </pre>
      */
-    public com.vine.vinemars.net.pb.SocialMessage.FriendRequestObjOrBuilder getRequestsOrBuilder(
+    public com.vine.vinemars.net.pb.SocialMessage.FriendRequestObjOrBuilder getRequestListOrBuilder(
         int index) {
-      return requests_.get(index);
+      return requestList_.get(index);
     }
 
     private void initFields() {
-      requests_ = java.util.Collections.emptyList();
+      requestList_ = java.util.Collections.emptyList();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -7441,8 +7764,8 @@ public final class SocialMessage {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      for (int i = 0; i < requests_.size(); i++) {
-        output.writeMessage(1, requests_.get(i));
+      for (int i = 0; i < requestList_.size(); i++) {
+        output.writeMessage(1, requestList_.get(i));
       }
     }
 
@@ -7452,9 +7775,9 @@ public final class SocialMessage {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < requests_.size(); i++) {
+      for (int i = 0; i < requestList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, requests_.get(i));
+          .computeMessageSize(1, requestList_.get(i));
       }
       memoizedSerializedSize = size;
       return size;
@@ -7551,7 +7874,7 @@ public final class SocialMessage {
 
       public Builder clear() {
         super.clear();
-        requests_ = java.util.Collections.emptyList();
+        requestList_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
@@ -7576,22 +7899,22 @@ public final class SocialMessage {
         com.vine.vinemars.net.pb.SocialMessage.ListFriendRequestRet result = new com.vine.vinemars.net.pb.SocialMessage.ListFriendRequestRet(this);
         int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          requests_ = java.util.Collections.unmodifiableList(requests_);
+          requestList_ = java.util.Collections.unmodifiableList(requestList_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.requests_ = requests_;
+        result.requestList_ = requestList_;
         return result;
       }
 
       public Builder mergeFrom(com.vine.vinemars.net.pb.SocialMessage.ListFriendRequestRet other) {
         if (other == com.vine.vinemars.net.pb.SocialMessage.ListFriendRequestRet.getDefaultInstance()) return this;
-        if (!other.requests_.isEmpty()) {
-          if (requests_.isEmpty()) {
-            requests_ = other.requests_;
+        if (!other.requestList_.isEmpty()) {
+          if (requestList_.isEmpty()) {
+            requestList_ = other.requestList_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureRequestsIsMutable();
-            requests_.addAll(other.requests_);
+            ensureRequestListIsMutable();
+            requestList_.addAll(other.requestList_);
           }
           
         }
@@ -7621,175 +7944,175 @@ public final class SocialMessage {
       }
       private int bitField0_;
 
-      // repeated .FriendRequestObj requests = 1;
-      private java.util.List<com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj> requests_ =
+      // repeated .FriendRequestObj requestList = 1;
+      private java.util.List<com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj> requestList_ =
         java.util.Collections.emptyList();
-      private void ensureRequestsIsMutable() {
+      private void ensureRequestListIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          requests_ = new java.util.ArrayList<com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj>(requests_);
+          requestList_ = new java.util.ArrayList<com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj>(requestList_);
           bitField0_ |= 0x00000001;
          }
       }
 
       /**
-       * <code>repeated .FriendRequestObj requests = 1;</code>
+       * <code>repeated .FriendRequestObj requestList = 1;</code>
        *
        * <pre>
        *还有请求列表
        * </pre>
        */
-      public java.util.List<com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj> getRequestsList() {
-        return java.util.Collections.unmodifiableList(requests_);
+      public java.util.List<com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj> getRequestListList() {
+        return java.util.Collections.unmodifiableList(requestList_);
       }
       /**
-       * <code>repeated .FriendRequestObj requests = 1;</code>
+       * <code>repeated .FriendRequestObj requestList = 1;</code>
        *
        * <pre>
        *还有请求列表
        * </pre>
        */
-      public int getRequestsCount() {
-        return requests_.size();
+      public int getRequestListCount() {
+        return requestList_.size();
       }
       /**
-       * <code>repeated .FriendRequestObj requests = 1;</code>
+       * <code>repeated .FriendRequestObj requestList = 1;</code>
        *
        * <pre>
        *还有请求列表
        * </pre>
        */
-      public com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj getRequests(int index) {
-        return requests_.get(index);
+      public com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj getRequestList(int index) {
+        return requestList_.get(index);
       }
       /**
-       * <code>repeated .FriendRequestObj requests = 1;</code>
+       * <code>repeated .FriendRequestObj requestList = 1;</code>
        *
        * <pre>
        *还有请求列表
        * </pre>
        */
-      public Builder setRequests(
+      public Builder setRequestList(
           int index, com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureRequestsIsMutable();
-        requests_.set(index, value);
+        ensureRequestListIsMutable();
+        requestList_.set(index, value);
 
         return this;
       }
       /**
-       * <code>repeated .FriendRequestObj requests = 1;</code>
+       * <code>repeated .FriendRequestObj requestList = 1;</code>
        *
        * <pre>
        *还有请求列表
        * </pre>
        */
-      public Builder setRequests(
+      public Builder setRequestList(
           int index, com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj.Builder builderForValue) {
-        ensureRequestsIsMutable();
-        requests_.set(index, builderForValue.build());
+        ensureRequestListIsMutable();
+        requestList_.set(index, builderForValue.build());
 
         return this;
       }
       /**
-       * <code>repeated .FriendRequestObj requests = 1;</code>
+       * <code>repeated .FriendRequestObj requestList = 1;</code>
        *
        * <pre>
        *还有请求列表
        * </pre>
        */
-      public Builder addRequests(com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj value) {
+      public Builder addRequestList(com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureRequestsIsMutable();
-        requests_.add(value);
+        ensureRequestListIsMutable();
+        requestList_.add(value);
 
         return this;
       }
       /**
-       * <code>repeated .FriendRequestObj requests = 1;</code>
+       * <code>repeated .FriendRequestObj requestList = 1;</code>
        *
        * <pre>
        *还有请求列表
        * </pre>
        */
-      public Builder addRequests(
+      public Builder addRequestList(
           int index, com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureRequestsIsMutable();
-        requests_.add(index, value);
+        ensureRequestListIsMutable();
+        requestList_.add(index, value);
 
         return this;
       }
       /**
-       * <code>repeated .FriendRequestObj requests = 1;</code>
+       * <code>repeated .FriendRequestObj requestList = 1;</code>
        *
        * <pre>
        *还有请求列表
        * </pre>
        */
-      public Builder addRequests(
+      public Builder addRequestList(
           com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj.Builder builderForValue) {
-        ensureRequestsIsMutable();
-        requests_.add(builderForValue.build());
+        ensureRequestListIsMutable();
+        requestList_.add(builderForValue.build());
 
         return this;
       }
       /**
-       * <code>repeated .FriendRequestObj requests = 1;</code>
+       * <code>repeated .FriendRequestObj requestList = 1;</code>
        *
        * <pre>
        *还有请求列表
        * </pre>
        */
-      public Builder addRequests(
+      public Builder addRequestList(
           int index, com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj.Builder builderForValue) {
-        ensureRequestsIsMutable();
-        requests_.add(index, builderForValue.build());
+        ensureRequestListIsMutable();
+        requestList_.add(index, builderForValue.build());
 
         return this;
       }
       /**
-       * <code>repeated .FriendRequestObj requests = 1;</code>
+       * <code>repeated .FriendRequestObj requestList = 1;</code>
        *
        * <pre>
        *还有请求列表
        * </pre>
        */
-      public Builder addAllRequests(
+      public Builder addAllRequestList(
           java.lang.Iterable<? extends com.vine.vinemars.net.pb.SocialMessage.FriendRequestObj> values) {
-        ensureRequestsIsMutable();
-        super.addAll(values, requests_);
+        ensureRequestListIsMutable();
+        super.addAll(values, requestList_);
 
         return this;
       }
       /**
-       * <code>repeated .FriendRequestObj requests = 1;</code>
+       * <code>repeated .FriendRequestObj requestList = 1;</code>
        *
        * <pre>
        *还有请求列表
        * </pre>
        */
-      public Builder clearRequests() {
-        requests_ = java.util.Collections.emptyList();
+      public Builder clearRequestList() {
+        requestList_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
 
         return this;
       }
       /**
-       * <code>repeated .FriendRequestObj requests = 1;</code>
+       * <code>repeated .FriendRequestObj requestList = 1;</code>
        *
        * <pre>
        *还有请求列表
        * </pre>
        */
-      public Builder removeRequests(int index) {
-        ensureRequestsIsMutable();
-        requests_.remove(index);
+      public Builder removeRequestList(int index) {
+        ensureRequestListIsMutable();
+        requestList_.remove(index);
 
         return this;
       }
@@ -9910,20 +10233,20 @@ public final class SocialMessage {
   public interface ListFriendRetOrBuilder
       extends com.google.protobuf.MessageLiteOrBuilder {
 
-    // repeated .FriendObj friends = 1;
+    // repeated .FriendObj friendList = 1;
     /**
-     * <code>repeated .FriendObj friends = 1;</code>
+     * <code>repeated .FriendObj friendList = 1;</code>
      */
     java.util.List<com.vine.vinemars.net.pb.SocialMessage.FriendObj> 
-        getFriendsList();
+        getFriendListList();
     /**
-     * <code>repeated .FriendObj friends = 1;</code>
+     * <code>repeated .FriendObj friendList = 1;</code>
      */
-    com.vine.vinemars.net.pb.SocialMessage.FriendObj getFriends(int index);
+    com.vine.vinemars.net.pb.SocialMessage.FriendObj getFriendList(int index);
     /**
-     * <code>repeated .FriendObj friends = 1;</code>
+     * <code>repeated .FriendObj friendList = 1;</code>
      */
-    int getFriendsCount();
+    int getFriendListCount();
   }
   /**
    * Protobuf type {@code ListFriendRet}
@@ -9974,10 +10297,10 @@ public final class SocialMessage {
             }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                friends_ = new java.util.ArrayList<com.vine.vinemars.net.pb.SocialMessage.FriendObj>();
+                friendList_ = new java.util.ArrayList<com.vine.vinemars.net.pb.SocialMessage.FriendObj>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              friends_.add(input.readMessage(com.vine.vinemars.net.pb.SocialMessage.FriendObj.PARSER, extensionRegistry));
+              friendList_.add(input.readMessage(com.vine.vinemars.net.pb.SocialMessage.FriendObj.PARSER, extensionRegistry));
               break;
             }
           }
@@ -9989,7 +10312,7 @@ public final class SocialMessage {
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          friends_ = java.util.Collections.unmodifiableList(friends_);
+          friendList_ = java.util.Collections.unmodifiableList(friendList_);
         }
         makeExtensionsImmutable();
       }
@@ -10009,44 +10332,44 @@ public final class SocialMessage {
       return PARSER;
     }
 
-    // repeated .FriendObj friends = 1;
-    public static final int FRIENDS_FIELD_NUMBER = 1;
-    private java.util.List<com.vine.vinemars.net.pb.SocialMessage.FriendObj> friends_;
+    // repeated .FriendObj friendList = 1;
+    public static final int FRIENDLIST_FIELD_NUMBER = 1;
+    private java.util.List<com.vine.vinemars.net.pb.SocialMessage.FriendObj> friendList_;
     /**
-     * <code>repeated .FriendObj friends = 1;</code>
+     * <code>repeated .FriendObj friendList = 1;</code>
      */
-    public java.util.List<com.vine.vinemars.net.pb.SocialMessage.FriendObj> getFriendsList() {
-      return friends_;
+    public java.util.List<com.vine.vinemars.net.pb.SocialMessage.FriendObj> getFriendListList() {
+      return friendList_;
     }
     /**
-     * <code>repeated .FriendObj friends = 1;</code>
+     * <code>repeated .FriendObj friendList = 1;</code>
      */
     public java.util.List<? extends com.vine.vinemars.net.pb.SocialMessage.FriendObjOrBuilder> 
-        getFriendsOrBuilderList() {
-      return friends_;
+        getFriendListOrBuilderList() {
+      return friendList_;
     }
     /**
-     * <code>repeated .FriendObj friends = 1;</code>
+     * <code>repeated .FriendObj friendList = 1;</code>
      */
-    public int getFriendsCount() {
-      return friends_.size();
+    public int getFriendListCount() {
+      return friendList_.size();
     }
     /**
-     * <code>repeated .FriendObj friends = 1;</code>
+     * <code>repeated .FriendObj friendList = 1;</code>
      */
-    public com.vine.vinemars.net.pb.SocialMessage.FriendObj getFriends(int index) {
-      return friends_.get(index);
+    public com.vine.vinemars.net.pb.SocialMessage.FriendObj getFriendList(int index) {
+      return friendList_.get(index);
     }
     /**
-     * <code>repeated .FriendObj friends = 1;</code>
+     * <code>repeated .FriendObj friendList = 1;</code>
      */
-    public com.vine.vinemars.net.pb.SocialMessage.FriendObjOrBuilder getFriendsOrBuilder(
+    public com.vine.vinemars.net.pb.SocialMessage.FriendObjOrBuilder getFriendListOrBuilder(
         int index) {
-      return friends_.get(index);
+      return friendList_.get(index);
     }
 
     private void initFields() {
-      friends_ = java.util.Collections.emptyList();
+      friendList_ = java.util.Collections.emptyList();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -10060,8 +10383,8 @@ public final class SocialMessage {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      for (int i = 0; i < friends_.size(); i++) {
-        output.writeMessage(1, friends_.get(i));
+      for (int i = 0; i < friendList_.size(); i++) {
+        output.writeMessage(1, friendList_.get(i));
       }
     }
 
@@ -10071,9 +10394,9 @@ public final class SocialMessage {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < friends_.size(); i++) {
+      for (int i = 0; i < friendList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, friends_.get(i));
+          .computeMessageSize(1, friendList_.get(i));
       }
       memoizedSerializedSize = size;
       return size;
@@ -10170,7 +10493,7 @@ public final class SocialMessage {
 
       public Builder clear() {
         super.clear();
-        friends_ = java.util.Collections.emptyList();
+        friendList_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
@@ -10195,22 +10518,22 @@ public final class SocialMessage {
         com.vine.vinemars.net.pb.SocialMessage.ListFriendRet result = new com.vine.vinemars.net.pb.SocialMessage.ListFriendRet(this);
         int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          friends_ = java.util.Collections.unmodifiableList(friends_);
+          friendList_ = java.util.Collections.unmodifiableList(friendList_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.friends_ = friends_;
+        result.friendList_ = friendList_;
         return result;
       }
 
       public Builder mergeFrom(com.vine.vinemars.net.pb.SocialMessage.ListFriendRet other) {
         if (other == com.vine.vinemars.net.pb.SocialMessage.ListFriendRet.getDefaultInstance()) return this;
-        if (!other.friends_.isEmpty()) {
-          if (friends_.isEmpty()) {
-            friends_ = other.friends_;
+        if (!other.friendList_.isEmpty()) {
+          if (friendList_.isEmpty()) {
+            friendList_ = other.friendList_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureFriendsIsMutable();
-            friends_.addAll(other.friends_);
+            ensureFriendListIsMutable();
+            friendList_.addAll(other.friendList_);
           }
           
         }
@@ -10240,127 +10563,127 @@ public final class SocialMessage {
       }
       private int bitField0_;
 
-      // repeated .FriendObj friends = 1;
-      private java.util.List<com.vine.vinemars.net.pb.SocialMessage.FriendObj> friends_ =
+      // repeated .FriendObj friendList = 1;
+      private java.util.List<com.vine.vinemars.net.pb.SocialMessage.FriendObj> friendList_ =
         java.util.Collections.emptyList();
-      private void ensureFriendsIsMutable() {
+      private void ensureFriendListIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          friends_ = new java.util.ArrayList<com.vine.vinemars.net.pb.SocialMessage.FriendObj>(friends_);
+          friendList_ = new java.util.ArrayList<com.vine.vinemars.net.pb.SocialMessage.FriendObj>(friendList_);
           bitField0_ |= 0x00000001;
          }
       }
 
       /**
-       * <code>repeated .FriendObj friends = 1;</code>
+       * <code>repeated .FriendObj friendList = 1;</code>
        */
-      public java.util.List<com.vine.vinemars.net.pb.SocialMessage.FriendObj> getFriendsList() {
-        return java.util.Collections.unmodifiableList(friends_);
+      public java.util.List<com.vine.vinemars.net.pb.SocialMessage.FriendObj> getFriendListList() {
+        return java.util.Collections.unmodifiableList(friendList_);
       }
       /**
-       * <code>repeated .FriendObj friends = 1;</code>
+       * <code>repeated .FriendObj friendList = 1;</code>
        */
-      public int getFriendsCount() {
-        return friends_.size();
+      public int getFriendListCount() {
+        return friendList_.size();
       }
       /**
-       * <code>repeated .FriendObj friends = 1;</code>
+       * <code>repeated .FriendObj friendList = 1;</code>
        */
-      public com.vine.vinemars.net.pb.SocialMessage.FriendObj getFriends(int index) {
-        return friends_.get(index);
+      public com.vine.vinemars.net.pb.SocialMessage.FriendObj getFriendList(int index) {
+        return friendList_.get(index);
       }
       /**
-       * <code>repeated .FriendObj friends = 1;</code>
+       * <code>repeated .FriendObj friendList = 1;</code>
        */
-      public Builder setFriends(
+      public Builder setFriendList(
           int index, com.vine.vinemars.net.pb.SocialMessage.FriendObj value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureFriendsIsMutable();
-        friends_.set(index, value);
+        ensureFriendListIsMutable();
+        friendList_.set(index, value);
 
         return this;
       }
       /**
-       * <code>repeated .FriendObj friends = 1;</code>
+       * <code>repeated .FriendObj friendList = 1;</code>
        */
-      public Builder setFriends(
+      public Builder setFriendList(
           int index, com.vine.vinemars.net.pb.SocialMessage.FriendObj.Builder builderForValue) {
-        ensureFriendsIsMutable();
-        friends_.set(index, builderForValue.build());
+        ensureFriendListIsMutable();
+        friendList_.set(index, builderForValue.build());
 
         return this;
       }
       /**
-       * <code>repeated .FriendObj friends = 1;</code>
+       * <code>repeated .FriendObj friendList = 1;</code>
        */
-      public Builder addFriends(com.vine.vinemars.net.pb.SocialMessage.FriendObj value) {
+      public Builder addFriendList(com.vine.vinemars.net.pb.SocialMessage.FriendObj value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureFriendsIsMutable();
-        friends_.add(value);
+        ensureFriendListIsMutable();
+        friendList_.add(value);
 
         return this;
       }
       /**
-       * <code>repeated .FriendObj friends = 1;</code>
+       * <code>repeated .FriendObj friendList = 1;</code>
        */
-      public Builder addFriends(
+      public Builder addFriendList(
           int index, com.vine.vinemars.net.pb.SocialMessage.FriendObj value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureFriendsIsMutable();
-        friends_.add(index, value);
+        ensureFriendListIsMutable();
+        friendList_.add(index, value);
 
         return this;
       }
       /**
-       * <code>repeated .FriendObj friends = 1;</code>
+       * <code>repeated .FriendObj friendList = 1;</code>
        */
-      public Builder addFriends(
+      public Builder addFriendList(
           com.vine.vinemars.net.pb.SocialMessage.FriendObj.Builder builderForValue) {
-        ensureFriendsIsMutable();
-        friends_.add(builderForValue.build());
+        ensureFriendListIsMutable();
+        friendList_.add(builderForValue.build());
 
         return this;
       }
       /**
-       * <code>repeated .FriendObj friends = 1;</code>
+       * <code>repeated .FriendObj friendList = 1;</code>
        */
-      public Builder addFriends(
+      public Builder addFriendList(
           int index, com.vine.vinemars.net.pb.SocialMessage.FriendObj.Builder builderForValue) {
-        ensureFriendsIsMutable();
-        friends_.add(index, builderForValue.build());
+        ensureFriendListIsMutable();
+        friendList_.add(index, builderForValue.build());
 
         return this;
       }
       /**
-       * <code>repeated .FriendObj friends = 1;</code>
+       * <code>repeated .FriendObj friendList = 1;</code>
        */
-      public Builder addAllFriends(
+      public Builder addAllFriendList(
           java.lang.Iterable<? extends com.vine.vinemars.net.pb.SocialMessage.FriendObj> values) {
-        ensureFriendsIsMutable();
-        super.addAll(values, friends_);
+        ensureFriendListIsMutable();
+        super.addAll(values, friendList_);
 
         return this;
       }
       /**
-       * <code>repeated .FriendObj friends = 1;</code>
+       * <code>repeated .FriendObj friendList = 1;</code>
        */
-      public Builder clearFriends() {
-        friends_ = java.util.Collections.emptyList();
+      public Builder clearFriendList() {
+        friendList_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
 
         return this;
       }
       /**
-       * <code>repeated .FriendObj friends = 1;</code>
+       * <code>repeated .FriendObj friendList = 1;</code>
        */
-      public Builder removeFriends(int index) {
-        ensureFriendsIsMutable();
-        friends_.remove(index);
+      public Builder removeFriendList(int index) {
+        ensureFriendListIsMutable();
+        friendList_.remove(index);
 
         return this;
       }
@@ -10754,20 +11077,20 @@ public final class SocialMessage {
   public interface ListNotificationRetOrBuilder
       extends com.google.protobuf.MessageLiteOrBuilder {
 
-    // repeated .NoticeObj notices = 1;
+    // repeated .NoticeObj noticeList = 1;
     /**
-     * <code>repeated .NoticeObj notices = 1;</code>
+     * <code>repeated .NoticeObj noticeList = 1;</code>
      */
     java.util.List<com.vine.vinemars.net.pb.SocialMessage.NoticeObj> 
-        getNoticesList();
+        getNoticeListList();
     /**
-     * <code>repeated .NoticeObj notices = 1;</code>
+     * <code>repeated .NoticeObj noticeList = 1;</code>
      */
-    com.vine.vinemars.net.pb.SocialMessage.NoticeObj getNotices(int index);
+    com.vine.vinemars.net.pb.SocialMessage.NoticeObj getNoticeList(int index);
     /**
-     * <code>repeated .NoticeObj notices = 1;</code>
+     * <code>repeated .NoticeObj noticeList = 1;</code>
      */
-    int getNoticesCount();
+    int getNoticeListCount();
   }
   /**
    * Protobuf type {@code ListNotificationRet}
@@ -10814,10 +11137,10 @@ public final class SocialMessage {
             }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                notices_ = new java.util.ArrayList<com.vine.vinemars.net.pb.SocialMessage.NoticeObj>();
+                noticeList_ = new java.util.ArrayList<com.vine.vinemars.net.pb.SocialMessage.NoticeObj>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              notices_.add(input.readMessage(com.vine.vinemars.net.pb.SocialMessage.NoticeObj.PARSER, extensionRegistry));
+              noticeList_.add(input.readMessage(com.vine.vinemars.net.pb.SocialMessage.NoticeObj.PARSER, extensionRegistry));
               break;
             }
           }
@@ -10829,7 +11152,7 @@ public final class SocialMessage {
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          notices_ = java.util.Collections.unmodifiableList(notices_);
+          noticeList_ = java.util.Collections.unmodifiableList(noticeList_);
         }
         makeExtensionsImmutable();
       }
@@ -10849,44 +11172,44 @@ public final class SocialMessage {
       return PARSER;
     }
 
-    // repeated .NoticeObj notices = 1;
-    public static final int NOTICES_FIELD_NUMBER = 1;
-    private java.util.List<com.vine.vinemars.net.pb.SocialMessage.NoticeObj> notices_;
+    // repeated .NoticeObj noticeList = 1;
+    public static final int NOTICELIST_FIELD_NUMBER = 1;
+    private java.util.List<com.vine.vinemars.net.pb.SocialMessage.NoticeObj> noticeList_;
     /**
-     * <code>repeated .NoticeObj notices = 1;</code>
+     * <code>repeated .NoticeObj noticeList = 1;</code>
      */
-    public java.util.List<com.vine.vinemars.net.pb.SocialMessage.NoticeObj> getNoticesList() {
-      return notices_;
+    public java.util.List<com.vine.vinemars.net.pb.SocialMessage.NoticeObj> getNoticeListList() {
+      return noticeList_;
     }
     /**
-     * <code>repeated .NoticeObj notices = 1;</code>
+     * <code>repeated .NoticeObj noticeList = 1;</code>
      */
     public java.util.List<? extends com.vine.vinemars.net.pb.SocialMessage.NoticeObjOrBuilder> 
-        getNoticesOrBuilderList() {
-      return notices_;
+        getNoticeListOrBuilderList() {
+      return noticeList_;
     }
     /**
-     * <code>repeated .NoticeObj notices = 1;</code>
+     * <code>repeated .NoticeObj noticeList = 1;</code>
      */
-    public int getNoticesCount() {
-      return notices_.size();
+    public int getNoticeListCount() {
+      return noticeList_.size();
     }
     /**
-     * <code>repeated .NoticeObj notices = 1;</code>
+     * <code>repeated .NoticeObj noticeList = 1;</code>
      */
-    public com.vine.vinemars.net.pb.SocialMessage.NoticeObj getNotices(int index) {
-      return notices_.get(index);
+    public com.vine.vinemars.net.pb.SocialMessage.NoticeObj getNoticeList(int index) {
+      return noticeList_.get(index);
     }
     /**
-     * <code>repeated .NoticeObj notices = 1;</code>
+     * <code>repeated .NoticeObj noticeList = 1;</code>
      */
-    public com.vine.vinemars.net.pb.SocialMessage.NoticeObjOrBuilder getNoticesOrBuilder(
+    public com.vine.vinemars.net.pb.SocialMessage.NoticeObjOrBuilder getNoticeListOrBuilder(
         int index) {
-      return notices_.get(index);
+      return noticeList_.get(index);
     }
 
     private void initFields() {
-      notices_ = java.util.Collections.emptyList();
+      noticeList_ = java.util.Collections.emptyList();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -10900,8 +11223,8 @@ public final class SocialMessage {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      for (int i = 0; i < notices_.size(); i++) {
-        output.writeMessage(1, notices_.get(i));
+      for (int i = 0; i < noticeList_.size(); i++) {
+        output.writeMessage(1, noticeList_.get(i));
       }
     }
 
@@ -10911,9 +11234,9 @@ public final class SocialMessage {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < notices_.size(); i++) {
+      for (int i = 0; i < noticeList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, notices_.get(i));
+          .computeMessageSize(1, noticeList_.get(i));
       }
       memoizedSerializedSize = size;
       return size;
@@ -11006,7 +11329,7 @@ public final class SocialMessage {
 
       public Builder clear() {
         super.clear();
-        notices_ = java.util.Collections.emptyList();
+        noticeList_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
@@ -11031,22 +11354,22 @@ public final class SocialMessage {
         com.vine.vinemars.net.pb.SocialMessage.ListNotificationRet result = new com.vine.vinemars.net.pb.SocialMessage.ListNotificationRet(this);
         int from_bitField0_ = bitField0_;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          notices_ = java.util.Collections.unmodifiableList(notices_);
+          noticeList_ = java.util.Collections.unmodifiableList(noticeList_);
           bitField0_ = (bitField0_ & ~0x00000001);
         }
-        result.notices_ = notices_;
+        result.noticeList_ = noticeList_;
         return result;
       }
 
       public Builder mergeFrom(com.vine.vinemars.net.pb.SocialMessage.ListNotificationRet other) {
         if (other == com.vine.vinemars.net.pb.SocialMessage.ListNotificationRet.getDefaultInstance()) return this;
-        if (!other.notices_.isEmpty()) {
-          if (notices_.isEmpty()) {
-            notices_ = other.notices_;
+        if (!other.noticeList_.isEmpty()) {
+          if (noticeList_.isEmpty()) {
+            noticeList_ = other.noticeList_;
             bitField0_ = (bitField0_ & ~0x00000001);
           } else {
-            ensureNoticesIsMutable();
-            notices_.addAll(other.notices_);
+            ensureNoticeListIsMutable();
+            noticeList_.addAll(other.noticeList_);
           }
           
         }
@@ -11076,127 +11399,127 @@ public final class SocialMessage {
       }
       private int bitField0_;
 
-      // repeated .NoticeObj notices = 1;
-      private java.util.List<com.vine.vinemars.net.pb.SocialMessage.NoticeObj> notices_ =
+      // repeated .NoticeObj noticeList = 1;
+      private java.util.List<com.vine.vinemars.net.pb.SocialMessage.NoticeObj> noticeList_ =
         java.util.Collections.emptyList();
-      private void ensureNoticesIsMutable() {
+      private void ensureNoticeListIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          notices_ = new java.util.ArrayList<com.vine.vinemars.net.pb.SocialMessage.NoticeObj>(notices_);
+          noticeList_ = new java.util.ArrayList<com.vine.vinemars.net.pb.SocialMessage.NoticeObj>(noticeList_);
           bitField0_ |= 0x00000001;
          }
       }
 
       /**
-       * <code>repeated .NoticeObj notices = 1;</code>
+       * <code>repeated .NoticeObj noticeList = 1;</code>
        */
-      public java.util.List<com.vine.vinemars.net.pb.SocialMessage.NoticeObj> getNoticesList() {
-        return java.util.Collections.unmodifiableList(notices_);
+      public java.util.List<com.vine.vinemars.net.pb.SocialMessage.NoticeObj> getNoticeListList() {
+        return java.util.Collections.unmodifiableList(noticeList_);
       }
       /**
-       * <code>repeated .NoticeObj notices = 1;</code>
+       * <code>repeated .NoticeObj noticeList = 1;</code>
        */
-      public int getNoticesCount() {
-        return notices_.size();
+      public int getNoticeListCount() {
+        return noticeList_.size();
       }
       /**
-       * <code>repeated .NoticeObj notices = 1;</code>
+       * <code>repeated .NoticeObj noticeList = 1;</code>
        */
-      public com.vine.vinemars.net.pb.SocialMessage.NoticeObj getNotices(int index) {
-        return notices_.get(index);
+      public com.vine.vinemars.net.pb.SocialMessage.NoticeObj getNoticeList(int index) {
+        return noticeList_.get(index);
       }
       /**
-       * <code>repeated .NoticeObj notices = 1;</code>
+       * <code>repeated .NoticeObj noticeList = 1;</code>
        */
-      public Builder setNotices(
+      public Builder setNoticeList(
           int index, com.vine.vinemars.net.pb.SocialMessage.NoticeObj value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureNoticesIsMutable();
-        notices_.set(index, value);
+        ensureNoticeListIsMutable();
+        noticeList_.set(index, value);
 
         return this;
       }
       /**
-       * <code>repeated .NoticeObj notices = 1;</code>
+       * <code>repeated .NoticeObj noticeList = 1;</code>
        */
-      public Builder setNotices(
+      public Builder setNoticeList(
           int index, com.vine.vinemars.net.pb.SocialMessage.NoticeObj.Builder builderForValue) {
-        ensureNoticesIsMutable();
-        notices_.set(index, builderForValue.build());
+        ensureNoticeListIsMutable();
+        noticeList_.set(index, builderForValue.build());
 
         return this;
       }
       /**
-       * <code>repeated .NoticeObj notices = 1;</code>
+       * <code>repeated .NoticeObj noticeList = 1;</code>
        */
-      public Builder addNotices(com.vine.vinemars.net.pb.SocialMessage.NoticeObj value) {
+      public Builder addNoticeList(com.vine.vinemars.net.pb.SocialMessage.NoticeObj value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureNoticesIsMutable();
-        notices_.add(value);
+        ensureNoticeListIsMutable();
+        noticeList_.add(value);
 
         return this;
       }
       /**
-       * <code>repeated .NoticeObj notices = 1;</code>
+       * <code>repeated .NoticeObj noticeList = 1;</code>
        */
-      public Builder addNotices(
+      public Builder addNoticeList(
           int index, com.vine.vinemars.net.pb.SocialMessage.NoticeObj value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        ensureNoticesIsMutable();
-        notices_.add(index, value);
+        ensureNoticeListIsMutable();
+        noticeList_.add(index, value);
 
         return this;
       }
       /**
-       * <code>repeated .NoticeObj notices = 1;</code>
+       * <code>repeated .NoticeObj noticeList = 1;</code>
        */
-      public Builder addNotices(
+      public Builder addNoticeList(
           com.vine.vinemars.net.pb.SocialMessage.NoticeObj.Builder builderForValue) {
-        ensureNoticesIsMutable();
-        notices_.add(builderForValue.build());
+        ensureNoticeListIsMutable();
+        noticeList_.add(builderForValue.build());
 
         return this;
       }
       /**
-       * <code>repeated .NoticeObj notices = 1;</code>
+       * <code>repeated .NoticeObj noticeList = 1;</code>
        */
-      public Builder addNotices(
+      public Builder addNoticeList(
           int index, com.vine.vinemars.net.pb.SocialMessage.NoticeObj.Builder builderForValue) {
-        ensureNoticesIsMutable();
-        notices_.add(index, builderForValue.build());
+        ensureNoticeListIsMutable();
+        noticeList_.add(index, builderForValue.build());
 
         return this;
       }
       /**
-       * <code>repeated .NoticeObj notices = 1;</code>
+       * <code>repeated .NoticeObj noticeList = 1;</code>
        */
-      public Builder addAllNotices(
+      public Builder addAllNoticeList(
           java.lang.Iterable<? extends com.vine.vinemars.net.pb.SocialMessage.NoticeObj> values) {
-        ensureNoticesIsMutable();
-        super.addAll(values, notices_);
+        ensureNoticeListIsMutable();
+        super.addAll(values, noticeList_);
 
         return this;
       }
       /**
-       * <code>repeated .NoticeObj notices = 1;</code>
+       * <code>repeated .NoticeObj noticeList = 1;</code>
        */
-      public Builder clearNotices() {
-        notices_ = java.util.Collections.emptyList();
+      public Builder clearNoticeList() {
+        noticeList_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000001);
 
         return this;
       }
       /**
-       * <code>repeated .NoticeObj notices = 1;</code>
+       * <code>repeated .NoticeObj noticeList = 1;</code>
        */
-      public Builder removeNotices(int index) {
-        ensureNoticesIsMutable();
-        notices_.remove(index);
+      public Builder removeNoticeList(int index) {
+        ensureNoticeListIsMutable();
+        noticeList_.remove(index);
 
         return this;
       }
@@ -14217,59 +14540,59 @@ public final class SocialMessage {
     com.google.protobuf.ByteString
         getThumbnailBytes();
 
-    // optional string image = 6;
+    // optional string picture = 6;
     /**
-     * <code>optional string image = 6;</code>
+     * <code>optional string picture = 6;</code>
      *
      * <pre>
      *话题原图
      * </pre>
      */
-    boolean hasImage();
+    boolean hasPicture();
     /**
-     * <code>optional string image = 6;</code>
+     * <code>optional string picture = 6;</code>
      *
      * <pre>
      *话题原图
      * </pre>
      */
-    java.lang.String getImage();
+    java.lang.String getPicture();
     /**
-     * <code>optional string image = 6;</code>
+     * <code>optional string picture = 6;</code>
      *
      * <pre>
      *话题原图
      * </pre>
      */
     com.google.protobuf.ByteString
-        getImageBytes();
+        getPictureBytes();
 
-    // optional string localImage = 7;
+    // optional string localPicture = 7;
     /**
-     * <code>optional string localImage = 7;</code>
+     * <code>optional string localPicture = 7;</code>
      *
      * <pre>
      *话题本地图 ???
      * </pre>
      */
-    boolean hasLocalImage();
+    boolean hasLocalPicture();
     /**
-     * <code>optional string localImage = 7;</code>
+     * <code>optional string localPicture = 7;</code>
      *
      * <pre>
      *话题本地图 ???
      * </pre>
      */
-    java.lang.String getLocalImage();
+    java.lang.String getLocalPicture();
     /**
-     * <code>optional string localImage = 7;</code>
+     * <code>optional string localPicture = 7;</code>
      *
      * <pre>
      *话题本地图 ???
      * </pre>
      */
     com.google.protobuf.ByteString
-        getLocalImageBytes();
+        getLocalPictureBytes();
 
     // optional int32 visibleCircle = 8;
     /**
@@ -14289,23 +14612,23 @@ public final class SocialMessage {
      */
     int getVisibleCircle();
 
-    // optional int32 praiseCount = 9;
+    // optional int32 likeCount = 9;
     /**
-     * <code>optional int32 praiseCount = 9;</code>
+     * <code>optional int32 likeCount = 9;</code>
      *
      * <pre>
      *点赞次数
      * </pre>
      */
-    boolean hasPraiseCount();
+    boolean hasLikeCount();
     /**
-     * <code>optional int32 praiseCount = 9;</code>
+     * <code>optional int32 likeCount = 9;</code>
      *
      * <pre>
      *点赞次数
      * </pre>
      */
-    int getPraiseCount();
+    int getLikeCount();
 
     // optional int32 commentCount = 10;
     /**
@@ -14361,9 +14684,9 @@ public final class SocialMessage {
      */
     int getFavoriteCount();
 
-    // optional int64 createTime = 13;
+    // optional string createTime = 13;
     /**
-     * <code>optional int64 createTime = 13;</code>
+     * <code>optional string createTime = 13;</code>
      *
      * <pre>
      *创建时间
@@ -14371,13 +14694,121 @@ public final class SocialMessage {
      */
     boolean hasCreateTime();
     /**
-     * <code>optional int64 createTime = 13;</code>
+     * <code>optional string createTime = 13;</code>
      *
      * <pre>
      *创建时间
      * </pre>
      */
-    long getCreateTime();
+    java.lang.String getCreateTime();
+    /**
+     * <code>optional string createTime = 13;</code>
+     *
+     * <pre>
+     *创建时间
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getCreateTimeBytes();
+
+    // optional string topicUserId = 14;
+    /**
+     * <code>optional string topicUserId = 14;</code>
+     *
+     * <pre>
+     *发表动态用户
+     * </pre>
+     */
+    boolean hasTopicUserId();
+    /**
+     * <code>optional string topicUserId = 14;</code>
+     *
+     * <pre>
+     *发表动态用户
+     * </pre>
+     */
+    java.lang.String getTopicUserId();
+    /**
+     * <code>optional string topicUserId = 14;</code>
+     *
+     * <pre>
+     *发表动态用户
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getTopicUserIdBytes();
+
+    // optional string nickname = 15;
+    /**
+     * <code>optional string nickname = 15;</code>
+     *
+     * <pre>
+     *发表动态用户昵称
+     * </pre>
+     */
+    boolean hasNickname();
+    /**
+     * <code>optional string nickname = 15;</code>
+     *
+     * <pre>
+     *发表动态用户昵称
+     * </pre>
+     */
+    java.lang.String getNickname();
+    /**
+     * <code>optional string nickname = 15;</code>
+     *
+     * <pre>
+     *发表动态用户昵称
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getNicknameBytes();
+
+    // optional string avatar = 16;
+    /**
+     * <code>optional string avatar = 16;</code>
+     *
+     * <pre>
+     *发表动态用户头像
+     * </pre>
+     */
+    boolean hasAvatar();
+    /**
+     * <code>optional string avatar = 16;</code>
+     *
+     * <pre>
+     *发表动态用户头像
+     * </pre>
+     */
+    java.lang.String getAvatar();
+    /**
+     * <code>optional string avatar = 16;</code>
+     *
+     * <pre>
+     *发表动态用户头像
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getAvatarBytes();
+
+    // optional int32 topicStatus = 17;
+    /**
+     * <code>optional int32 topicStatus = 17;</code>
+     *
+     * <pre>
+     *状态
+     * </pre>
+     */
+    boolean hasTopicStatus();
+    /**
+     * <code>optional int32 topicStatus = 17;</code>
+     *
+     * <pre>
+     *状态
+     * </pre>
+     */
+    int getTopicStatus();
   }
   /**
    * Protobuf type {@code TopicObj}
@@ -14448,12 +14879,12 @@ public final class SocialMessage {
             }
             case 50: {
               bitField0_ |= 0x00000010;
-              image_ = input.readBytes();
+              picture_ = input.readBytes();
               break;
             }
             case 58: {
               bitField0_ |= 0x00000020;
-              localImage_ = input.readBytes();
+              localPicture_ = input.readBytes();
               break;
             }
             case 64: {
@@ -14463,7 +14894,7 @@ public final class SocialMessage {
             }
             case 72: {
               bitField0_ |= 0x00000080;
-              praiseCount_ = input.readInt32();
+              likeCount_ = input.readInt32();
               break;
             }
             case 80: {
@@ -14481,9 +14912,29 @@ public final class SocialMessage {
               favoriteCount_ = input.readInt32();
               break;
             }
-            case 104: {
+            case 106: {
               bitField0_ |= 0x00000800;
-              createTime_ = input.readInt64();
+              createTime_ = input.readBytes();
+              break;
+            }
+            case 114: {
+              bitField0_ |= 0x00001000;
+              topicUserId_ = input.readBytes();
+              break;
+            }
+            case 122: {
+              bitField0_ |= 0x00002000;
+              nickname_ = input.readBytes();
+              break;
+            }
+            case 130: {
+              bitField0_ |= 0x00004000;
+              avatar_ = input.readBytes();
+              break;
+            }
+            case 136: {
+              bitField0_ |= 0x00008000;
+              topicStatus_ = input.readInt32();
               break;
             }
           }
@@ -14702,28 +15153,28 @@ public final class SocialMessage {
       }
     }
 
-    // optional string image = 6;
-    public static final int IMAGE_FIELD_NUMBER = 6;
-    private java.lang.Object image_;
+    // optional string picture = 6;
+    public static final int PICTURE_FIELD_NUMBER = 6;
+    private java.lang.Object picture_;
     /**
-     * <code>optional string image = 6;</code>
+     * <code>optional string picture = 6;</code>
      *
      * <pre>
      *话题原图
      * </pre>
      */
-    public boolean hasImage() {
+    public boolean hasPicture() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>optional string image = 6;</code>
+     * <code>optional string picture = 6;</code>
      *
      * <pre>
      *话题原图
      * </pre>
      */
-    public java.lang.String getImage() {
-      java.lang.Object ref = image_;
+    public java.lang.String getPicture() {
+      java.lang.Object ref = picture_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
@@ -14731,54 +15182,54 @@ public final class SocialMessage {
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          image_ = s;
+          picture_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>optional string image = 6;</code>
+     * <code>optional string picture = 6;</code>
      *
      * <pre>
      *话题原图
      * </pre>
      */
     public com.google.protobuf.ByteString
-        getImageBytes() {
-      java.lang.Object ref = image_;
+        getPictureBytes() {
+      java.lang.Object ref = picture_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        image_ = b;
+        picture_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    // optional string localImage = 7;
-    public static final int LOCALIMAGE_FIELD_NUMBER = 7;
-    private java.lang.Object localImage_;
+    // optional string localPicture = 7;
+    public static final int LOCALPICTURE_FIELD_NUMBER = 7;
+    private java.lang.Object localPicture_;
     /**
-     * <code>optional string localImage = 7;</code>
+     * <code>optional string localPicture = 7;</code>
      *
      * <pre>
      *话题本地图 ???
      * </pre>
      */
-    public boolean hasLocalImage() {
+    public boolean hasLocalPicture() {
       return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
-     * <code>optional string localImage = 7;</code>
+     * <code>optional string localPicture = 7;</code>
      *
      * <pre>
      *话题本地图 ???
      * </pre>
      */
-    public java.lang.String getLocalImage() {
-      java.lang.Object ref = localImage_;
+    public java.lang.String getLocalPicture() {
+      java.lang.Object ref = localPicture_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
@@ -14786,26 +15237,26 @@ public final class SocialMessage {
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
-          localImage_ = s;
+          localPicture_ = s;
         }
         return s;
       }
     }
     /**
-     * <code>optional string localImage = 7;</code>
+     * <code>optional string localPicture = 7;</code>
      *
      * <pre>
      *话题本地图 ???
      * </pre>
      */
     public com.google.protobuf.ByteString
-        getLocalImageBytes() {
-      java.lang.Object ref = localImage_;
+        getLocalPictureBytes() {
+      java.lang.Object ref = localPicture_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        localImage_ = b;
+        localPicture_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -14836,28 +15287,28 @@ public final class SocialMessage {
       return visibleCircle_;
     }
 
-    // optional int32 praiseCount = 9;
-    public static final int PRAISECOUNT_FIELD_NUMBER = 9;
-    private int praiseCount_;
+    // optional int32 likeCount = 9;
+    public static final int LIKECOUNT_FIELD_NUMBER = 9;
+    private int likeCount_;
     /**
-     * <code>optional int32 praiseCount = 9;</code>
+     * <code>optional int32 likeCount = 9;</code>
      *
      * <pre>
      *点赞次数
      * </pre>
      */
-    public boolean hasPraiseCount() {
+    public boolean hasLikeCount() {
       return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
-     * <code>optional int32 praiseCount = 9;</code>
+     * <code>optional int32 likeCount = 9;</code>
      *
      * <pre>
      *点赞次数
      * </pre>
      */
-    public int getPraiseCount() {
-      return praiseCount_;
+    public int getLikeCount() {
+      return likeCount_;
     }
 
     // optional int32 commentCount = 10;
@@ -14932,11 +15383,11 @@ public final class SocialMessage {
       return favoriteCount_;
     }
 
-    // optional int64 createTime = 13;
+    // optional string createTime = 13;
     public static final int CREATETIME_FIELD_NUMBER = 13;
-    private long createTime_;
+    private java.lang.Object createTime_;
     /**
-     * <code>optional int64 createTime = 13;</code>
+     * <code>optional string createTime = 13;</code>
      *
      * <pre>
      *创建时间
@@ -14946,14 +15397,234 @@ public final class SocialMessage {
       return ((bitField0_ & 0x00000800) == 0x00000800);
     }
     /**
-     * <code>optional int64 createTime = 13;</code>
+     * <code>optional string createTime = 13;</code>
      *
      * <pre>
      *创建时间
      * </pre>
      */
-    public long getCreateTime() {
-      return createTime_;
+    public java.lang.String getCreateTime() {
+      java.lang.Object ref = createTime_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          createTime_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string createTime = 13;</code>
+     *
+     * <pre>
+     *创建时间
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getCreateTimeBytes() {
+      java.lang.Object ref = createTime_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createTime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional string topicUserId = 14;
+    public static final int TOPICUSERID_FIELD_NUMBER = 14;
+    private java.lang.Object topicUserId_;
+    /**
+     * <code>optional string topicUserId = 14;</code>
+     *
+     * <pre>
+     *发表动态用户
+     * </pre>
+     */
+    public boolean hasTopicUserId() {
+      return ((bitField0_ & 0x00001000) == 0x00001000);
+    }
+    /**
+     * <code>optional string topicUserId = 14;</code>
+     *
+     * <pre>
+     *发表动态用户
+     * </pre>
+     */
+    public java.lang.String getTopicUserId() {
+      java.lang.Object ref = topicUserId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          topicUserId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string topicUserId = 14;</code>
+     *
+     * <pre>
+     *发表动态用户
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getTopicUserIdBytes() {
+      java.lang.Object ref = topicUserId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        topicUserId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional string nickname = 15;
+    public static final int NICKNAME_FIELD_NUMBER = 15;
+    private java.lang.Object nickname_;
+    /**
+     * <code>optional string nickname = 15;</code>
+     *
+     * <pre>
+     *发表动态用户昵称
+     * </pre>
+     */
+    public boolean hasNickname() {
+      return ((bitField0_ & 0x00002000) == 0x00002000);
+    }
+    /**
+     * <code>optional string nickname = 15;</code>
+     *
+     * <pre>
+     *发表动态用户昵称
+     * </pre>
+     */
+    public java.lang.String getNickname() {
+      java.lang.Object ref = nickname_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          nickname_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string nickname = 15;</code>
+     *
+     * <pre>
+     *发表动态用户昵称
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getNicknameBytes() {
+      java.lang.Object ref = nickname_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nickname_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional string avatar = 16;
+    public static final int AVATAR_FIELD_NUMBER = 16;
+    private java.lang.Object avatar_;
+    /**
+     * <code>optional string avatar = 16;</code>
+     *
+     * <pre>
+     *发表动态用户头像
+     * </pre>
+     */
+    public boolean hasAvatar() {
+      return ((bitField0_ & 0x00004000) == 0x00004000);
+    }
+    /**
+     * <code>optional string avatar = 16;</code>
+     *
+     * <pre>
+     *发表动态用户头像
+     * </pre>
+     */
+    public java.lang.String getAvatar() {
+      java.lang.Object ref = avatar_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          avatar_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string avatar = 16;</code>
+     *
+     * <pre>
+     *发表动态用户头像
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getAvatarBytes() {
+      java.lang.Object ref = avatar_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        avatar_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional int32 topicStatus = 17;
+    public static final int TOPICSTATUS_FIELD_NUMBER = 17;
+    private int topicStatus_;
+    /**
+     * <code>optional int32 topicStatus = 17;</code>
+     *
+     * <pre>
+     *状态
+     * </pre>
+     */
+    public boolean hasTopicStatus() {
+      return ((bitField0_ & 0x00008000) == 0x00008000);
+    }
+    /**
+     * <code>optional int32 topicStatus = 17;</code>
+     *
+     * <pre>
+     *状态
+     * </pre>
+     */
+    public int getTopicStatus() {
+      return topicStatus_;
     }
 
     private void initFields() {
@@ -14961,14 +15632,18 @@ public final class SocialMessage {
       title_ = "";
       content_ = "";
       thumbnail_ = "";
-      image_ = "";
-      localImage_ = "";
+      picture_ = "";
+      localPicture_ = "";
       visibleCircle_ = 0;
-      praiseCount_ = 0;
+      likeCount_ = 0;
       commentCount_ = 0;
       forwardCount_ = 0;
       favoriteCount_ = 0;
-      createTime_ = 0L;
+      createTime_ = "";
+      topicUserId_ = "";
+      nickname_ = "";
+      avatar_ = "";
+      topicStatus_ = 0;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -14995,16 +15670,16 @@ public final class SocialMessage {
         output.writeBytes(5, getThumbnailBytes());
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeBytes(6, getImageBytes());
+        output.writeBytes(6, getPictureBytes());
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeBytes(7, getLocalImageBytes());
+        output.writeBytes(7, getLocalPictureBytes());
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeInt32(8, visibleCircle_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        output.writeInt32(9, praiseCount_);
+        output.writeInt32(9, likeCount_);
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         output.writeInt32(10, commentCount_);
@@ -15016,7 +15691,19 @@ public final class SocialMessage {
         output.writeInt32(12, favoriteCount_);
       }
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
-        output.writeInt64(13, createTime_);
+        output.writeBytes(13, getCreateTimeBytes());
+      }
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+        output.writeBytes(14, getTopicUserIdBytes());
+      }
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+        output.writeBytes(15, getNicknameBytes());
+      }
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+        output.writeBytes(16, getAvatarBytes());
+      }
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+        output.writeInt32(17, topicStatus_);
       }
     }
 
@@ -15044,11 +15731,11 @@ public final class SocialMessage {
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(6, getImageBytes());
+          .computeBytesSize(6, getPictureBytes());
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(7, getLocalImageBytes());
+          .computeBytesSize(7, getLocalPictureBytes());
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
@@ -15056,7 +15743,7 @@ public final class SocialMessage {
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, praiseCount_);
+          .computeInt32Size(9, likeCount_);
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
@@ -15072,7 +15759,23 @@ public final class SocialMessage {
       }
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(13, createTime_);
+          .computeBytesSize(13, getCreateTimeBytes());
+      }
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(14, getTopicUserIdBytes());
+      }
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(15, getNicknameBytes());
+      }
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(16, getAvatarBytes());
+      }
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(17, topicStatus_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -15177,13 +15880,13 @@ public final class SocialMessage {
         bitField0_ = (bitField0_ & ~0x00000004);
         thumbnail_ = "";
         bitField0_ = (bitField0_ & ~0x00000008);
-        image_ = "";
+        picture_ = "";
         bitField0_ = (bitField0_ & ~0x00000010);
-        localImage_ = "";
+        localPicture_ = "";
         bitField0_ = (bitField0_ & ~0x00000020);
         visibleCircle_ = 0;
         bitField0_ = (bitField0_ & ~0x00000040);
-        praiseCount_ = 0;
+        likeCount_ = 0;
         bitField0_ = (bitField0_ & ~0x00000080);
         commentCount_ = 0;
         bitField0_ = (bitField0_ & ~0x00000100);
@@ -15191,8 +15894,16 @@ public final class SocialMessage {
         bitField0_ = (bitField0_ & ~0x00000200);
         favoriteCount_ = 0;
         bitField0_ = (bitField0_ & ~0x00000400);
-        createTime_ = 0L;
+        createTime_ = "";
         bitField0_ = (bitField0_ & ~0x00000800);
+        topicUserId_ = "";
+        bitField0_ = (bitField0_ & ~0x00001000);
+        nickname_ = "";
+        bitField0_ = (bitField0_ & ~0x00002000);
+        avatar_ = "";
+        bitField0_ = (bitField0_ & ~0x00004000);
+        topicStatus_ = 0;
+        bitField0_ = (bitField0_ & ~0x00008000);
         return this;
       }
 
@@ -15235,11 +15946,11 @@ public final class SocialMessage {
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
         }
-        result.image_ = image_;
+        result.picture_ = picture_;
         if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000020;
         }
-        result.localImage_ = localImage_;
+        result.localPicture_ = localPicture_;
         if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
           to_bitField0_ |= 0x00000040;
         }
@@ -15247,7 +15958,7 @@ public final class SocialMessage {
         if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
           to_bitField0_ |= 0x00000080;
         }
-        result.praiseCount_ = praiseCount_;
+        result.likeCount_ = likeCount_;
         if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
           to_bitField0_ |= 0x00000100;
         }
@@ -15264,6 +15975,22 @@ public final class SocialMessage {
           to_bitField0_ |= 0x00000800;
         }
         result.createTime_ = createTime_;
+        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+          to_bitField0_ |= 0x00001000;
+        }
+        result.topicUserId_ = topicUserId_;
+        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
+          to_bitField0_ |= 0x00002000;
+        }
+        result.nickname_ = nickname_;
+        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
+          to_bitField0_ |= 0x00004000;
+        }
+        result.avatar_ = avatar_;
+        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
+          to_bitField0_ |= 0x00008000;
+        }
+        result.topicStatus_ = topicStatus_;
         result.bitField0_ = to_bitField0_;
         return result;
       }
@@ -15288,21 +16015,21 @@ public final class SocialMessage {
           thumbnail_ = other.thumbnail_;
           
         }
-        if (other.hasImage()) {
+        if (other.hasPicture()) {
           bitField0_ |= 0x00000010;
-          image_ = other.image_;
+          picture_ = other.picture_;
           
         }
-        if (other.hasLocalImage()) {
+        if (other.hasLocalPicture()) {
           bitField0_ |= 0x00000020;
-          localImage_ = other.localImage_;
+          localPicture_ = other.localPicture_;
           
         }
         if (other.hasVisibleCircle()) {
           setVisibleCircle(other.getVisibleCircle());
         }
-        if (other.hasPraiseCount()) {
-          setPraiseCount(other.getPraiseCount());
+        if (other.hasLikeCount()) {
+          setLikeCount(other.getLikeCount());
         }
         if (other.hasCommentCount()) {
           setCommentCount(other.getCommentCount());
@@ -15314,7 +16041,27 @@ public final class SocialMessage {
           setFavoriteCount(other.getFavoriteCount());
         }
         if (other.hasCreateTime()) {
-          setCreateTime(other.getCreateTime());
+          bitField0_ |= 0x00000800;
+          createTime_ = other.createTime_;
+          
+        }
+        if (other.hasTopicUserId()) {
+          bitField0_ |= 0x00001000;
+          topicUserId_ = other.topicUserId_;
+          
+        }
+        if (other.hasNickname()) {
+          bitField0_ |= 0x00002000;
+          nickname_ = other.nickname_;
+          
+        }
+        if (other.hasAvatar()) {
+          bitField0_ |= 0x00004000;
+          avatar_ = other.avatar_;
+          
+        }
+        if (other.hasTopicStatus()) {
+          setTopicStatus(other.getTopicStatus());
         }
         return this;
       }
@@ -15685,198 +16432,198 @@ public final class SocialMessage {
         return this;
       }
 
-      // optional string image = 6;
-      private java.lang.Object image_ = "";
+      // optional string picture = 6;
+      private java.lang.Object picture_ = "";
       /**
-       * <code>optional string image = 6;</code>
+       * <code>optional string picture = 6;</code>
        *
        * <pre>
        *话题原图
        * </pre>
        */
-      public boolean hasImage() {
+      public boolean hasPicture() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>optional string image = 6;</code>
+       * <code>optional string picture = 6;</code>
        *
        * <pre>
        *话题原图
        * </pre>
        */
-      public java.lang.String getImage() {
-        java.lang.Object ref = image_;
+      public java.lang.String getPicture() {
+        java.lang.Object ref = picture_;
         if (!(ref instanceof java.lang.String)) {
           java.lang.String s = ((com.google.protobuf.ByteString) ref)
               .toStringUtf8();
-          image_ = s;
+          picture_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string image = 6;</code>
+       * <code>optional string picture = 6;</code>
        *
        * <pre>
        *话题原图
        * </pre>
        */
       public com.google.protobuf.ByteString
-          getImageBytes() {
-        java.lang.Object ref = image_;
+          getPictureBytes() {
+        java.lang.Object ref = picture_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          image_ = b;
+          picture_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>optional string image = 6;</code>
+       * <code>optional string picture = 6;</code>
        *
        * <pre>
        *话题原图
        * </pre>
        */
-      public Builder setImage(
+      public Builder setPicture(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000010;
-        image_ = value;
+        picture_ = value;
         
         return this;
       }
       /**
-       * <code>optional string image = 6;</code>
+       * <code>optional string picture = 6;</code>
        *
        * <pre>
        *话题原图
        * </pre>
        */
-      public Builder clearImage() {
+      public Builder clearPicture() {
         bitField0_ = (bitField0_ & ~0x00000010);
-        image_ = getDefaultInstance().getImage();
+        picture_ = getDefaultInstance().getPicture();
         
         return this;
       }
       /**
-       * <code>optional string image = 6;</code>
+       * <code>optional string picture = 6;</code>
        *
        * <pre>
        *话题原图
        * </pre>
        */
-      public Builder setImageBytes(
+      public Builder setPictureBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000010;
-        image_ = value;
+        picture_ = value;
         
         return this;
       }
 
-      // optional string localImage = 7;
-      private java.lang.Object localImage_ = "";
+      // optional string localPicture = 7;
+      private java.lang.Object localPicture_ = "";
       /**
-       * <code>optional string localImage = 7;</code>
+       * <code>optional string localPicture = 7;</code>
        *
        * <pre>
        *话题本地图 ???
        * </pre>
        */
-      public boolean hasLocalImage() {
+      public boolean hasLocalPicture() {
         return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
-       * <code>optional string localImage = 7;</code>
+       * <code>optional string localPicture = 7;</code>
        *
        * <pre>
        *话题本地图 ???
        * </pre>
        */
-      public java.lang.String getLocalImage() {
-        java.lang.Object ref = localImage_;
+      public java.lang.String getLocalPicture() {
+        java.lang.Object ref = localPicture_;
         if (!(ref instanceof java.lang.String)) {
           java.lang.String s = ((com.google.protobuf.ByteString) ref)
               .toStringUtf8();
-          localImage_ = s;
+          localPicture_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string localImage = 7;</code>
+       * <code>optional string localPicture = 7;</code>
        *
        * <pre>
        *话题本地图 ???
        * </pre>
        */
       public com.google.protobuf.ByteString
-          getLocalImageBytes() {
-        java.lang.Object ref = localImage_;
+          getLocalPictureBytes() {
+        java.lang.Object ref = localPicture_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          localImage_ = b;
+          localPicture_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>optional string localImage = 7;</code>
+       * <code>optional string localPicture = 7;</code>
        *
        * <pre>
        *话题本地图 ???
        * </pre>
        */
-      public Builder setLocalImage(
+      public Builder setLocalPicture(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000020;
-        localImage_ = value;
+        localPicture_ = value;
         
         return this;
       }
       /**
-       * <code>optional string localImage = 7;</code>
+       * <code>optional string localPicture = 7;</code>
        *
        * <pre>
        *话题本地图 ???
        * </pre>
        */
-      public Builder clearLocalImage() {
+      public Builder clearLocalPicture() {
         bitField0_ = (bitField0_ & ~0x00000020);
-        localImage_ = getDefaultInstance().getLocalImage();
+        localPicture_ = getDefaultInstance().getLocalPicture();
         
         return this;
       }
       /**
-       * <code>optional string localImage = 7;</code>
+       * <code>optional string localPicture = 7;</code>
        *
        * <pre>
        *话题本地图 ???
        * </pre>
        */
-      public Builder setLocalImageBytes(
+      public Builder setLocalPictureBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000020;
-        localImage_ = value;
+        localPicture_ = value;
         
         return this;
       }
@@ -15930,51 +16677,51 @@ public final class SocialMessage {
         return this;
       }
 
-      // optional int32 praiseCount = 9;
-      private int praiseCount_ ;
+      // optional int32 likeCount = 9;
+      private int likeCount_ ;
       /**
-       * <code>optional int32 praiseCount = 9;</code>
+       * <code>optional int32 likeCount = 9;</code>
        *
        * <pre>
        *点赞次数
        * </pre>
        */
-      public boolean hasPraiseCount() {
+      public boolean hasLikeCount() {
         return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
-       * <code>optional int32 praiseCount = 9;</code>
+       * <code>optional int32 likeCount = 9;</code>
        *
        * <pre>
        *点赞次数
        * </pre>
        */
-      public int getPraiseCount() {
-        return praiseCount_;
+      public int getLikeCount() {
+        return likeCount_;
       }
       /**
-       * <code>optional int32 praiseCount = 9;</code>
+       * <code>optional int32 likeCount = 9;</code>
        *
        * <pre>
        *点赞次数
        * </pre>
        */
-      public Builder setPraiseCount(int value) {
+      public Builder setLikeCount(int value) {
         bitField0_ |= 0x00000080;
-        praiseCount_ = value;
+        likeCount_ = value;
         
         return this;
       }
       /**
-       * <code>optional int32 praiseCount = 9;</code>
+       * <code>optional int32 likeCount = 9;</code>
        *
        * <pre>
        *点赞次数
        * </pre>
        */
-      public Builder clearPraiseCount() {
+      public Builder clearLikeCount() {
         bitField0_ = (bitField0_ & ~0x00000080);
-        praiseCount_ = 0;
+        likeCount_ = 0;
         
         return this;
       }
@@ -16126,10 +16873,10 @@ public final class SocialMessage {
         return this;
       }
 
-      // optional int64 createTime = 13;
-      private long createTime_ ;
+      // optional string createTime = 13;
+      private java.lang.Object createTime_ = "";
       /**
-       * <code>optional int64 createTime = 13;</code>
+       * <code>optional string createTime = 13;</code>
        *
        * <pre>
        *创建时间
@@ -16139,30 +16886,62 @@ public final class SocialMessage {
         return ((bitField0_ & 0x00000800) == 0x00000800);
       }
       /**
-       * <code>optional int64 createTime = 13;</code>
+       * <code>optional string createTime = 13;</code>
        *
        * <pre>
        *创建时间
        * </pre>
        */
-      public long getCreateTime() {
-        return createTime_;
+      public java.lang.String getCreateTime() {
+        java.lang.Object ref = createTime_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          createTime_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional int64 createTime = 13;</code>
+       * <code>optional string createTime = 13;</code>
        *
        * <pre>
        *创建时间
        * </pre>
        */
-      public Builder setCreateTime(long value) {
-        bitField0_ |= 0x00000800;
+      public com.google.protobuf.ByteString
+          getCreateTimeBytes() {
+        java.lang.Object ref = createTime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createTime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string createTime = 13;</code>
+       *
+       * <pre>
+       *创建时间
+       * </pre>
+       */
+      public Builder setCreateTime(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000800;
         createTime_ = value;
         
         return this;
       }
       /**
-       * <code>optional int64 createTime = 13;</code>
+       * <code>optional string createTime = 13;</code>
        *
        * <pre>
        *创建时间
@@ -16170,7 +16949,367 @@ public final class SocialMessage {
        */
       public Builder clearCreateTime() {
         bitField0_ = (bitField0_ & ~0x00000800);
-        createTime_ = 0L;
+        createTime_ = getDefaultInstance().getCreateTime();
+        
+        return this;
+      }
+      /**
+       * <code>optional string createTime = 13;</code>
+       *
+       * <pre>
+       *创建时间
+       * </pre>
+       */
+      public Builder setCreateTimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000800;
+        createTime_ = value;
+        
+        return this;
+      }
+
+      // optional string topicUserId = 14;
+      private java.lang.Object topicUserId_ = "";
+      /**
+       * <code>optional string topicUserId = 14;</code>
+       *
+       * <pre>
+       *发表动态用户
+       * </pre>
+       */
+      public boolean hasTopicUserId() {
+        return ((bitField0_ & 0x00001000) == 0x00001000);
+      }
+      /**
+       * <code>optional string topicUserId = 14;</code>
+       *
+       * <pre>
+       *发表动态用户
+       * </pre>
+       */
+      public java.lang.String getTopicUserId() {
+        java.lang.Object ref = topicUserId_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          topicUserId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string topicUserId = 14;</code>
+       *
+       * <pre>
+       *发表动态用户
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getTopicUserIdBytes() {
+        java.lang.Object ref = topicUserId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          topicUserId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string topicUserId = 14;</code>
+       *
+       * <pre>
+       *发表动态用户
+       * </pre>
+       */
+      public Builder setTopicUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00001000;
+        topicUserId_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional string topicUserId = 14;</code>
+       *
+       * <pre>
+       *发表动态用户
+       * </pre>
+       */
+      public Builder clearTopicUserId() {
+        bitField0_ = (bitField0_ & ~0x00001000);
+        topicUserId_ = getDefaultInstance().getTopicUserId();
+        
+        return this;
+      }
+      /**
+       * <code>optional string topicUserId = 14;</code>
+       *
+       * <pre>
+       *发表动态用户
+       * </pre>
+       */
+      public Builder setTopicUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00001000;
+        topicUserId_ = value;
+        
+        return this;
+      }
+
+      // optional string nickname = 15;
+      private java.lang.Object nickname_ = "";
+      /**
+       * <code>optional string nickname = 15;</code>
+       *
+       * <pre>
+       *发表动态用户昵称
+       * </pre>
+       */
+      public boolean hasNickname() {
+        return ((bitField0_ & 0x00002000) == 0x00002000);
+      }
+      /**
+       * <code>optional string nickname = 15;</code>
+       *
+       * <pre>
+       *发表动态用户昵称
+       * </pre>
+       */
+      public java.lang.String getNickname() {
+        java.lang.Object ref = nickname_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          nickname_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string nickname = 15;</code>
+       *
+       * <pre>
+       *发表动态用户昵称
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getNicknameBytes() {
+        java.lang.Object ref = nickname_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nickname_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string nickname = 15;</code>
+       *
+       * <pre>
+       *发表动态用户昵称
+       * </pre>
+       */
+      public Builder setNickname(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00002000;
+        nickname_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional string nickname = 15;</code>
+       *
+       * <pre>
+       *发表动态用户昵称
+       * </pre>
+       */
+      public Builder clearNickname() {
+        bitField0_ = (bitField0_ & ~0x00002000);
+        nickname_ = getDefaultInstance().getNickname();
+        
+        return this;
+      }
+      /**
+       * <code>optional string nickname = 15;</code>
+       *
+       * <pre>
+       *发表动态用户昵称
+       * </pre>
+       */
+      public Builder setNicknameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00002000;
+        nickname_ = value;
+        
+        return this;
+      }
+
+      // optional string avatar = 16;
+      private java.lang.Object avatar_ = "";
+      /**
+       * <code>optional string avatar = 16;</code>
+       *
+       * <pre>
+       *发表动态用户头像
+       * </pre>
+       */
+      public boolean hasAvatar() {
+        return ((bitField0_ & 0x00004000) == 0x00004000);
+      }
+      /**
+       * <code>optional string avatar = 16;</code>
+       *
+       * <pre>
+       *发表动态用户头像
+       * </pre>
+       */
+      public java.lang.String getAvatar() {
+        java.lang.Object ref = avatar_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          avatar_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string avatar = 16;</code>
+       *
+       * <pre>
+       *发表动态用户头像
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getAvatarBytes() {
+        java.lang.Object ref = avatar_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          avatar_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string avatar = 16;</code>
+       *
+       * <pre>
+       *发表动态用户头像
+       * </pre>
+       */
+      public Builder setAvatar(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00004000;
+        avatar_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional string avatar = 16;</code>
+       *
+       * <pre>
+       *发表动态用户头像
+       * </pre>
+       */
+      public Builder clearAvatar() {
+        bitField0_ = (bitField0_ & ~0x00004000);
+        avatar_ = getDefaultInstance().getAvatar();
+        
+        return this;
+      }
+      /**
+       * <code>optional string avatar = 16;</code>
+       *
+       * <pre>
+       *发表动态用户头像
+       * </pre>
+       */
+      public Builder setAvatarBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00004000;
+        avatar_ = value;
+        
+        return this;
+      }
+
+      // optional int32 topicStatus = 17;
+      private int topicStatus_ ;
+      /**
+       * <code>optional int32 topicStatus = 17;</code>
+       *
+       * <pre>
+       *状态
+       * </pre>
+       */
+      public boolean hasTopicStatus() {
+        return ((bitField0_ & 0x00008000) == 0x00008000);
+      }
+      /**
+       * <code>optional int32 topicStatus = 17;</code>
+       *
+       * <pre>
+       *状态
+       * </pre>
+       */
+      public int getTopicStatus() {
+        return topicStatus_;
+      }
+      /**
+       * <code>optional int32 topicStatus = 17;</code>
+       *
+       * <pre>
+       *状态
+       * </pre>
+       */
+      public Builder setTopicStatus(int value) {
+        bitField0_ |= 0x00008000;
+        topicStatus_ = value;
+        
+        return this;
+      }
+      /**
+       * <code>optional int32 topicStatus = 17;</code>
+       *
+       * <pre>
+       *状态
+       * </pre>
+       */
+      public Builder clearTopicStatus() {
+        bitField0_ = (bitField0_ & ~0x00008000);
+        topicStatus_ = 0;
         
         return this;
       }
@@ -18035,23 +19174,23 @@ public final class SocialMessage {
     com.google.protobuf.ByteString
         getCommentContentBytes();
 
-    // optional int64 praiseId = 7;
+    // optional int64 likeId = 7;
     /**
-     * <code>optional int64 praiseId = 7;</code>
+     * <code>optional int64 likeId = 7;</code>
      *
      * <pre>
      *点赞者
      * </pre>
      */
-    boolean hasPraiseId();
+    boolean hasLikeId();
     /**
-     * <code>optional int64 praiseId = 7;</code>
+     * <code>optional int64 likeId = 7;</code>
      *
      * <pre>
      *点赞者
      * </pre>
      */
-    long getPraiseId();
+    long getLikeId();
 
     // optional string friendId = 8;
     /**
@@ -18227,7 +19366,7 @@ public final class SocialMessage {
             }
             case 56: {
               bitField0_ |= 0x00000040;
-              praiseId_ = input.readInt64();
+              likeId_ = input.readInt64();
               break;
             }
             case 66: {
@@ -18545,28 +19684,28 @@ public final class SocialMessage {
       }
     }
 
-    // optional int64 praiseId = 7;
-    public static final int PRAISEID_FIELD_NUMBER = 7;
-    private long praiseId_;
+    // optional int64 likeId = 7;
+    public static final int LIKEID_FIELD_NUMBER = 7;
+    private long likeId_;
     /**
-     * <code>optional int64 praiseId = 7;</code>
+     * <code>optional int64 likeId = 7;</code>
      *
      * <pre>
      *点赞者
      * </pre>
      */
-    public boolean hasPraiseId() {
+    public boolean hasLikeId() {
       return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
-     * <code>optional int64 praiseId = 7;</code>
+     * <code>optional int64 likeId = 7;</code>
      *
      * <pre>
      *点赞者
      * </pre>
      */
-    public long getPraiseId() {
-      return praiseId_;
+    public long getLikeId() {
+      return likeId_;
     }
 
     // optional string friendId = 8;
@@ -18765,7 +19904,7 @@ public final class SocialMessage {
       topicThumbnail_ = "";
       commentId_ = 0L;
       commentContent_ = "";
-      praiseId_ = 0L;
+      likeId_ = 0L;
       friendId_ = "";
       friendAvator_ = "";
       friendNickname_ = "";
@@ -18802,7 +19941,7 @@ public final class SocialMessage {
         output.writeBytes(6, getCommentContentBytes());
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        output.writeInt64(7, praiseId_);
+        output.writeInt64(7, likeId_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         output.writeBytes(8, getFriendIdBytes());
@@ -18850,7 +19989,7 @@ public final class SocialMessage {
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(7, praiseId_);
+          .computeInt64Size(7, likeId_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
@@ -18971,7 +20110,7 @@ public final class SocialMessage {
         bitField0_ = (bitField0_ & ~0x00000010);
         commentContent_ = "";
         bitField0_ = (bitField0_ & ~0x00000020);
-        praiseId_ = 0L;
+        likeId_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000040);
         friendId_ = "";
         bitField0_ = (bitField0_ & ~0x00000080);
@@ -19031,7 +20170,7 @@ public final class SocialMessage {
         if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
           to_bitField0_ |= 0x00000040;
         }
-        result.praiseId_ = praiseId_;
+        result.likeId_ = likeId_;
         if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
           to_bitField0_ |= 0x00000080;
         }
@@ -19080,8 +20219,8 @@ public final class SocialMessage {
           commentContent_ = other.commentContent_;
           
         }
-        if (other.hasPraiseId()) {
-          setPraiseId(other.getPraiseId());
+        if (other.hasLikeId()) {
+          setLikeId(other.getLikeId());
         }
         if (other.hasFriendId()) {
           bitField0_ |= 0x00000080;
@@ -19617,51 +20756,51 @@ public final class SocialMessage {
         return this;
       }
 
-      // optional int64 praiseId = 7;
-      private long praiseId_ ;
+      // optional int64 likeId = 7;
+      private long likeId_ ;
       /**
-       * <code>optional int64 praiseId = 7;</code>
+       * <code>optional int64 likeId = 7;</code>
        *
        * <pre>
        *点赞者
        * </pre>
        */
-      public boolean hasPraiseId() {
+      public boolean hasLikeId() {
         return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
-       * <code>optional int64 praiseId = 7;</code>
+       * <code>optional int64 likeId = 7;</code>
        *
        * <pre>
        *点赞者
        * </pre>
        */
-      public long getPraiseId() {
-        return praiseId_;
+      public long getLikeId() {
+        return likeId_;
       }
       /**
-       * <code>optional int64 praiseId = 7;</code>
+       * <code>optional int64 likeId = 7;</code>
        *
        * <pre>
        *点赞者
        * </pre>
        */
-      public Builder setPraiseId(long value) {
+      public Builder setLikeId(long value) {
         bitField0_ |= 0x00000040;
-        praiseId_ = value;
+        likeId_ = value;
         
         return this;
       }
       /**
-       * <code>optional int64 praiseId = 7;</code>
+       * <code>optional int64 likeId = 7;</code>
        *
        * <pre>
        *点赞者
        * </pre>
        */
-      public Builder clearPraiseId() {
+      public Builder clearLikeId() {
         bitField0_ = (bitField0_ & ~0x00000040);
-        praiseId_ = 0L;
+        likeId_ = 0L;
         
         return this;
       }

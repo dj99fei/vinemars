@@ -2,13 +2,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.vine.vinemars.app.MainActivity" >
-    <item android:id="@id/action_feedback"
-        android:title="@string/feedback_label"
+    <item android:id="@id/action_send"
+        android:title="@string/action_send"
         android:orderInCategory="100"
-        app:showAsAction="never" />
-    <item android:id="@id/action_publishTopic"
-        android:title="@string/post"
-        android:icon="@drawable/ic_add"
-        android:orderInCategory="100"
+        android:icon="@drawable/ic_send_white_24"
         app:showAsAction="always" />
 </menu>

@@ -50,6 +50,10 @@ public class MainActivity extends BaseActivity {
             startActivity(new Intent(this, FeedbackActivity.class));
             return true;
         }
+        if (item.getItemId() == R.id.action_publishTopic) {
+            startActivity(new Intent(this, AddTopicActivity.class));
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 }
