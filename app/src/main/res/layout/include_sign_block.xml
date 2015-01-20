@@ -24,7 +24,7 @@
             >
 
             <EditText
-                android:id="@+id/et_user_name"
+                android:id="@id/edit_user_name"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/edit_height"
                 android:hint="@string/hint_username"
@@ -67,7 +67,7 @@
         </RelativeLayout>
 
         <Button
-            android:id="@+id/btn_ok"
+            android:id="@id/btn_ok"
             style="@style/ButtonAppTheme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
