@@ -100,4 +100,5 @@
 
     <item type="id" name="action_publishTopic"/>
     <item type="id" name="camera"/>
+    <item type="id" name="fab"/>
 </resources>

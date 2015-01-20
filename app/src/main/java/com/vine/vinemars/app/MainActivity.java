@@ -7,7 +7,9 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
+import com.shamanland.fab.FloatingActionButton;
 import com.vine.vinemars.R;
 
 import butterknife.ButterKnife;
@@ -20,6 +22,8 @@ public class MainActivity extends BaseActivity {
     protected Toolbar toolbar;
     @InjectView(R.id.drawer_layout)
     protected DrawerLayout drawerLayout;
+    @InjectView(R.id.fab)
+    protected FloatingActionButton addTopicButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +33,7 @@ public class MainActivity extends BaseActivity {
         toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
         toggle.setDrawerIndicatorEnabled(true);
         drawerLayout.setDrawerListener(toggle);
+        addTopicButton.setOnClickListener(this);
     }
 
     @Override
@@ -50,10 +55,13 @@ public class MainActivity extends BaseActivity {
             startActivity(new Intent(this, FeedbackActivity.class));
             return true;
         }
-        if (item.getItemId() == R.id.action_publishTopic) {
-            startActivity(new Intent(this, AddTopicActivity.class));
-            return true;
-        }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.fab) {
+            startActivity(new Intent(this, AddTopicActivity.class));
+        }
     }
 }

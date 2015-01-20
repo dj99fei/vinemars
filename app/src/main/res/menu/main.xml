@@ -6,9 +6,4 @@
         android:title="@string/feedback_label"
         android:orderInCategory="100"
         app:showAsAction="never" />
-    <item android:id="@id/action_publishTopic"
-        android:title="@string/post"
-        android:icon="@drawable/ic_add"
-        android:orderInCategory="100"
-        app:showAsAction="always" />
 </menu>
