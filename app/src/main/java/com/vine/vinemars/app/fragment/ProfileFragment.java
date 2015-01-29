@@ -14,6 +14,7 @@ import com.vine.vinemars.R;
 import com.vine.vinemars.adapter.ProfileAdapter;
 import com.vine.vinemars.bus.ProfileHeaderMessuredEvent;
 import com.vine.vinemars.net.NetworkRequestListener;
+import com.vine.vinemars.view.SpacesItemDecoration;
 
 import butterknife.InjectView;
 import de.greenrobot.event.EventBus;
@@ -48,6 +49,7 @@ public class ProfileFragment extends BaseFragment implements NetworkRequestListe
         EventBus.getDefault().register(this);
         final LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
+        recyclerView.addItemDecoration(new SpacesItemDecoration(20));
         recyclerView.setAdapter(new ProfileAdapter(MyApplication.getUser()));
 //        headerHeight = getResources().getDimensionPixelOffset(R.dimen.profile_cover_height) + getResources().getDimensionPixelOffset(R.dimen.profile_header_tabs_height);
         tabsHeight = getResources().getDimensionPixelOffset(R.dimen.profile_header_tabs_height);

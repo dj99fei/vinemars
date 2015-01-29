@@ -115,6 +115,12 @@
             android:label="@string/publish_topic"
             />
         <activity
+            android:name=".app.CommentsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible"
+            android:label="@string/publish_topic"
+            />
+        <activity
             android:name="cn.smssdk.SMSSDKUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"

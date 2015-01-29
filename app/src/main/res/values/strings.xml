@@ -121,5 +121,12 @@
     <string name="close">Close</string>
     <string name="share_to">To: </string>
 
+
+
+    <plurals name="likes_count">
+        <item quantity="one">%d like</item>
+        <item quantity="other">%d likes</item>
+    </plurals>
+
 </resources>
 

@@ -107,7 +107,7 @@
                 <AutoCompleteTextView
                     android:id="@id/edit_password"
                     style="@style/EditTextAppTheme"
-                    android:layout_width="@dimen/edit_passoword_min_width"
+                    android:layout_width="@dimen/edit_password_min_width"
                     android:layout_height="match_parent"
                     android:hint="@string/hint_password"
                     android:imeOptions="actionDone"

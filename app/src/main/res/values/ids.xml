@@ -60,7 +60,7 @@
     <item type="id" name="line_label_user_info"/>
     <item type="id" name="btn_ok"/>
     <item type="id" name="list"/>
-    <item type="id" name="avatar"/>
+    <item type="id" name="iv_avatar"/>
     <item type="id" name="nickname"/>
     <item type="id" name="share_to"/>
     <item type="id" name="layout_profile_avatar"/>
@@ -101,4 +101,10 @@
     <item type="id" name="action_publishTopic"/>
     <item type="id" name="camera"/>
     <item type="id" name="fab"/>
+    <item type="id" name="container_main_list"/>
+    <item type="id" name="tv_comment"/>
+    <item type="id" name="rv_comments"/>
+    <item type="id" name="ll_add_Comment"/>
+    <item type="id" name="content_root"/>
+    <item type="id" name="rv_articles"/>
 </resources>

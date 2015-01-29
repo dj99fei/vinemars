@@ -17,6 +17,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    aaptOptions {
+        noCompress 'apk'
+    }
 }
 
 dependencies {
@@ -37,7 +41,7 @@ dependencies {
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.8.+'
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.google.code.gson:gson:2.3'
-    compile 'com.squareup.picasso:picasso:2.3.2'
+    compile 'com.squareup.picasso:picasso:2.4.0'
     compile 'de.greenrobot:eventbus:2.2.1'
 //    compile 'com.squareup:android-times-square:1.4.0@aar'
     compile 'com.google.protobuf:protobuf-java:2.5.0'

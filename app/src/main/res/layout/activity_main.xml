@@ -1,52 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@id/toolbar"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:theme="@style/Theme.Toolbar"
-        />
-
-
     <android.support.v4.widget.DrawerLayout
         android:id="@id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        app:contentInsetStart="?actionBarInsetStart">
+
 
         <!-- The main content view -->
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/layout_padding_horizontal"
-                android:layout_marginRight="@dimen/layout_padding_vertical"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true">
+            <include layout="@layout/include_toolbar"/>
 
-                <include
-                    layout="@layout/include_fab"/>
-            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        </RelativeLayout>
+                <FrameLayout
+                    android:id="@id/container_main_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
 
+                <android.support.v7.widget.RecyclerView
+                    android:id="@id/rv_articles"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="none"/>
+
+                <ImageButton
+                    android:id="@id/fab"
+                    android:layout_width="@dimen/btn_fab_size"
+                    android:layout_height="@dimen/btn_fab_size"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="@dimen/layout_padding_vertical"
+                    android:layout_marginRight="@dimen/layout_padding_vertical"
+                    android:background="@drawable/btn_fab_default"
+                    android:elevation="@dimen/default_elevation"
+                    android:src="@drawable/ic_fab_add"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
         <!-- The navigation drawer -->
         <fragment
             android:id="@+id/navigation_drawer"
             class="com.vine.vinemars.app.fragment.ProfileFragment"
-            android:layout_width="match_parent"
+            android:layout_width="304dp"
             android:layout_height="match_parent"
-            android:layout_gravity="start"/>
+            android:layout_gravity="left"
+            android:fitsSystemWindows="true"/>
     </android.support.v4.widget.DrawerLayout>
 
-</LinearLayout>
+</RelativeLayout>

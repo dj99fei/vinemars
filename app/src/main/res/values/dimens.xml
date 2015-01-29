@@ -50,10 +50,13 @@
     <dimen name="instruction_login_height">72dp</dimen>
     <dimen name="edit_padding">6dp</dimen>
     <dimen name="edit_cross_size">25dp</dimen>
-    <dimen name="edit_passoword_min_width">144dp</dimen>
+    <dimen name="edit_password_min_width">144dp</dimen>
     <dimen name="edit_captcha_min_width">144dp</dimen>
     <dimen name="edit_region_min_width">72dp</dimen>
 
     <dimen name="post_avatar_size">72dp</dimen>
-
+    <dimen name="drawer_side_menu_width">304dp</dimen>
+    <dimen name="comment_avatar_size">56dp</dimen>
+    <dimen name="default_elevation">8dp</dimen>
+    <dimen name="btn_fab_size">56dp</dimen>
 </resources>

@@ -1,11 +1,9 @@
 package com.vine.vinemars.adapter;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
+import android.graphics.Color;
+import android.support.v7.graphics.Palette;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,10 +13,14 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Transformation;
 import com.vine.vinemars.MyApplication;
 import com.vine.vinemars.R;
 import com.vine.vinemars.bus.ProfileHeaderMessuredEvent;
 import com.vine.vinemars.domain.User;
+import com.vine.vinemars.utils.ImageUtils;
+import com.vine.vinemars.view.RoundedAvatarDrawable;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -78,12 +80,12 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.BaseProf
     }
 
     @Override
-    public void onBindViewHolder(ProfileAdapter.BaseProfileViewHolder viewHolder, int position) {
+    public void onBindViewHolder(final ProfileAdapter.BaseProfileViewHolder viewHolder, int position) {
         int type = getItemViewType(position);
 
         switch (type) {
             case TYPE_HEADER:
-                HeaderViewHolder headerViewHolder = (HeaderViewHolder) viewHolder;
+                final HeaderViewHolder headerViewHolder = (HeaderViewHolder) viewHolder;
                 final View itemLayout = ((HeaderViewHolder) viewHolder).itemView;
                 ((HeaderViewHolder) viewHolder).itemView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
 
@@ -94,27 +96,64 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.BaseProf
                         return true;
                     }
                 });
-//                Picasso.with(context).load(R.drawable.avatar_default).transform(new Transformation() {
-//                    @Override
-//                    public Bitmap transform(Bitmap source) {
-//                        return ImageUtils.convertDrawable2BitmapByCanvas(new RoundedAvatarDrawable(source));
-//                    }
-//
-//                    @Override
-//                    public String key() {
-//                        return ;
-//                    }
-//                }).into(headerViewHolder.avatarImage);
+
+                Picasso.with(context).load("http://c.hiphotos.baidu.com/image/w%3D230/sign=21ef048bcbea15ce41eee70a86013a25/55e736d12f2eb938b98410fcd7628535e4dd6fd6.jpg").transform(new Transformation() {
+                    @Override
+                    public Bitmap transform(Bitmap source) {
+                        Bitmap bitmap = ImageUtils.convertDrawable2BitmapByCanvas(new RoundedAvatarDrawable(source));
+                        source.recycle();
+                        return bitmap;
+                    }
+
+                    @Override
+                    public String key() {
+                        return "circle()";
+                    }
+                }).placeholder(R.drawable.avatar_default).into(headerViewHolder.avatarImage);
 
 //                headerViewHolder.avatarImage.setImageDrawable(new RoundedBitmapDrawable() {
 //                });
-                Resources res = context.getResources();
-                Bitmap src = BitmapFactory.decodeResource(res, R.drawable.avatar_default);
-                RoundedBitmapDrawable dr =
-                        RoundedBitmapDrawableFactory.create(res, src);
-                dr.setCornerRadius(Math.max(src.getWidth(), src.getHeight()) / 2.0f);
-                headerViewHolder.avatarImage.setImageDrawable(dr);
-                headerViewHolder.signatrueText.setText(user.signature);
+
+                Picasso.with(context).load("http://g.hiphotos.baidu.com/image/pic/item/b17eca8065380cd79ff5cf51a244ad34588281a6.jpg").transform(new Transformation() {
+
+                    @Override
+                    public Bitmap transform(Bitmap source) {
+                        Palette.generateAsync(source, 10, new Palette.PaletteAsyncListener() {
+                            @Override
+                            public void onGenerated(Palette palette) {
+                                Palette.Swatch swatch =
+                                        palette.getVibrantSwatch();
+                                if (swatch != null) {
+                                    // If we have a vibrant color
+                                    // update the title TextView
+                                    ((View) (headerViewHolder.nickName.getParent())).setBackgroundColor(
+                                            swatch.getRgb());
+                                    headerViewHolder.nickName.setTextColor(
+                                            swatch.getTitleTextColor());
+                                    int bodyTextColor = swatch.getBodyTextColor();
+                                    headerViewHolder.signatureText.setTextColor(bodyTextColor);
+                                    headerViewHolder.abstractText.setTextColor(bodyTextColor);
+                                    headerViewHolder.viewedText.setTextColor(Color.argb(100, Color.red(bodyTextColor), Color.green(bodyTextColor),
+                                            Color.blue(bodyTextColor)));
+                                }
+                            }
+                        });
+                        return source;
+                    }
+
+                    @Override
+                    public String key() {
+                        return "palette()";
+                    }
+                }).placeholder(R.drawable.profile_cover_default).into(headerViewHolder.coverImage);
+//                Resources res = context.getResources();
+//                Bitmap src = BitmapFactory.decodeResource(res, R.drawable.avatar_default);
+
+//                RoundedBitmapDrawable dr =
+//                        RoundedBitmapDrawableFactory.create(res, src);
+//                dr.setCornerRadius(Math.max(src.getWidth(), src.getHeight()) / 2.0f);
+//                headerViewHolder.avatarImage.setImageDrawable(dr);
+                headerViewHolder.signatureText.setText(user.signature);
                 headerViewHolder.nickName.setText(user.nickname);
                 break;
             case TYPE_BASIC_INFO:
@@ -192,7 +231,7 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.BaseProf
 
     public static final class ProfileHeaderViewHolder extends BaseProfileViewHolder {
 
-        @InjectView(R.id.avatar)
+        @InjectView(R.id.iv_avatar)
         protected ImageView avatarImage;
         @InjectView(R.id.profile_cover)
         protected ImageView coverImage;
@@ -211,12 +250,18 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.BaseProf
 
     public static class HeaderViewHolder extends BaseProfileViewHolder {
 
-        @InjectView(R.id.avatar)
+        @InjectView(R.id.iv_avatar)
         protected ImageView avatarImage;
         @InjectView(R.id.profile_signature)
-        protected TextView signatrueText;
+        protected TextView signatureText;
         @InjectView(R.id.profile_username)
         protected TextView nickName;
+        @InjectView(R.id.profile_abstract)
+        protected TextView abstractText;
+        @InjectView(R.id.profile_viewed)
+        protected TextView viewedText;
+        @InjectView(R.id.profile_cover)
+        protected ImageView coverImage;
 
         public HeaderViewHolder(View itemView) {
             super(itemView);

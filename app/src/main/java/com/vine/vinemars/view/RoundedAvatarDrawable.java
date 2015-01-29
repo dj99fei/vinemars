@@ -32,8 +32,8 @@ public class RoundedAvatarDrawable extends Drawable {
         mPaint.setShader(shader);
 
         // NOTE: we assume bitmap is properly scaled to current density
-        mBitmapWidth = mBitmap.getWidth();
-        mBitmapHeight = mBitmap.getHeight();
+        mBitmapWidth = mBitmap.getWidth() > mBitmap.getHeight() ? mBitmap.getHeight() : mBitmap.getWidth();
+        mBitmapHeight = mBitmapWidth;
         setAntiAlias(true);
     }
 

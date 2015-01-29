@@ -26,13 +26,7 @@ public abstract class CommonActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getContentViewId());
-        ButterKnife.inject(this);
-        setSupportActionBar(toolbar);
-        actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            setDisplayOptions();
-        }
+        setContentView(R.layout.activity_common);
         getSupportFragmentManager().beginTransaction().add(R.id.content_frame, getFragment()).disallowAddToBackStack().commit();
     }
 
@@ -44,6 +38,21 @@ public abstract class CommonActivity extends BaseActivity {
 
     String getTag() {
         return this.getClass().getSimpleName();
+    }
+
+    @Override
+    public void setContentView(int layoutResID) {
+        super.setContentView(layoutResID);
+        ButterKnife.inject(this);
+        setupActionBar();
+    }
+
+    private void setupActionBar() {
+        setSupportActionBar(toolbar);
+        actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            setDisplayOptions();
+        }
     }
 
     int getContentViewId() {

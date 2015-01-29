@@ -15,7 +15,7 @@
         >
 
         <ImageView
-            android:id="@id/avatar"
+            android:id="@id/iv_avatar"
             android:layout_width="@dimen/post_avatar_size"
             android:layout_height="@dimen/post_avatar_size"
             android:layout_marginLeft="@dimen/layout_inner_padding_horizontal"
@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/layout_inner_padding_horizontal"
-            android:layout_toRightOf="@id/avatar"
+            android:layout_toRightOf="@id/iv_avatar"
             android:text="Fenn Cheng"/>
 
         <TextView
@@ -51,8 +51,8 @@
             android:id="@id/edit_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/avatar"
-            android:layout_below="@id/avatar"
+            android:layout_alignLeft="@id/iv_avatar"
+            android:layout_below="@id/iv_avatar"
             android:gravity="left|top"
             android:layout_marginRight="@dimen/layout_inner_padding_horizontal"
             android:layout_marginTop="@dimen/layout_padding_vertical"
